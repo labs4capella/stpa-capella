@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="ASCII"?>
+<!--
+  Copyright (c) 2020-2023 THALES.
+  
+  This program and the accompanying materials are made available under the
+  terms of the Eclipse Public License 2.0 which is available at
+  http://www.eclipse.org/legal/epl-2.0
+  
+  SPDX-License-Identifier: EPL-2.0
+
+  Contributors:
+       THALES - initial API and implementation
+-->
+<vp:Viewpoint xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sirius="http://www.polarsys.org/kitalpha/ad/sirius/1.0.0" xmlns:vp="http://www.polarsys.org/kitalpha/ad/viewpoint/1.0.0" name="STPA" id="com.thalesgroup.mde.capella.stpa" vpid="_26eb4KHHEeqqRtvhSsDzCg" version="0.1.0.qualifier">
+  <metamodel>
+    <models href="../../com.thalesgroup.mde.capella.stpa.model/models/STPA.ecore#/"/>
+  </metamodel>
+  <representation>
+    <representations xsi:type="sirius:SiriusRepresentation">
+      <odesign href="../../com.thalesgroup.mde.capella.stpa.design/description/STPA.odesign#/"/>
+    </representations>
+  </representation>
+</vp:Viewpoint>

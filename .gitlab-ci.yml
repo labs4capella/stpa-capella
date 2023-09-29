@@ -1,0 +1,31 @@
+image: maven:3.6.3-jdk-11
+
+variables:
+  MAVEN_OPTS: "-Dmaven.repo.local=.m2/repository"
+  BUILD_OUTPUT_PATH: ./releng/com.thalesgroup.mde.capella.stpa.update/target
+  OUTPUT_FOLDER: output
+
+stages:
+  - build
+
+cache:
+  key: ${CI_COMMIT_REF_SLUG}
+  paths:
+    - .m2/repository/
+
+build-job:
+  stage: build
+  script:
+    - mkdir ${OUTPUT_FOLDER}
+    - tp_versions=("5.0" "5.1" "5.2" "6.0" "6.1")
+    - for v in ${tp_versions[@]}; do
+    -   echo '********** BUILDING FOR CAPELLA '${v}' **********'
+    -   mvn clean package -P capella-${v} -Declipse.p2.mirrors=false
+    -   mv ${BUILD_OUTPUT_PATH}/STPA*.zip ./${OUTPUT_FOLDER}
+    - done
+  artifacts:
+    paths:
+      - ${OUTPUT_FOLDER}
+  tags:
+    - autoscale
+

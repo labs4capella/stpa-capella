@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<!--
+  Copyright (c) 2020-2023 THALES.
+  
+  This program and the accompanying materials are made available under the
+  terms of the Eclipse Public License 2.0 which is available at
+  http://www.eclipse.org/legal/epl-2.0
+  
+  SPDX-License-Identifier: EPL-2.0
+
+  Contributors:
+       THALES - initial API and implementation
+-->
+<plugin>
+<extension point="org.eclipse.amalgam.explorer.activity.ui.pagesProvider">
+	<Page
+		class="com.thalesgroup.mde.capella.stpa.activity.explorer.page.STPAAnalysisPage"
+        id="org.polarsys.capella.vp.stpa.page" 
+		imageOff="icons/stpa_overview_off.png" 
+		imageOn="icons/stpa_overview_on.png"
+        index="3"
+        tabName="%STPAAnalysis"
+        title="%STPAAnalysis"
+        viewer="true">
+			<Description></Description>
+			<Predicate
+				class="com.thalesgroup.mde.capella.stpa.activity.explorer.predicate.PSTPAAnalysisPredicate">
+			</Predicate>
+
+		<Overview imageOff="icons/welcome-stpa-analysis-off.png" imageOn="icons/welcome-stpa-analysis-on.png">
+			<Description>
+				&lt;p&gt;&lt;b&gt;Develop Safety Requirements&lt;/b&gt;&lt;/p&gt;&lt;p&gt;Identify losses and hazards, define control structure&lt;br/&gt;Identify unsafe control actions and loss scenarios&lt;br/&gt;Specify mitigation constraints and requirements&lt;/p&gt;
+			</Description>
+		</Overview>
+
+		<Section
+			   expanded="false"
+			   filtering="true"
+			   id="org.polarsys.capella.vp.stpa.section.definepurpose"	   
+			   index="0"
+			   name="%Step1">
+			<Description>
+				&lt;p&gt;Define the kind of losses the analysis aims to prevent and how they translate to safety constraints on the system.&lt;/p&gt;
+			</Description>
+   <Activity
+         class="com.thalesgroup.mde.capella.stpa.activity.explorer.activity.StakesActivity"
+         id="com.thalesgroup.mde.capella.stpa.activity.stakes"
+         image="icons/matrix.png"
+         index="0"
+         name="%tableStake">
+      <Description></Description>
+   </Activity>
+   <Activity
+         class="com.thalesgroup.mde.capella.stpa.activity.explorer.activity.LossesActivity"
+         id="com.thalesgroup.mde.capella.stpa.activity.losses"
+         image="icons/matrix.png"
+         index="1"
+         name="%tableLoss">
+      <Description></Description>
+   </Activity>
+   <Activity
+         class="com.thalesgroup.mde.capella.stpa.activity.explorer.activity.HazardsActivity"
+         id="com.thalesgroup.mde.capella.stpa.activity.hazards"
+         image="icons/matrix.png"
+         index="2"
+         name="%tableHazard">
+      <Description></Description>
+   </Activity>
+   <Activity
+         class="com.thalesgroup.mde.capella.stpa.activity.explorer.activity.SystemConstraintsActivity"
+         id="com.thalesgroup.mde.capella.stpa.activity.systemconstraints"
+         image="icons/matrix.png"
+         index="3"
+         name="%tableSystemConstraint">
+      <Description></Description>
+   </Activity>
+   <Activity
+         class="com.thalesgroup.mde.capella.stpa.activity.explorer.activity.DependenciesActivity"
+         id="com.thalesgroup.mde.capella.stpa.activity.dependencies"
+         image="icons/dep.png"
+         index="4"
+         name="%diagramDependencies">
+      <Description></Description>
+   </Activity>
+		</Section>
+  <Section
+        expanded="false"
+        filtering="true"
+        id="org.polarsys.capella.vp.stpa.section.modelcs"
+        index="1"
+        name="%Step2">
+     <Description>
+     </Description>
+     <Activity
+           class="com.thalesgroup.mde.capella.stpa.activity.explorer.activity.HCSActivity"
+           id="com.thalesgroup.mde.capella.stpa.activity.hcs"
+           image="icons/hcs.png"
+           index="0"
+           name="%diagramHCS">
+        <Description></Description>
+     </Activity>
+     <Activity
+           class="com.thalesgroup.mde.capella.stpa.activity.explorer.activity.ResponsibilityActivity"
+           id="com.thalesgroup.mde.capella.stpa.activity.resp"
+           image="icons/matrix.png"
+           index="1"
+           name="%tableResponsibility">
+        <Description></Description>
+     </Activity>
+     <Activity
+           class="com.thalesgroup.mde.capella.stpa.activity.explorer.activity.IOActivity"
+           id="com.thalesgroup.mde.capella.stpa.activity.io"
+           image="icons/matrix.png"
+           index="2"
+           name="%tableIO">
+        <Description></Description>
+     </Activity>
+     <Activity
+           class="com.thalesgroup.mde.capella.stpa.activity.explorer.activity.CAActivity"
+           id="com.thalesgroup.mde.capella.stpa.activity.ca"
+           image="icons/matrix.png"
+           index="3"
+           name="%tableCA">
+        <Description></Description>
+     </Activity>
+     <Activity
+           class="com.thalesgroup.mde.capella.stpa.activity.explorer.activity.DetailedControllerActivity"
+           id="com.thalesgroup.mde.capella.stpa.activity.dcd"
+           image="icons/hcs.png"
+           index="4"
+           name="%diagramDCD">
+        <Description></Description>
+     </Activity>
+  </Section>
+  <Section
+        expanded="false"
+        filtering="true"
+        id="org.polarsys.capella.vp.stpa.section.iducas"
+        index="2"
+        name="%Step3">
+     <Description></Description>
+     <Activity
+           class="com.thalesgroup.mde.capella.stpa.activity.explorer.activity.UCAActivity"
+           id="com.thalesgroup.mde.capella.stpa.activity.ucas"
+           image="icons/matrix.png"
+           index="0"
+           name="%treeUCA">
+        <Description></Description>
+     </Activity>
+  </Section>
+  <Section
+        expanded="false"
+        filtering="true"
+        id="org.polarsys.capella.vp.stpa.section.idlscenarios"
+        index="3"
+        name="%Step4">
+     <Description></Description>
+     <Activity
+           class="com.thalesgroup.mde.capella.stpa.activity.explorer.activity.ControlFlawActivity"
+           id="com.thalesgroup.mde.capella.stpa.activity.causalfactors"
+           image="icons/hcs.png"
+           index="0"
+           name="%diagramControlFlaw">
+        <Description></Description>
+     </Activity>
+     <Activity
+           class="com.thalesgroup.mde.capella.stpa.activity.explorer.activity.LossScenariosActivity"
+           id="com.thalesgroup.mde.capella.stpa.activity.lscenarios"
+           image="icons/matrix.png"
+           index="1"
+           name="%tableLossScenario">
+        <Description></Description>
+     </Activity>
+     <Activity
+           class="com.thalesgroup.mde.capella.stpa.activity.explorer.activity.GlobalTableActivity"
+           id="com.thalesgroup.mde.capella.stpa.activity.globaltable"
+           image="icons/matrix.png"
+           index="2"
+           name="%tableGlobal">
+        <Description></Description>
+     </Activity>
+  </Section>
+	</Page>
+</extension>
+</plugin>

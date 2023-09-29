@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Copyright (c) 2020-2023 THALES.
+  
+  This program and the accompanying materials are made available under the
+  terms of the Eclipse Public License 2.0 which is available at
+  http://www.eclipse.org/legal/epl-2.0
+  
+  SPDX-License-Identifier: EPL-2.0
+
+  Contributors:
+       THALES - initial API and implementation
+-->
+<feature
+      id="com.thalesgroup.mde.capella.stpa.feature"
+      label="%featureName"
+      version="0.1.0.qualifier"
+      provider-name="%providerName">
+
+   <description>
+      %featureDescription
+   </description>
+
+   <copyright>
+      %copyright
+   </copyright>
+
+   <license url="%licenseURL">
+      %license
+   </license>
+
+   <requires>
+      <import plugin="org.polarsys.kitalpha.ad.viewpoint.ui"/>
+      <import plugin="org.eclipse.core.runtime"/>
+      <import plugin="org.polarsys.capella.core.model.handler"/>
+      <import plugin="org.polarsys.capella.core.model.helpers"/>
+      <import plugin="org.polarsys.kitalpha.ad.services"/>
+      <import plugin="org.eclipse.emf.edit"/>
+      <import plugin="org.polarsys.kitalpha.emde.model"/>
+      <import plugin="org.polarsys.kitalpha.emde.model.edit"/>
+      <import plugin="org.polarsys.capella.core.data.gen"/>
+      <import plugin="org.polarsys.capella.core.data.gen.edit"/>
+      <import plugin="org.polarsys.capella.common.data.core.gen"/>
+      <import plugin="org.polarsys.capella.common.data.core.gen.edit"/>
+      <import plugin="org.polarsys.capella.common.data.activity.gen"/>
+      <import plugin="org.polarsys.capella.common.data.activity.gen.edit"/>
+      <import plugin="org.polarsys.capella.common.data.behavior.gen"/>
+      <import plugin="org.polarsys.capella.common.data.behavior.gen.edit"/>
+      <import plugin="org.eclipse.ui"/>
+      <import plugin="org.eclipse.core.resources"/>
+      <import plugin="org.eclipse.sirius"/>
+      <import plugin="org.eclipse.sirius.common.acceleo.aql"/>
+      <import plugin="org.eclipse.emf.ecore"/>
+      <import plugin="org.eclipse.sirius.diagram"/>
+      <import plugin="org.polarsys.capella.core.sirius.analysis"/>
+      <import plugin="org.polarsys.capella.core.platform.sirius.ui.actions"/>
+      <import plugin="org.eclipse.sirius.ext.base"/>
+      <import plugin="org.eclipse.sirius.table"/>
+      <import plugin="org.eclipse.sirius.diagram.ui"/>
+      <import plugin="org.eclipse.gef"/>
+      <import plugin="org.eclipse.gmf.runtime.common.core"/>
+      <import plugin="org.eclipse.gmf.runtime.diagram.ui"/>
+      <import plugin="org.polarsys.capella.core.ui.properties"/>
+      <import plugin="org.eclipse.ui.ide"/>
+      <import plugin="org.polarsys.capella.common.ui.toolkit.browser"/>
+      <import plugin="org.eclipse.emf.ecore.xmi"/>
+      <import plugin="org.polarsys.capella.core.data.helpers"/>
+      <import plugin="org.polarsys.kitalpha.emde.xmi"/>
+      <import plugin="org.eclipse.ui.workbench"/>
+      <import plugin="org.eclipse.ui.forms"/>
+      <import plugin="org.polarsys.kitalpha.ad.integration.amalgam"/>
+      <import plugin="org.eclipse.amalgam.explorer.activity.ui"/>
+      <import plugin="org.polarsys.capella.core.explorer.activity.ui"/>
+      <import plugin="org.polarsys.capella.core.sirius.ui"/>
+      <import plugin="org.polarsys.capella.common.ui"/>
+      <import feature="org.eclipse.sirius.properties.feature" version="6.4.0.202011190936" match="greaterOrEqual"/>
+   </requires>
+
+   <plugin
+         id="com.thalesgroup.mde.capella.stpa.af"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="com.thalesgroup.mde.capella.stpa.helpers"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="com.thalesgroup.mde.capella.stpa.model.edit"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="com.thalesgroup.mde.capella.stpa.design"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="com.thalesgroup.mde.capella.stpa.queries"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="com.thalesgroup.mde.capella.stpa.model"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="com.thalesgroup.mde.capella.stpa.activity.explorer"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="com.thalesgroup.mde.capella.stpa.ui"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+</feature>

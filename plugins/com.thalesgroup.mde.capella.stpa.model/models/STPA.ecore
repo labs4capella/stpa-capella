@@ -1,0 +1,409 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="stpa" nsURI="http://www.thalesgroup.com/capella/stpa" nsPrefix="stpa">
+  <eClassifiers xsi:type="ecore:EClass" name="StpaAnalysisElement" abstract="true"
+      eSuperTypes="platform:/plugin/org.polarsys.capella.core.data.gen/model/CapellaCore.ecore#//NamedElement">
+    <eOperations name="getAnalysis" lowerBound="1" eType="#//StpaAnalysis"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ArchitectureMappable" abstract="true"
+      eSuperTypes="#//StpaAnalysisElement">
+    <eTypeParameters name="T">
+      <eBounds eClassifier="ecore:EClass platform:/plugin/org.polarsys.capella.core.data.gen/model/CapellaCore.ecore#//NamedElement"/>
+    </eTypeParameters>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="architectureElements" upperBound="-1">
+      <eGenericType eTypeParameter="#//ArchitectureMappable/T"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="UserIdentifiedElement" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="userID" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eGenericSuperTypes eClassifier="#//ArchitectureMappable">
+      <eTypeArguments eClassifier="ecore:EClass platform:/plugin/org.polarsys.capella.core.data.gen/model/CapellaCore.ecore#//NamedElement"/>
+    </eGenericSuperTypes>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Decomposable" abstract="true" eSuperTypes="#//UserIdentifiedElement">
+    <eTypeParameters name="T">
+      <eBounds eClassifier="#//Decomposable">
+        <eTypeArguments eTypeParameter="#//Decomposable/T"/>
+      </eBounds>
+    </eTypeParameters>
+    <eOperations name="isRoot" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eOperations name="isLeaf" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eOperations name="getDecomposition" upperBound="-1">
+      <eGenericType eTypeParameter="#//Decomposable/T"/>
+    </eOperations>
+    <eOperations name="getComposite">
+      <eGenericType eTypeParameter="#//Decomposable/T"/>
+    </eOperations>
+    <eOperations name="getOrderedDecomposition" upperBound="-1">
+      <eGenericType eTypeParameter="#//Decomposable/T"/>
+    </eOperations>
+    <eOperations name="getRoot" lowerBound="1">
+      <eGenericType eTypeParameter="#//Decomposable/T"/>
+    </eOperations>
+    <eOperations name="getSubtree" upperBound="-1">
+      <eGenericType eTypeParameter="#//Decomposable/T"/>
+    </eOperations>
+    <eOperations name="getUncategorized" upperBound="-1">
+      <eGenericType eTypeParameter="#//Decomposable/T"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="decompositionCategories"
+        upperBound="-1" containment="true">
+      <eGenericType eClassifier="#//DecompositionCategory">
+        <eTypeArguments eTypeParameter="#//Decomposable/T"/>
+      </eGenericType>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="category" eOpposite="#//DecompositionCategory/coverage">
+      <eGenericType eClassifier="#//DecompositionCategory">
+        <eTypeArguments eTypeParameter="#//Decomposable/T"/>
+      </eGenericType>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DecompositionCategory" eSuperTypes="#//StpaAnalysisElement">
+    <eTypeParameters name="T">
+      <eBounds eClassifier="#//Decomposable">
+        <eTypeArguments eTypeParameter="#//DecompositionCategory/T"/>
+      </eBounds>
+    </eTypeParameters>
+    <eOperations name="getOrderedCoverage" upperBound="-1">
+      <eGenericType eTypeParameter="#//DecompositionCategory/T"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="coverage" upperBound="-1"
+        eOpposite="#//Decomposable/category">
+      <eGenericType eTypeParameter="#//DecompositionCategory/T"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StpaAnalysis" eSuperTypes="#//StpaAnalysisElement platform:/plugin/org.polarsys.kitalpha.emde/model/eMDE.ecore#//ElementExtension">
+    <eAnnotations source="http://www.polarsys.org/kitalpha/emde/1.0.0/constraint">
+      <details key="ExtendedElement" value=" http://www.polarsys.org/capella/core/modeller/1.4.0#//ModelRoot"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.polarsys.org/kitalpha/emde/1.0.0/constraintMapping">
+      <details key="Mapping" value=" platform:/plugin/org.polarsys.capella.core.data.gen/model/CapellaModeller.ecore#//ModelRoot"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="technicalPackage" eType="#//TechnicalPackage"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="lossPackage" eType="#//LossPackage"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hazardConstraintPackage"
+        eType="#//HazardConstraintPackage" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="controlStructurePackage"
+        eType="#//ControlStructurePackage" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="lossScenarioPackage" eType="#//LossScenarioPackage"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="system" eType="#//ControlEntity"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subAnalyses" upperBound="-1"
+        eType="#//StpaAnalysis" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AnalysisPackage" abstract="true" eSuperTypes="#//StpaAnalysisElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TechnicalPackage" eSuperTypes="#//AnalysisPackage">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="unsafeControlActionCategories"
+        upperBound="-1" eType="#//UnsafeControlActionCategory" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LossPackage" eSuperTypes="#//AnalysisPackage">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="stakeholders" upperBound="-1"
+        eType="#//Stakeholder" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="losses" upperBound="-1"
+        eType="#//Loss" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="HazardConstraintPackage" eSuperTypes="#//AnalysisPackage">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rootHazards" upperBound="-1"
+        eType="#//Hazard" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rootSystemConstraints"
+        upperBound="-1" eType="#//SystemConstraint" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ControlStructurePackage" eSuperTypes="#//AnalysisPackage">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rootEntities" upperBound="-1"
+        eType="#//ControlEntity" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LossScenarioPackage" eSuperTypes="#//AnalysisPackage">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="lossScenarios" upperBound="-1"
+        eType="#//LossScenario" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Stakeholder" eSuperTypes="#//UserIdentifiedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="stakes" upperBound="-1"
+        eType="#//Stake" containment="true" eOpposite="#//Stake/stakeholder"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Stake" eSuperTypes="#//UserIdentifiedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="stakeholder" lowerBound="1"
+        eType="#//Stakeholder" eOpposite="#//Stakeholder/stakes"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="losses" upperBound="-1"
+        eType="#//Loss" eOpposite="#//Loss/stakes"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Loss" eSuperTypes="#//UserIdentifiedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hazards" upperBound="-1"
+        eType="#//Hazard" eOpposite="#//Hazard/losses"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="stakes" upperBound="-1"
+        eType="#//Stake" eOpposite="#//Stake/losses"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ControlFlawTarget" abstract="true" eSuperTypes="#//UserIdentifiedElement">
+    <eOperations name="getUnsafeControlActions" upperBound="-1" eType="#//UnsafeControlAction"/>
+    <eOperations name="getLossScenarios" upperBound="-1" eType="#//LossScenario"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Hazard">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="unsafeCondition" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subHazards" upperBound="-1"
+        eType="#//Hazard" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="losses" upperBound="-1"
+        eType="#//Loss" eOpposite="#//Loss/hazards"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="systemConstraints" upperBound="-1"
+        eType="#//SystemConstraint" eOpposite="#//SystemConstraint/hazards"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="unsafeControlActions" upperBound="-1"
+        eType="#//UnsafeControlAction" eOpposite="#//UnsafeControlAction/hazards"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="lossScenarios" upperBound="-1"
+        eType="#//LossScenario" eOpposite="#//LossScenario/hazards"/>
+    <eGenericSuperTypes eClassifier="#//Decomposable">
+      <eTypeArguments eClassifier="#//Hazard"/>
+    </eGenericSuperTypes>
+    <eGenericSuperTypes eClassifier="#//ControlFlawTarget"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SystemConstraint">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="conditionToEnforce" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subSystemConstraints" upperBound="-1"
+        eType="#//SystemConstraint" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hazards" upperBound="-1"
+        eType="#//Hazard" eOpposite="#//Hazard/systemConstraints"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="responsibilities" upperBound="-1"
+        eType="#//Responsibility" eOpposite="#//Responsibility/systemConstraints"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="unsafeControlActions" upperBound="-1"
+        eType="#//UnsafeControlAction" eOpposite="#//UnsafeControlAction/violatedConstraints"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="lossScenarios" upperBound="-1"
+        eType="#//LossScenario" eOpposite="#//LossScenario/violatedConstraints"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="assumptions" upperBound="-1"
+        eType="ecore:EClass platform:/plugin/org.polarsys.capella.core.data.gen/model/CapellaCore.ecore#//Constraint"/>
+    <eGenericSuperTypes eClassifier="#//Decomposable">
+      <eTypeArguments eClassifier="#//SystemConstraint"/>
+    </eGenericSuperTypes>
+    <eGenericSuperTypes eClassifier="#//ControlFlawTarget"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ControlEntity">
+    <eOperations name="isController" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eOperations name="isControlled" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eOperations name="isSystem" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eOperations name="getIncomingControlActions" upperBound="-1" eType="#//ControlAction"/>
+    <eOperations name="getIncomingExchangeElements" upperBound="-1" eType="#//ExchangeElement"/>
+    <eOperations name="getIncomingFeedback" upperBound="-1" eType="#//FeedbackElement"/>
+    <eOperations name="getIncomingInformation" upperBound="-1" eType="#//PieceOfInformation"/>
+    <eOperations name="getOutgoingControlActions" upperBound="-1" eType="#//ControlAction"/>
+    <eOperations name="getOutgoingExchangeElements" upperBound="-1" eType="#//ExchangeElement"/>
+    <eOperations name="getOutgoingFeedback" upperBound="-1" eType="#//FeedbackElement"/>
+    <eOperations name="getOutgoingInformation" upperBound="-1" eType="#//PieceOfInformation"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="process" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subEntities" upperBound="-1"
+        eType="#//ControlEntity" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="responsibilities" upperBound="-1"
+        eType="#//Responsibility" containment="true" eOpposite="#//Responsibility/controller"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="outgoingRelations" upperBound="-1"
+        eType="#//Relation" containment="true" eOpposite="#//Relation/source"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="incomingRelations" upperBound="-1"
+        eType="#//Relation" eOpposite="#//Relation/target"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="processModel" upperBound="-1"
+        eType="#//ProcessModelVariable" containment="true" eOpposite="#//ProcessModelVariable/controller"/>
+    <eGenericSuperTypes eClassifier="#//Decomposable">
+      <eTypeArguments eClassifier="#//ControlEntity"/>
+    </eGenericSuperTypes>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ExchangeBasedElement" abstract="true"
+      eSuperTypes="#//StpaAnalysisElement">
+    <eOperations name="getFeedback" upperBound="-1" eType="#//FeedbackElement"/>
+    <eOperations name="getInformation" upperBound="-1" eType="#//PieceOfInformation"/>
+    <eOperations name="getControlActions" upperBound="-1" eType="#//ExchangeElement"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Responsibility" eSuperTypes="#//UserIdentifiedElement #//ExchangeBasedElement">
+    <eOperations name="getExchangeElements" upperBound="-1" eType="#//ExchangeElement"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="processModelState" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="controller" lowerBound="1"
+        eType="#//ControlEntity" eOpposite="#//ControlEntity/responsibilities"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="systemConstraints" upperBound="-1"
+        eType="#//SystemConstraint" eOpposite="#//SystemConstraint/responsibilities"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="controlActions" upperBound="-1"
+        eType="#//ExchangeElement" eOpposite="#//ExchangeElement/exercisedResponsibilities"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="feedback" upperBound="-1"
+        eType="#//FeedbackElement" eOpposite="#//FeedbackElement/responsibilities"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="information" upperBound="-1"
+        eType="#//PieceOfInformation" eOpposite="#//PieceOfInformation/responsibilities"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="variables" upperBound="-1"
+        eType="#//ProcessModelVariable" eOpposite="#//ProcessModelVariable/responsibilities"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ProcessModelVariable" eSuperTypes="#//UserIdentifiedElement #//ExchangeBasedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="controller" lowerBound="1"
+        eType="#//ControlEntity" eOpposite="#//ControlEntity/processModel"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="responsibilities" upperBound="-1"
+        eType="#//Responsibility" eOpposite="#//Responsibility/variables"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="values" upperBound="-1"
+        eType="#//ProcessModelValue" containment="true" eOpposite="#//ProcessModelValue/variable"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="feedback" upperBound="-1"
+        eType="#//FeedbackElement" eOpposite="#//FeedbackElement/processModel"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="information" upperBound="-1"
+        eType="#//PieceOfInformation" eOpposite="#//PieceOfInformation/processModel"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="controlActions" upperBound="-1"
+        eType="#//ExchangeElement" eOpposite="#//ExchangeElement/supportingProcessModel"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ProcessModelValue">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="variable" lowerBound="1"
+        eType="#//ProcessModelVariable" eOpposite="#//ProcessModelVariable/values"/>
+    <eGenericSuperTypes eClassifier="#//ArchitectureMappable">
+      <eTypeArguments eClassifier="ecore:EClass platform:/plugin/org.polarsys.capella.core.data.gen/model/CapellaCore.ecore#//NamedElement"/>
+    </eGenericSuperTypes>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Relation" abstract="true">
+    <eOperations name="getExchangeElements" upperBound="-1" eType="#//ExchangeElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
+        eType="#//ControlEntity" eOpposite="#//ControlEntity/outgoingRelations"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
+        eType="#//ControlEntity" eOpposite="#//ControlEntity/incomingRelations"/>
+    <eGenericSuperTypes eClassifier="#//ArchitectureMappable">
+      <eTypeArguments eClassifier="ecore:EClass platform:/plugin/org.polarsys.capella.core.data.gen/model/CapellaCore.ecore#//NamedElement"/>
+    </eGenericSuperTypes>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ControlFlawContext" abstract="true"
+      eSuperTypes="#//UserIdentifiedElement">
+    <eOperations name="getControlAction" lowerBound="1" eType="#//ExchangeElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="controlFlawSet" eType="#//ControlFlawSet"
+        containment="true" eOpposite="#//ControlFlawSet/context"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ExchangeElement" abstract="true" eSuperTypes="#//UserIdentifiedElement #//ControlFlawContext">
+    <eOperations name="getRelation" lowerBound="1" eType="#//Relation"/>
+    <eOperations name="getControlFlaws" upperBound="-1" eType="#//ControlFlaw"/>
+    <eOperations name="getController" lowerBound="1" eType="#//ControlEntity"/>
+    <eOperations name="getProcess" lowerBound="1" eType="#//ControlEntity"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="exercisedResponsibilities"
+        upperBound="-1" eType="#//Responsibility" eOpposite="#//Responsibility/controlActions"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="lossScenarios" upperBound="-1"
+        eType="#//LossScenario" eOpposite="#//LossScenario/controlAction"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="supportingProcessModel"
+        upperBound="-1" eType="#//ProcessModelVariable" eOpposite="#//ProcessModelVariable/controlActions"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="unsafeControlActions" upperBound="-1"
+        eType="#//UnsafeControlAction" containment="true" eOpposite="#//UnsafeControlAction/controlAction"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ControlRelation" eSuperTypes="#//Relation">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="controlActions" upperBound="-1"
+        eType="#//ControlAction" containment="true" eOpposite="#//ControlAction/relation"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ControlAction" eSuperTypes="#//ExchangeElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="relation" lowerBound="1"
+        eType="#//ControlRelation" eOpposite="#//ControlRelation/controlActions"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ResponsibilitySupportExchangeElement"
+      abstract="true" eSuperTypes="#//ExchangeElement">
+    <eOperations name="getProcessModel" upperBound="-1" eType="#//ProcessModelVariable"/>
+    <eOperations name="getResponsibilities" upperBound="-1" eType="#//Responsibility"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FeedbackRelation" eSuperTypes="#//Relation">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="feedback" upperBound="-1"
+        eType="#//FeedbackElement" containment="true" eOpposite="#//FeedbackElement/relation"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FeedbackElement" eSuperTypes="#//ResponsibilitySupportExchangeElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="relation" lowerBound="1"
+        eType="#//FeedbackRelation" eOpposite="#//FeedbackRelation/feedback"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="responsibilities" upperBound="-1"
+        eType="#//Responsibility" eOpposite="#//Responsibility/feedback"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="processModel" upperBound="-1"
+        eType="#//ProcessModelVariable" eOpposite="#//ProcessModelVariable/feedback"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InformationExchangeRelation" eSuperTypes="#//Relation">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="information" upperBound="-1"
+        eType="#//PieceOfInformation" containment="true" eOpposite="#//PieceOfInformation/relation"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PieceOfInformation" eSuperTypes="#//ResponsibilitySupportExchangeElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="relation" lowerBound="1"
+        eType="#//InformationExchangeRelation" eOpposite="#//InformationExchangeRelation/information"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="responsibilities" upperBound="-1"
+        eType="#//Responsibility" eOpposite="#//Responsibility/information"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="processModel" upperBound="-1"
+        eType="#//ProcessModelVariable" eOpposite="#//ProcessModelVariable/information"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Mitigable" abstract="true" eSuperTypes="#//StpaAnalysisElement">
+    <eOperations name="getControlAction" lowerBound="1" eType="#//ExchangeElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="countermeasures" upperBound="-1"
+        eType="ecore:EClass platform:/plugin/org.polarsys.capella.core.data.gen/model/CapellaCore.ecore#//Constraint"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ControlFlawAnalysisElement" abstract="true"
+      eSuperTypes="#//UserIdentifiedElement #//Mitigable">
+    <eOperations name="getViolatedConstraints" lowerBound="1" upperBound="-1" eType="#//SystemConstraint"/>
+    <eOperations name="getHazards" lowerBound="1" upperBound="-1" eType="#//Hazard"/>
+    <eOperations name="getCausalFactors" upperBound="-1" eType="#//ControlFlaw"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="UnsafeControlAction" eSuperTypes="#//ControlFlawAnalysisElement #//ControlFlawContext">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" lowerBound="1" eType="#//UnsafeControlActionKind"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="context" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="controlAction" lowerBound="1"
+        eType="#//ExchangeElement" eOpposite="#//ExchangeElement/unsafeControlActions"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="lossScenarios" upperBound="-1"
+        eType="#//LossScenario" eOpposite="#//LossScenario/unsafeControlAction"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="violatedConstraints" upperBound="-1"
+        eType="#//SystemConstraint" eOpposite="#//SystemConstraint/unsafeControlActions"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hazards" upperBound="-1"
+        eType="#//Hazard" eOpposite="#//Hazard/unsafeControlActions"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LossScenario" eSuperTypes="#//ControlFlawAnalysisElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="controlAction" lowerBound="1"
+        eType="#//ExchangeElement" eOpposite="#//ExchangeElement/lossScenarios"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="unsafeControlAction" eType="#//UnsafeControlAction"
+        eOpposite="#//UnsafeControlAction/lossScenarios"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="causalFactors" upperBound="-1"
+        eType="#//ControlFlaw" eOpposite="#//ControlFlaw/lossScenarios"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="violatedConstraints" upperBound="-1"
+        eType="#//SystemConstraint" eOpposite="#//SystemConstraint/lossScenarios"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hazards" upperBound="-1"
+        eType="#//Hazard" eOpposite="#//Hazard/lossScenarios"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="UnsafeControlActionCategory" eSuperTypes="#//StpaAnalysisElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" lowerBound="1" eType="#//UnsafeControlActionKind"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="UnsafeControlActionKind">
+    <eLiterals name="NOT_PROVIDING" literal="NOT_PROVIDING"/>
+    <eLiterals name="PROVIDING" value="1" literal="PROVIDING"/>
+    <eLiterals name="WRONG_TIMING" value="2" literal="WRONG_TIMING"/>
+    <eLiterals name="WRONG_DURATION" value="3" literal="WRONG_DURATION"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ControlFlawSet" eSuperTypes="#//StpaAnalysisElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="controlFlaws" upperBound="-1"
+        eType="#//ControlFlaw" containment="true" eOpposite="#//ControlFlaw/owningSet"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="context" lowerBound="1"
+        eType="#//ControlFlawContext" eOpposite="#//ControlFlawContext/controlFlawSet"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ControlFlaw">
+    <eOperations name="getContext" lowerBound="1" eType="#//ControlFlawContext"/>
+    <eOperations name="getControlAction" lowerBound="1" eType="#//ExchangeElement"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" lowerBound="1" eType="#//ControlFlawKind"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="verdict" lowerBound="1"
+        eType="#//ControlFlawVerdict"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="owningSet" lowerBound="1"
+        eType="#//ControlFlawSet" eOpposite="#//ControlFlawSet/controlFlaws"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="justification" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="lossScenarios" upperBound="-1"
+        eType="#//LossScenario" eOpposite="#//LossScenario/causalFactors"/>
+    <eGenericSuperTypes eClassifier="#//StpaAnalysisElement"/>
+    <eGenericSuperTypes eClassifier="#//ArchitectureMappable">
+      <eTypeArguments eClassifier="ecore:EClass platform:/plugin/org.polarsys.capella.core.data.gen/model/CapellaCore.ecore#//NamedElement"/>
+    </eGenericSuperTypes>
+    <eGenericSuperTypes eClassifier="#//Mitigable"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ControlFlawKind">
+    <eLiterals name="CONTROL_INPUT"/>
+    <eLiterals name="CONTROL_ALGORITHM" value="1"/>
+    <eLiterals name="PROCESS_MODEL" value="2"/>
+    <eLiterals name="CONTROLLER_TO_ACTUATOR" value="3"/>
+    <eLiterals name="ACTUATOR" value="4"/>
+    <eLiterals name="ACTUATOR_TO_PROCESS" value="5"/>
+    <eLiterals name="PROCESS_FAILURE" value="6"/>
+    <eLiterals name="PROCESS_CHANGE" value="7"/>
+    <eLiterals name="PROCESS_CONFLICT" value="8"/>
+    <eLiterals name="PROCESS_INPUT" value="9"/>
+    <eLiterals name="PROCESS_DISTURBANCE" value="10"/>
+    <eLiterals name="PROCESS_OUTPUT" value="11"/>
+    <eLiterals name="PROCESS_TO_SENSOR_DELAY" value="12"/>
+    <eLiterals name="PROCESS_TO_SENSOR_INACCURATE" value="13"/>
+    <eLiterals name="PROCESS_TO_SENSOR_INCORRECT" value="14"/>
+    <eLiterals name="SENSOR" value="15"/>
+    <eLiterals name="SENSOR_TO_CONTROLLER_DELAY" value="16"/>
+    <eLiterals name="SENSOR_TO_CONTROLLER_INADEQUATE" value="17"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ControlFlawVerdict">
+    <eLiterals name="UNDEFINED"/>
+    <eLiterals name="OK" value="1"/>
+    <eLiterals name="KO" value="2"/>
+    <eLiterals name="NA" value="3"/>
+  </eClassifiers>
+</ecore:EPackage>

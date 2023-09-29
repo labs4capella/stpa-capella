@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<!--
+  Copyright (c) 2020-2023 THALES.
+  
+  This program and the accompanying materials are made available under the
+  terms of the Eclipse Public License 2.0 which is available at
+  http://www.eclipse.org/legal/epl-2.0
+  
+  SPDX-License-Identifier: EPL-2.0
+
+  Contributors:
+       THALES - initial API and implementation
+-->
+<plugin>
+	<extension
+	     point="org.eclipse.ui.views">
+	  <view
+	        name="stpa"
+	        icon="icons/view.gif"
+	        category="org.polarsys.kitalpha.view.category"
+	        class="org.polarsys.kitalpha.ad.viewpoint.ui.views.ViewpointView"
+	        id="com.thalesgroup.mde.capella.stpa.view"/>
+	</extension>
+	<extension
+	     point="org.polarsys.kitalpha.resourcereuse.resources">
+	  <resource
+	        domain="AF"
+	        id="com.thalesgroup.mde.capella.stpa"
+	        tags="vp"
+	        name="stpa"
+	        path="/com.thalesgroup.mde.capella.stpa.af/model/stpa.vp#_26eb4KHHEeqqRtvhSsDzCg"/>
+	</extension>
+	<extension 
+	     point="org.eclipse.ui.propertiesView">
+	 	<excludeSources
+	    	id="com.thalesgroup.mde.capella.stpa.view">
+	 	</excludeSources>
+	</extension>
+</plugin>
+

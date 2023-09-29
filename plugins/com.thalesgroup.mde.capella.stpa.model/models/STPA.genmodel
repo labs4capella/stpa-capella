@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/com.thalesgroup.mde.capella.stpa.model/src" creationIcons="false"
+    modelPluginID="com.thalesgroup.mde.capella.stpa.model" modelName="Stpa" nonNLSMarkers="true"
+    codeFormatting="true" importerID="org.eclipse.emf.importer.ecore" containmentProxies="true"
+    complianceLevel="8.0" copyrightFields="false" optimizedHasChildren="true" runtimeVersion="2.16"
+    usedGenPackages="platform:/plugin/org.polarsys.kitalpha.emde.model/model/eMDE.genmodel#//emde platform:/plugin/org.polarsys.capella.core.data.gen/model/CapellaModeller.genmodel#//capellamodeller platform:/plugin/org.polarsys.capella.core.data.gen/model/CapellaModeller.genmodel#//capellacore platform:/plugin/org.polarsys.capella.core.data.gen/model/CapellaModeller.genmodel#//oa platform:/plugin/org.polarsys.capella.core.data.gen/model/CapellaModeller.genmodel#//ctx platform:/plugin/org.polarsys.capella.core.data.gen/model/CapellaModeller.genmodel#//la platform:/plugin/org.polarsys.capella.core.data.gen/model/CapellaModeller.genmodel#//pa platform:/plugin/org.polarsys.capella.core.data.gen/model/CapellaModeller.genmodel#//epbs platform:/plugin/org.polarsys.capella.core.data.gen/model/CapellaModeller.genmodel#//sharedmodel platform:/plugin/org.polarsys.capella.core.data.gen/model/CapellaModeller.genmodel#//requirement platform:/plugin/org.polarsys.capella.core.data.gen/model/CapellaModeller.genmodel#//capellacommon platform:/plugin/org.polarsys.capella.core.data.gen/model/CapellaModeller.genmodel#//information platform:/plugin/org.polarsys.capella.core.data.gen/model/CapellaModeller.genmodel#//cs platform:/plugin/org.polarsys.capella.core.data.gen/model/CapellaModeller.genmodel#//fa platform:/plugin/org.polarsys.capella.core.data.gen/model/CapellaModeller.genmodel#//interaction platform:/plugin/org.polarsys.capella.common.data.core.gen/model/ModellingCore.genmodel#//modellingcore platform:/plugin/org.polarsys.capella.common.data.activity.gen/model/Activity.genmodel#//activity platform:/plugin/org.polarsys.capella.common.data.behavior.gen/model/Behavior.genmodel#//behavior"
+    importOrganizing="true">
+  <foreignModel>STPA.ecore</foreignModel>
+  <genPackages prefix="Stpa" basePackage="com.thalesgroup.mde.capella" resource="XMI"
+      disposableProviderFactory="true" interfacePackageSuffix="model" metaDataPackageSuffix="model"
+      classPackageSuffix="model.impl" utilityPackageSuffix="model.util" providerPackageSuffix="model.provider"
+      presentationPackageSuffix="model.presentation" testsPackageSuffix="model.tests"
+      generateExampleClass="false" multipleEditorPages="false" extensibleProviderFactory="true"
+      childCreationExtenders="true" ecorePackage="STPA.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="STPA.ecore#//UnsafeControlActionKind">
+      <genEnumLiterals ecoreEnumLiteral="STPA.ecore#//UnsafeControlActionKind/NOT_PROVIDING"/>
+      <genEnumLiterals ecoreEnumLiteral="STPA.ecore#//UnsafeControlActionKind/PROVIDING"/>
+      <genEnumLiterals ecoreEnumLiteral="STPA.ecore#//UnsafeControlActionKind/WRONG_TIMING"/>
+      <genEnumLiterals ecoreEnumLiteral="STPA.ecore#//UnsafeControlActionKind/WRONG_DURATION"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="STPA.ecore#//ControlFlawKind">
+      <genEnumLiterals ecoreEnumLiteral="STPA.ecore#//ControlFlawKind/CONTROL_INPUT"/>
+      <genEnumLiterals ecoreEnumLiteral="STPA.ecore#//ControlFlawKind/CONTROL_ALGORITHM"/>
+      <genEnumLiterals ecoreEnumLiteral="STPA.ecore#//ControlFlawKind/PROCESS_MODEL"/>
+      <genEnumLiterals ecoreEnumLiteral="STPA.ecore#//ControlFlawKind/CONTROLLER_TO_ACTUATOR"/>
+      <genEnumLiterals ecoreEnumLiteral="STPA.ecore#//ControlFlawKind/ACTUATOR"/>
+      <genEnumLiterals ecoreEnumLiteral="STPA.ecore#//ControlFlawKind/ACTUATOR_TO_PROCESS"/>
+      <genEnumLiterals ecoreEnumLiteral="STPA.ecore#//ControlFlawKind/PROCESS_FAILURE"/>
+      <genEnumLiterals ecoreEnumLiteral="STPA.ecore#//ControlFlawKind/PROCESS_CHANGE"/>
+      <genEnumLiterals ecoreEnumLiteral="STPA.ecore#//ControlFlawKind/PROCESS_CONFLICT"/>
+      <genEnumLiterals ecoreEnumLiteral="STPA.ecore#//ControlFlawKind/PROCESS_INPUT"/>
+      <genEnumLiterals ecoreEnumLiteral="STPA.ecore#//ControlFlawKind/PROCESS_DISTURBANCE"/>
+      <genEnumLiterals ecoreEnumLiteral="STPA.ecore#//ControlFlawKind/PROCESS_OUTPUT"/>
+      <genEnumLiterals ecoreEnumLiteral="STPA.ecore#//ControlFlawKind/PROCESS_TO_SENSOR_DELAY"/>
+      <genEnumLiterals ecoreEnumLiteral="STPA.ecore#//ControlFlawKind/PROCESS_TO_SENSOR_INACCURATE"/>
+      <genEnumLiterals ecoreEnumLiteral="STPA.ecore#//ControlFlawKind/PROCESS_TO_SENSOR_INCORRECT"/>
+      <genEnumLiterals ecoreEnumLiteral="STPA.ecore#//ControlFlawKind/SENSOR"/>
+      <genEnumLiterals ecoreEnumLiteral="STPA.ecore#//ControlFlawKind/SENSOR_TO_CONTROLLER_DELAY"/>
+      <genEnumLiterals ecoreEnumLiteral="STPA.ecore#//ControlFlawKind/SENSOR_TO_CONTROLLER_INADEQUATE"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="STPA.ecore#//ControlFlawVerdict">
+      <genEnumLiterals ecoreEnumLiteral="STPA.ecore#//ControlFlawVerdict/UNDEFINED"/>
+      <genEnumLiterals ecoreEnumLiteral="STPA.ecore#//ControlFlawVerdict/OK"/>
+      <genEnumLiterals ecoreEnumLiteral="STPA.ecore#//ControlFlawVerdict/KO"/>
+      <genEnumLiterals ecoreEnumLiteral="STPA.ecore#//ControlFlawVerdict/NA"/>
+    </genEnums>
+    <genClasses image="false" ecoreClass="STPA.ecore#//StpaAnalysisElement">
+      <genOperations ecoreOperation="STPA.ecore#//StpaAnalysisElement/getAnalysis"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="STPA.ecore#//ArchitectureMappable">
+      <genTypeParameters ecoreTypeParameter="STPA.ecore#//ArchitectureMappable/T"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPA.ecore#//ArchitectureMappable/architectureElements"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="STPA.ecore#//UserIdentifiedElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute STPA.ecore#//UserIdentifiedElement/userID"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="STPA.ecore#//Decomposable">
+      <genTypeParameters ecoreTypeParameter="STPA.ecore#//Decomposable/T"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference STPA.ecore#//Decomposable/decompositionCategories"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPA.ecore#//Decomposable/category"/>
+      <genOperations ecoreOperation="STPA.ecore#//Decomposable/isRoot"/>
+      <genOperations ecoreOperation="STPA.ecore#//Decomposable/isLeaf"/>
+      <genOperations ecoreOperation="STPA.ecore#//Decomposable/getDecomposition"/>
+      <genOperations ecoreOperation="STPA.ecore#//Decomposable/getComposite"/>
+      <genOperations ecoreOperation="STPA.ecore#//Decomposable/getOrderedDecomposition"/>
+      <genOperations ecoreOperation="STPA.ecore#//Decomposable/getRoot"/>
+      <genOperations ecoreOperation="STPA.ecore#//Decomposable/getSubtree"/>
+      <genOperations ecoreOperation="STPA.ecore#//Decomposable/getUncategorized"/>
+    </genClasses>
+    <genClasses ecoreClass="STPA.ecore#//DecompositionCategory">
+      <genTypeParameters ecoreTypeParameter="STPA.ecore#//DecompositionCategory/T"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPA.ecore#//DecompositionCategory/coverage"/>
+      <genOperations ecoreOperation="STPA.ecore#//DecompositionCategory/getOrderedCoverage"/>
+    </genClasses>
+    <genClasses ecoreClass="STPA.ecore#//StpaAnalysis">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPA.ecore#//StpaAnalysis/technicalPackage"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference STPA.ecore#//StpaAnalysis/lossPackage"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference STPA.ecore#//StpaAnalysis/hazardConstraintPackage"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference STPA.ecore#//StpaAnalysis/controlStructurePackage"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference STPA.ecore#//StpaAnalysis/lossScenarioPackage"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPA.ecore#//StpaAnalysis/system"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference STPA.ecore#//StpaAnalysis/subAnalyses"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="STPA.ecore#//AnalysisPackage"/>
+    <genClasses ecoreClass="STPA.ecore#//TechnicalPackage">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference STPA.ecore#//TechnicalPackage/unsafeControlActionCategories"/>
+    </genClasses>
+    <genClasses ecoreClass="STPA.ecore#//LossPackage">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference STPA.ecore#//LossPackage/stakeholders"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference STPA.ecore#//LossPackage/losses"/>
+    </genClasses>
+    <genClasses ecoreClass="STPA.ecore#//HazardConstraintPackage">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference STPA.ecore#//HazardConstraintPackage/rootHazards"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference STPA.ecore#//HazardConstraintPackage/rootSystemConstraints"/>
+    </genClasses>
+    <genClasses ecoreClass="STPA.ecore#//ControlStructurePackage">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference STPA.ecore#//ControlStructurePackage/rootEntities"/>
+    </genClasses>
+    <genClasses ecoreClass="STPA.ecore#//LossScenarioPackage">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference STPA.ecore#//LossScenarioPackage/lossScenarios"/>
+    </genClasses>
+    <genClasses ecoreClass="STPA.ecore#//Stakeholder">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference STPA.ecore#//Stakeholder/stakes"/>
+    </genClasses>
+    <genClasses ecoreClass="STPA.ecore#//Stake">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference STPA.ecore#//Stake/stakeholder"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPA.ecore#//Stake/losses"/>
+    </genClasses>
+    <genClasses ecoreClass="STPA.ecore#//Loss">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPA.ecore#//Loss/hazards"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPA.ecore#//Loss/stakes"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="STPA.ecore#//ControlFlawTarget">
+      <genOperations ecoreOperation="STPA.ecore#//ControlFlawTarget/getUnsafeControlActions"/>
+      <genOperations ecoreOperation="STPA.ecore#//ControlFlawTarget/getLossScenarios"/>
+    </genClasses>
+    <genClasses ecoreClass="STPA.ecore#//Hazard">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute STPA.ecore#//Hazard/unsafeCondition"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference STPA.ecore#//Hazard/subHazards"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPA.ecore#//Hazard/losses"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPA.ecore#//Hazard/systemConstraints"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPA.ecore#//Hazard/unsafeControlActions"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPA.ecore#//Hazard/lossScenarios"/>
+    </genClasses>
+    <genClasses ecoreClass="STPA.ecore#//SystemConstraint">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute STPA.ecore#//SystemConstraint/conditionToEnforce"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference STPA.ecore#//SystemConstraint/subSystemConstraints"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPA.ecore#//SystemConstraint/hazards"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPA.ecore#//SystemConstraint/responsibilities"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPA.ecore#//SystemConstraint/unsafeControlActions"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPA.ecore#//SystemConstraint/lossScenarios"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPA.ecore#//SystemConstraint/assumptions"/>
+    </genClasses>
+    <genClasses ecoreClass="STPA.ecore#//ControlEntity">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute STPA.ecore#//ControlEntity/process"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference STPA.ecore#//ControlEntity/subEntities"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference STPA.ecore#//ControlEntity/responsibilities"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference STPA.ecore#//ControlEntity/outgoingRelations"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPA.ecore#//ControlEntity/incomingRelations"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference STPA.ecore#//ControlEntity/processModel"/>
+      <genOperations ecoreOperation="STPA.ecore#//ControlEntity/isController"/>
+      <genOperations ecoreOperation="STPA.ecore#//ControlEntity/isControlled"/>
+      <genOperations ecoreOperation="STPA.ecore#//ControlEntity/isSystem"/>
+      <genOperations ecoreOperation="STPA.ecore#//ControlEntity/getIncomingControlActions"/>
+      <genOperations ecoreOperation="STPA.ecore#//ControlEntity/getIncomingExchangeElements"/>
+      <genOperations ecoreOperation="STPA.ecore#//ControlEntity/getIncomingFeedback"/>
+      <genOperations ecoreOperation="STPA.ecore#//ControlEntity/getIncomingInformation"/>
+      <genOperations ecoreOperation="STPA.ecore#//ControlEntity/getOutgoingControlActions"/>
+      <genOperations ecoreOperation="STPA.ecore#//ControlEntity/getOutgoingExchangeElements"/>
+      <genOperations ecoreOperation="STPA.ecore#//ControlEntity/getOutgoingFeedback"/>
+      <genOperations ecoreOperation="STPA.ecore#//ControlEntity/getOutgoingInformation"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="STPA.ecore#//ExchangeBasedElement">
+      <genOperations ecoreOperation="STPA.ecore#//ExchangeBasedElement/getFeedback"/>
+      <genOperations ecoreOperation="STPA.ecore#//ExchangeBasedElement/getInformation"/>
+      <genOperations ecoreOperation="STPA.ecore#//ExchangeBasedElement/getControlActions"/>
+    </genClasses>
+    <genClasses ecoreClass="STPA.ecore#//Responsibility">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute STPA.ecore#//Responsibility/processModelState"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference STPA.ecore#//Responsibility/controller"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPA.ecore#//Responsibility/systemConstraints"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPA.ecore#//Responsibility/controlActions"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPA.ecore#//Responsibility/feedback"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPA.ecore#//Responsibility/information"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPA.ecore#//Responsibility/variables"/>
+      <genOperations ecoreOperation="STPA.ecore#//Responsibility/getExchangeElements"/>
+    </genClasses>
+    <genClasses ecoreClass="STPA.ecore#//ProcessModelVariable">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference STPA.ecore#//ProcessModelVariable/controller"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPA.ecore#//ProcessModelVariable/responsibilities"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference STPA.ecore#//ProcessModelVariable/values"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPA.ecore#//ProcessModelVariable/feedback"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPA.ecore#//ProcessModelVariable/information"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPA.ecore#//ProcessModelVariable/controlActions"/>
+    </genClasses>
+    <genClasses ecoreClass="STPA.ecore#//ProcessModelValue">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference STPA.ecore#//ProcessModelValue/variable"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="STPA.ecore#//Relation">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference STPA.ecore#//Relation/source"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPA.ecore#//Relation/target"/>
+      <genOperations ecoreOperation="STPA.ecore#//Relation/getExchangeElements"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="STPA.ecore#//ControlFlawContext">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference STPA.ecore#//ControlFlawContext/controlFlawSet"/>
+      <genOperations ecoreOperation="STPA.ecore#//ControlFlawContext/getControlAction"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="STPA.ecore#//ExchangeElement">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPA.ecore#//ExchangeElement/exercisedResponsibilities"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPA.ecore#//ExchangeElement/lossScenarios"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPA.ecore#//ExchangeElement/supportingProcessModel"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference STPA.ecore#//ExchangeElement/unsafeControlActions"/>
+      <genOperations ecoreOperation="STPA.ecore#//ExchangeElement/getRelation"/>
+      <genOperations ecoreOperation="STPA.ecore#//ExchangeElement/getControlFlaws"/>
+      <genOperations ecoreOperation="STPA.ecore#//ExchangeElement/getController"/>
+      <genOperations ecoreOperation="STPA.ecore#//ExchangeElement/getProcess"/>
+    </genClasses>
+    <genClasses ecoreClass="STPA.ecore#//ControlRelation">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference STPA.ecore#//ControlRelation/controlActions"/>
+    </genClasses>
+    <genClasses ecoreClass="STPA.ecore#//ControlAction">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference STPA.ecore#//ControlAction/relation"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="STPA.ecore#//ResponsibilitySupportExchangeElement">
+      <genOperations ecoreOperation="STPA.ecore#//ResponsibilitySupportExchangeElement/getProcessModel"/>
+      <genOperations ecoreOperation="STPA.ecore#//ResponsibilitySupportExchangeElement/getResponsibilities"/>
+    </genClasses>
+    <genClasses ecoreClass="STPA.ecore#//FeedbackRelation">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference STPA.ecore#//FeedbackRelation/feedback"/>
+    </genClasses>
+    <genClasses ecoreClass="STPA.ecore#//FeedbackElement">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference STPA.ecore#//FeedbackElement/relation"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPA.ecore#//FeedbackElement/responsibilities"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPA.ecore#//FeedbackElement/processModel"/>
+    </genClasses>
+    <genClasses ecoreClass="STPA.ecore#//InformationExchangeRelation">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference STPA.ecore#//InformationExchangeRelation/information"/>
+    </genClasses>
+    <genClasses ecoreClass="STPA.ecore#//PieceOfInformation">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference STPA.ecore#//PieceOfInformation/relation"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPA.ecore#//PieceOfInformation/responsibilities"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPA.ecore#//PieceOfInformation/processModel"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="STPA.ecore#//Mitigable">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPA.ecore#//Mitigable/countermeasures"/>
+      <genOperations ecoreOperation="STPA.ecore#//Mitigable/getControlAction"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="STPA.ecore#//ControlFlawAnalysisElement">
+      <genOperations ecoreOperation="STPA.ecore#//ControlFlawAnalysisElement/getViolatedConstraints"/>
+      <genOperations ecoreOperation="STPA.ecore#//ControlFlawAnalysisElement/getHazards"/>
+      <genOperations ecoreOperation="STPA.ecore#//ControlFlawAnalysisElement/getCausalFactors"/>
+    </genClasses>
+    <genClasses ecoreClass="STPA.ecore#//UnsafeControlAction">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute STPA.ecore#//UnsafeControlAction/kind"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute STPA.ecore#//UnsafeControlAction/context"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference STPA.ecore#//UnsafeControlAction/controlAction"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPA.ecore#//UnsafeControlAction/lossScenarios"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPA.ecore#//UnsafeControlAction/violatedConstraints"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPA.ecore#//UnsafeControlAction/hazards"/>
+    </genClasses>
+    <genClasses ecoreClass="STPA.ecore#//LossScenario">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPA.ecore#//LossScenario/controlAction"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPA.ecore#//LossScenario/unsafeControlAction"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPA.ecore#//LossScenario/causalFactors"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPA.ecore#//LossScenario/violatedConstraints"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPA.ecore#//LossScenario/hazards"/>
+    </genClasses>
+    <genClasses ecoreClass="STPA.ecore#//UnsafeControlActionCategory">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute STPA.ecore#//UnsafeControlActionCategory/kind"/>
+    </genClasses>
+    <genClasses ecoreClass="STPA.ecore#//ControlFlawSet">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference STPA.ecore#//ControlFlawSet/controlFlaws"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference STPA.ecore#//ControlFlawSet/context"/>
+    </genClasses>
+    <genClasses ecoreClass="STPA.ecore#//ControlFlaw">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute STPA.ecore#//ControlFlaw/kind"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute STPA.ecore#//ControlFlaw/verdict"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference STPA.ecore#//ControlFlaw/owningSet"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute STPA.ecore#//ControlFlaw/justification"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPA.ecore#//ControlFlaw/lossScenarios"/>
+      <genOperations ecoreOperation="STPA.ecore#//ControlFlaw/getContext"/>
+      <genOperations ecoreOperation="STPA.ecore#//ControlFlaw/getControlAction"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

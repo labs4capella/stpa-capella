@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<!--
+  Copyright (c) 2020-2023 THALES.
+  
+  This program and the accompanying materials are made available under the
+  terms of the Eclipse Public License 2.0 which is available at
+  http://www.eclipse.org/legal/epl-2.0
+  
+  SPDX-License-Identifier: EPL-2.0
+
+  Contributors:
+       THALES - initial API and implementation
+-->
+<plugin>
+
+   <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <!-- @generated STPA -->
+      <factory
+            uri="http://www.thalesgroup.com/capella/stpa"
+            class="com.thalesgroup.mde.capella.stpa.model.provider.StpaItemProviderAdapterFactory"
+            supportedTypes=
+              "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
+               org.eclipse.emf.edit.provider.IStructuredItemContentProvider
+               org.eclipse.emf.edit.provider.ITreeItemContentProvider
+               org.eclipse.emf.edit.provider.IItemLabelProvider
+               org.eclipse.emf.edit.provider.IItemPropertySource"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.edit.childCreationExtenders">
+      <!-- @generated STPA -->
+      <extender
+            uri="http://www.polarsys.org/kitalpha/emde/1.0.0"
+            class="com.thalesgroup.mde.capella.stpa.model.provider.StpaItemProviderAdapterFactory$EmdeChildCreationExtender"/>
+      <extender
+            uri="http://www.polarsys.org/capella/core/sharedmodel/6.0.0"
+            class="com.thalesgroup.mde.capella.stpa.model.provider.StpaItemProviderAdapterFactory$SharedmodelChildCreationExtender"/>
+   </extension>
+
+</plugin>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<?eclipse version="3.4"?>
+<!--
+  Copyright (c) 2020-2023 THALES.
+  
+  This program and the accompanying materials are made available under the
+  terms of the Eclipse Public License 2.0 which is available at
+  http://www.eclipse.org/legal/epl-2.0
+  
+  SPDX-License-Identifier: EPL-2.0
+
+  Contributors:
+       THALES - initial API and implementation
+-->
+<plugin>
+
+<extension
+      point="org.eclipse.ui.navigator.navigatorContent">
+      <commonFilter
+            activeByDefault="true"
+            description="Hides all technical STPA elements"
+            id="capella.project.explorer.filters.stpa.technical"
+            name="STPA technical elements"
+            visibleInUI="true">
+         <filterExpression>
+         <or>
+            <instanceof
+                  value="com.thalesgroup.mde.capella.stpa.model.TechnicalPackage">
+            </instanceof>
+          <instanceof
+                  value="com.thalesgroup.mde.capella.stpa.model.UnsafeControlActionCategory">
+            </instanceof>
+          <instanceof
+                  value="com.thalesgroup.mde.capella.stpa.model.ControlFlawSet">
+            </instanceof>
+          <instanceof
+                  value="com.thalesgroup.mde.capella.stpa.model.ControlFlaw">
+            </instanceof>
+         </or>            
+         </filterExpression>
+      </commonFilter>
+</extension>
+<extension
+      point="org.eclipse.ui.commands">
+   <command
+         defaultHandler="com.thalesgroup.mde.capella.stpa.ui.ReidentifyCommandHandler"
+         id="com.thalesgroup.mde.capella.stpa.ui.reidentifyCommand"
+         name="Reset Identifiers">
+   </command>
+</extension>
+<extension
+      point="org.eclipse.ui.menus">
+   <menuContribution
+         allPopups="false"
+         locationURI="popup:org.eclipse.ui.popup.any?after=additions">
+      <command
+            commandId="com.thalesgroup.mde.capella.stpa.ui.reidentifyCommand"
+            label="Reset STPA IDs"
+            style="push">
+         <visibleWhen
+               checkEnabled="false">
+            <and>
+               <count
+                     value="1">
+               </count>
+               <iterate
+                     ifEmpty="false"
+                     operator="and">
+                  <instanceof
+                        value="com.thalesgroup.mde.capella.stpa.model.StpaAnalysisElement">
+                  </instanceof>
+               </iterate>
+            </and>
+         </visibleWhen>
+      </command>
+   </menuContribution>
+</extension>
+
+</plugin>

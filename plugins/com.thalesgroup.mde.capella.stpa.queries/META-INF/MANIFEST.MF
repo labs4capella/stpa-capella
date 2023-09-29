@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: com.thalesgroup.mde.capella.stpa.queries;singleton:=true
+Bundle-Version: 0.1.0.qualifier
+Automatic-Module-Name: com.thalesgroup.mde.capella.stpa.queries
+Bundle-Localization: plugin
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Require-Bundle: com.thalesgroup.mde.capella.stpa.model,
+ com.thalesgroup.mde.capella.stpa.helpers,
+ org.polarsys.capella.common.ui.toolkit.browser
+Bundle-Vendor: %providerName
+Export-Package: com.thalesgroup.mde.capella.stpa.queries

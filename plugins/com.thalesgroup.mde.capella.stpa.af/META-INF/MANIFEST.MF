@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: com.thalesgroup.mde.capella.stpa.af;singleton:=true
+Bundle-Version: 0.1.0.qualifier
+Bundle-Localization: plugin
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Require-Bundle: org.polarsys.kitalpha.ad.viewpoint.ui,
+ com.thalesgroup.mde.capella.stpa.model,
+ com.thalesgroup.mde.capella.stpa.design
+Automatic-Module-Name: com.thalesgroup.mde.capella.stpa.af
+Bundle-Vendor: %providerName
