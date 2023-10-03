@@ -26,6 +26,12 @@ build-job:
   artifacts:
     paths:
       - ${OUTPUT_FOLDER}
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+      changes:
+        - features/**/*
+        - plugins/**/*
+        - releng/**/*
   tags:
     - autoscale
 
