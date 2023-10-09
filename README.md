@@ -6,3 +6,7 @@ This project provides *experimental* tool support for STPA. It enables system ar
 
 A [user guide](doc/STPA-AddOn-UserGuide.pdf) is available.
 For installation instructions, please refer to [the dedicated section in the Capella documentation](https://github.com/eclipse/capella/blob/master/doc/plugins/org.polarsys.capella.ui.doc/html/Installation%20Guide/How%20to%20install%20Capella%20and%20Addons.mediawiki#Configuration-and-Extensibility).
+
+</br>
+
+![Illustration](doc/img/Samples.png "Illustration")
