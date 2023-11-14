@@ -4,8 +4,9 @@ STPA is a widely recognised [risk analysis method by MIT](https://psas.scripts.m
 
 This project provides *experimental* tool support for STPA. It enables system architects, designers, domain experts, safety or risk analysis experts to perform STPA analyses in a model-based fashion, either standalone or in combination with [Capella](https://eclipse.dev/capella/)/[Arcadia](https://eclipse.dev/capella/arcadia.html) system architecture modeling. Albeit experimental, it has been successfully used in several real-world projects.
 
-A [user guide](doc/STPA-AddOn-UserGuide.pdf) is available. Familiarity with Capella or other [Sirius](https://eclipse.dev/sirius/)-based modeling tools lowers the learning curve.  
-[Installation instructions](https://github.com/eclipse/capella/blob/master/doc/plugins/org.polarsys.capella.ui.doc/html/Installation%20Guide/How%20to%20install%20Capella%20and%20Addons.mediawiki#Configuration-and-Extensibility) are provided as part of the Capella documentation.
+A [user guide](doc/STPA-AddOn-UserGuide.pdf) is available. Familiarity with Capella or other [Sirius](https://eclipse.dev/sirius/)-based modeling tools lowers the learning curve.
+
+[Installation instructions](https://github.com/eclipse/capella/blob/master/doc/plugins/org.polarsys.capella.ui.doc/html/Installation%20Guide/How%20to%20install%20Capella%20and%20Addons.mediawiki#Configuration-and-Extensibility) are provided as part of the Capella documentation. By default, just download a ["dropins" release](https://github.com/labs4capella/stpa-capella/releases) for your version of Capella (for example, download [STPA-dropins-capella6.1-v0.1.0.zip](https://github.com/labs4capella/stpa-capella/releases/download/v0.1.0/STPA-dropins-capella6.1-v0.1.0.zip) for Capella 6.1) and unzip it in the capella/dropins folder of your Capella installation.
 
 </br>
 
