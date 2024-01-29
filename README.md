@@ -6,7 +6,9 @@ This project provides *experimental* tool support for STPA. It enables system ar
 
 A [user guide](doc/STPA-AddOn-UserGuide.pdf) is available. Familiarity with Capella or other [Sirius](https://eclipse.dev/sirius/)-based modeling tools lowers the learning curve.
 
-[Installation instructions](https://github.com/eclipse/capella/blob/master/doc/plugins/org.polarsys.capella.ui.doc/html/Installation%20Guide/How%20to%20install%20Capella%20and%20Addons.mediawiki#Configuration-and-Extensibility) are provided as part of the Capella documentation. By default, just download a ["dropins" release](https://github.com/labs4capella/stpa-capella/releases) for your version of Capella (for example, download [STPA-dropins-capella6.1-v0.1.0.zip](https://github.com/labs4capella/stpa-capella/releases/download/v0.1.0/STPA-dropins-capella6.1-v0.1.0.zip) for Capella 6.1) and unzip it in the capella/dropins folder of your Capella installation.
+[Installation instructions](https://github.com/eclipse/capella/blob/master/doc/plugins/org.polarsys.capella.ui.doc/html/Installation%20Guide/How%20to%20install%20Capella%20and%20Addons.mediawiki#Configuration-and-Extensibility) are provided as part of the Capella documentation. To sum up, download the appropriate [archive](https://github.com/labs4capella/stpa-capella/releases) according to your version of Capella.
+- Either as a dropin (for example [here](https://github.com/labs4capella/stpa-capella/releases/download/v0.1.0/STPA-dropins-capella6.1-v0.1.0.zip) for Capella 6.1). To install, simply unzip it in the capella/dropins folder of your Capella installation.
+- Or as an update site (for example [here](https://github.com/labs4capella/stpa-capella/releases/download/v0.1.0/STPA-updateSite-capella6.1-v0.1.0.zip) for Capella 6.1), which provides more compatibility guarantees if your  installation is more than just a simple, raw Capella or if you are unsure about its version. To install, follow the dedicated [instructions](https://github.com/eclipse/capella/blob/master/doc/plugins/org.polarsys.capella.ui.doc/html/Installation%20Guide/How%20to%20install%20Capella%20and%20Addons.mediawiki#update-sites).
 
 </br>
 
