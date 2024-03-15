@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<!--
+  Copyright (c) 2020-2024 THALES.
+  
+  This program and the accompanying materials are made available under the
+  terms of the Eclipse Public License 2.0 which is available at
+  http://www.eclipse.org/legal/epl-2.0
+  
+  SPDX-License-Identifier: EPL-2.0
+
+  Contributors:
+       THALES - initial API and implementation
+-->
+<plugin>
+
+   <extension
+         point="org.eclipse.egf.core.fcore">
+      <fcore
+            id="egf/stpa-docgen.fcore">
+      </fcore>
+   </extension>
+
+   <extension
+         point="org.polarsys.kitalpha.doc.gen.business.core.contentExtension">
+      <pageExtension
+            category="STPA Viewpoint"
+            defaultStatus="Active"
+            description="STPA Viewpoint"
+            diagramHelper="com.thalesgroup.mde.capella.stpa.docgen.STPADocGenDiagramHelper"
+            domain="capella"
+            fileNameService="com.thalesgroup.mde.capella.stpa.docgen.STPADocGenFileNameService"
+            name="STPA Viewpoint">
+         <pagePattern
+               URI="platform:/plugin/com.thalesgroup.mde.capella.stpa.docgen/egf/stpa-docgen.fcore#_Jw884Cw9EeyISLpWJUiW6A">
+         </pagePattern>
+         <!--sidebarPattern
+               URI="platform:/plugin/com.thalesgroup.mde.capella.stpa.docgen/egf/stpa-docgen.fcore#_qIZ2ECwhEeyISLpWJUiW6A">
+         </sidebarPattern-->
+      </pageExtension>
+      <!--contentExtension
+            description="Generate Capella STPA in dedicated Pages"
+            name="Capella STPA GenDoc Extension"
+            priority="0"
+            topic="CAPELLA_STPA_EXTENSION">
+         <fcores
+               patternURI="platform:/plugin/com.thalesgroup.mde.capella.stpa.docgen/egf/stpa-docgen.fcore#_V16NQCwhEeyISLpWJUiW6A">
+         </fcores>
+      </contentExtension-->
+   </extension>
+
+</plugin>

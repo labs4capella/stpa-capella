@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <?pde?>
 <!--
-  Copyright (c) 2020-2023 THALES.
+  Copyright (c) 2020-2024 THALES.
   
   This program and the accompanying materials are made available under the
   terms of the Eclipse Public License 2.0 which is available at
@@ -11,8 +11,7 @@
 
   Contributors:
        THALES - initial API and implementation
--->
-<target name="com.thalesgroup.mde.capella.stpa.capella-5.0" sequenceNumber="1606912429">
+--><target name="com.thalesgroup.mde.capella.stpa.capella-5.0" sequenceNumber="1606912429">
   <locations>
     <location includeAllPlatforms="false" includeConfigurePhase="false" includeMode="planner" includeSource="true" type="InstallableUnit">
       <unit id="org.eclipse.gmf.runtime.notation.sdk.feature.group" version="0.0.0"/>
@@ -123,6 +122,10 @@
     <location includeAllPlatforms="false" includeConfigurePhase="false" includeMode="planner" includeSource="true" type="InstallableUnit">
       <repository location="https://download.eclipse.org/capella/core/updates/releases/5.2.0-R20211130-125709/org.polarsys.capella.rcp.site/"/>
       <unit id="org.polarsys.capella.rcp.feature.group" version="5.2.0.202111301257"/>
+    </location>
+    <location includeAllPlatforms="false" includeConfigurePhase="false" includeMode="planner" includeSource="true" type="InstallableUnit">
+      <repository location="https://download.eclipse.org/capella/addons/xhtmldocgen/updates/releases/5.0.0/"/>
+      <unit id="org.polarsys.capella.docgen.package.feature.feature.group" version="5.0.0.202012170838"/>
     </location>
   </locations>
 </target>

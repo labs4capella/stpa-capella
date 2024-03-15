@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Copyright (c) 2020-2024 THALES.
+  
+  This program and the accompanying materials are made available under the
+  terms of the Eclipse Public License 2.0 which is available at
+  http://www.eclipse.org/legal/epl-2.0
+  
+  SPDX-License-Identifier: EPL-2.0
+
+  Contributors:
+       THALES - initial API and implementation
+-->
+<feature
+      id="com.thalesgroup.mde.capella.stpa.docgen.feature"
+      label="%featureName"
+      version="0.1.0.qualifier"
+      provider-name="%providerName">
+
+   <description>
+      %featureDescription
+   </description>
+
+   <copyright>
+      %copyright
+   </copyright>
+
+   <license url="%licenseURL">
+      %license
+   </license>
+
+   <requires>
+      <import plugin="org.eclipse.egf.pattern"/>
+      <import plugin="org.eclipse.egf.pattern.ftask"/>
+      <import plugin="org.polarsys.capella.docgen"/>
+      <import feature="com.thalesgroup.mde.capella.stpa.feature" version="0.1.0.qualifier"/>
+      <import plugin="com.thalesgroup.mde.capella.stpa.model"/>
+      <import plugin="org.eclipse.sirius.diagram"/>
+   </requires>
+
+   <plugin
+         id="com.thalesgroup.mde.capella.stpa.docgen"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+</feature>

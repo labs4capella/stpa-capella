@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Copyright (c) 2020-2024 THALES.
+  
+  This program and the accompanying materials are made available under the
+  terms of the Eclipse Public License 2.0 which is available at
+  http://www.eclipse.org/legal/epl-2.0
+  
+  SPDX-License-Identifier: EPL-2.0
+
+  Contributors:
+       THALES - initial API and implementation
+-->
+<fcore:FactoryComponent xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:fcore="http://www.eclipse.org/egf/1.0.0/fcore"
+    xmlns:jetpattern="http://www.eclipse.org/egf/1.0.0/jetpattern" xmlns:pattern="http://www.eclipse.org/egf/1.0.0/pattern"
+    xmi:id="_dvWGICwKEeyISLpWJUiW6A" name="stpa-docgen">
+  <viewpointContainer xmi:id="_Q5s-gCwMEeyISLpWJUiW6A">
+    <viewpoints xmi:type="pattern:PatternViewpoint" xmi:id="_UPMToCwMEeyISLpWJUiW6A">
+      <libraries xmi:id="_Vdc2gCwMEeyISLpWJUiW6A" name="com.thalesgroup.mde.capella.stpa.docgen.common">
+        <elements xmi:id="_lxr9QC29EeyISLpWJUiW6A" name="AbstractStpaAnalysisElementDocGen"
+            superPattern="platform:/plugin/org.polarsys.capella.docgen/egf/HTMLDocGenCapella.fcore#_LUSfMN0jEd-Vzvs7Wt1vzQ"
+            headerMethod="#_lxr9Qi29EeyISLpWJUiW6A" conditionMethod="#_lxr9RC29EeyISLpWJUiW6A"
+            initMethod="#_lxr9Qy29EeyISLpWJUiW6A" footerMethod="#_lxr9Ri29EeyISLpWJUiW6A">
+          <nature xmi:type="jetpattern:JetNature" xmi:id="_lxr9QS29EeyISLpWJUiW6A"
+              name="JET"/>
+          <methods xmi:id="_lxr9Qi29EeyISLpWJUiW6A" name="header" patternFilePath="templates/pattern._lxr9QC29EeyISLpWJUiW6A/method._lxr9Qi29EeyISLpWJUiW6A.pt"/>
+          <methods xmi:id="_lxr9Qy29EeyISLpWJUiW6A" name="init" patternFilePath="templates/pattern._lxr9QC29EeyISLpWJUiW6A/method._lxr9Qy29EeyISLpWJUiW6A.pt"/>
+          <methods xmi:id="_lxr9RC29EeyISLpWJUiW6A" name="preCondition" patternFilePath="templates/pattern._lxr9QC29EeyISLpWJUiW6A/method._lxr9RC29EeyISLpWJUiW6A.pt"/>
+          <methods xmi:id="_lxr9Ri29EeyISLpWJUiW6A" name="footer" patternFilePath="templates/pattern._lxr9QC29EeyISLpWJUiW6A/method._lxr9Ri29EeyISLpWJUiW6A.pt"/>
+          <orchestration xmi:type="pattern:SuperCall" xmi:id="_lxr9Ry29EeyISLpWJUiW6A"/>
+        </elements>
+      </libraries>
+      <libraries xmi:id="_VD_oICwhEeyISLpWJUiW6A" name="com.thalesgroup.mde.capella.stpa.docgen.content">
+        <elements xmi:id="_Jw884Cw9EeyISLpWJUiW6A" name="StpaAnalysisElementDocGen"
+            superPattern="#_lxr9QC29EeyISLpWJUiW6A" headerMethod="#_Jw884iw9EeyISLpWJUiW6A"
+            conditionMethod="#_Jw885Cw9EeyISLpWJUiW6A" initMethod="#_Jw884yw9EeyISLpWJUiW6A"
+            footerMethod="#_Jw885iw9EeyISLpWJUiW6A">
+          <nature xmi:type="jetpattern:JetNature" xmi:id="_Jw884Sw9EeyISLpWJUiW6A"
+              name="JET"/>
+          <methods xmi:id="_Jw884iw9EeyISLpWJUiW6A" name="header" patternFilePath="templates/pattern._Jw884Cw9EeyISLpWJUiW6A/method._Jw884iw9EeyISLpWJUiW6A.pt"/>
+          <methods xmi:id="_Jw884yw9EeyISLpWJUiW6A" name="init" patternFilePath="templates/pattern._Jw884Cw9EeyISLpWJUiW6A/method._Jw884yw9EeyISLpWJUiW6A.pt"/>
+          <methods xmi:id="_Jw885Cw9EeyISLpWJUiW6A" name="preCondition" patternFilePath="templates/pattern._Jw884Cw9EeyISLpWJUiW6A/method._Jw885Cw9EeyISLpWJUiW6A.pt"/>
+          <methods xmi:id="_Jw885iw9EeyISLpWJUiW6A" name="footer" patternFilePath="templates/pattern._Jw884Cw9EeyISLpWJUiW6A/method._Jw885iw9EeyISLpWJUiW6A.pt"/>
+          <methods xmi:id="_VoWFsC2-EeyISLpWJUiW6A" name="setCapellaContext" patternFilePath="templates/pattern._Jw884Cw9EeyISLpWJUiW6A/method._VoWFsC2-EeyISLpWJUiW6A.pt"/>
+          <parameters xmi:id="_43s68C20EeyISLpWJUiW6A" name="parameter" type="http://www.thalesgroup.com/capella/stpa#//StpaAnalysisElement"/>
+          <orchestration xmi:type="pattern:SuperCall" xmi:id="_Jw885yw9EeyISLpWJUiW6A"/>
+        </elements>
+      </libraries>
+      <!--libraries xmi:id="_Vhte4CwhEeyISLpWJUiW6A" name="com.thalesgroup.mde.capella.stpa.docgen.sidebar">
+        <elements xmi:id="_qIZ2ECwhEeyISLpWJUiW6A" name="StpaAnalysisElementSidebar"
+            superPattern="platform:/plugin/org.polarsys.kitalpha.doc.gen.business.core/egf/HTMLDocGenCommon.fcore#_7IeWkN6QEd-ZSZ6AN4Dlrg"
+            headerMethod="#_qIZ2EiwhEeyISLpWJUiW6A" conditionMethod="#_qIZ2FCwhEeyISLpWJUiW6A"
+            initMethod="#_qIZ2EywhEeyISLpWJUiW6A" footerMethod="#_qIZ2FiwhEeyISLpWJUiW6A">
+          <nature xmi:type="jetpattern:JetNature" xmi:id="_qIZ2ESwhEeyISLpWJUiW6A"
+              name="JET"/>
+          <methods xmi:id="_qIZ2EiwhEeyISLpWJUiW6A" name="header" patternFilePath="templates/pattern._qIZ2ECwhEeyISLpWJUiW6A/method._qIZ2EiwhEeyISLpWJUiW6A.pt"/>
+          <methods xmi:id="_qIZ2EywhEeyISLpWJUiW6A" name="init" patternFilePath="templates/pattern._qIZ2ECwhEeyISLpWJUiW6A/method._qIZ2EywhEeyISLpWJUiW6A.pt"/>
+          <methods xmi:id="_qIZ2FCwhEeyISLpWJUiW6A" name="preCondition" patternFilePath="templates/pattern._qIZ2ECwhEeyISLpWJUiW6A/method._qIZ2FCwhEeyISLpWJUiW6A.pt"/>
+          <methods xmi:id="_qIZ2FSwhEeyISLpWJUiW6A" name="setCurrentObject" patternFilePath="templates/pattern._qIZ2ECwhEeyISLpWJUiW6A/method._qIZ2FSwhEeyISLpWJUiW6A.pt"/>
+          <methods xmi:id="_qIZ2FiwhEeyISLpWJUiW6A" name="footer" patternFilePath="templates/pattern._qIZ2ECwhEeyISLpWJUiW6A/method._qIZ2FiwhEeyISLpWJUiW6A.pt"/>
+          <methods xmi:id="_T9HPwC26EeyISLpWJUiW6A" name="setFileNameService" patternFilePath="templates/pattern._qIZ2ECwhEeyISLpWJUiW6A/method._T9HPwC26EeyISLpWJUiW6A.pt"/>
+          <methods xmi:id="_sZWIgCwiEeyISLpWJUiW6A" name="startSidebarSubElement"
+              patternFilePath="templates/pattern._qIZ2ECwhEeyISLpWJUiW6A/method._sZWIgCwiEeyISLpWJUiW6A.pt"/>
+          <methods xmi:id="_tZeIwCwiEeyISLpWJUiW6A" name="endSidebarSubElement" patternFilePath="templates/pattern._qIZ2ECwhEeyISLpWJUiW6A/method._tZeIwCwiEeyISLpWJUiW6A.pt"/>
+          <parameters xmi:id="_9qDQwCwhEeyISLpWJUiW6A" name="parameter" type="http://www.thalesgroup.com/capella/stpa#//StpaAnalysisElement"/>
+          <orchestration xmi:type="pattern:SuperCall" xmi:id="_qIZ2FywhEeyISLpWJUiW6A"/>
+        </elements>
+      </libraries-->
+      <!--libraries xmi:id="_V16NQCwhEeyISLpWJUiW6A" name="com.thalesgroup.mde.capella.stpa.docgen.extensions">
+        <elements xmi:id="_2bBioCw_EeyISLpWJUiW6A" name="STPAContent" headerMethod="#_2bBioiw_EeyISLpWJUiW6A"
+            conditionMethod="#_2bBipCw_EeyISLpWJUiW6A" initMethod="#_2bBioyw_EeyISLpWJUiW6A"
+            footerMethod="#_2bBipiw_EeyISLpWJUiW6A">
+          <nature xmi:type="jetpattern:JetNature" xmi:id="_2bBioSw_EeyISLpWJUiW6A"
+              name="JET"/>
+          <methods xmi:id="_2bBioiw_EeyISLpWJUiW6A" name="header" patternFilePath="templates/pattern._2bBioCw_EeyISLpWJUiW6A/method._2bBioiw_EeyISLpWJUiW6A.pt"/>
+          <methods xmi:id="_2bBioyw_EeyISLpWJUiW6A" name="init" patternFilePath="templates/pattern._2bBioCw_EeyISLpWJUiW6A/method._2bBioyw_EeyISLpWJUiW6A.pt"/>
+          <methods xmi:id="_2bBipCw_EeyISLpWJUiW6A" name="preCondition" patternFilePath="templates/pattern._2bBioCw_EeyISLpWJUiW6A/method._2bBipCw_EeyISLpWJUiW6A.pt"/>
+          <methods xmi:id="_2bBipSw_EeyISLpWJUiW6A" name="content" patternFilePath="templates/pattern._2bBioCw_EeyISLpWJUiW6A/method._2bBipSw_EeyISLpWJUiW6A.pt"/>
+          <methods xmi:id="_2bBipiw_EeyISLpWJUiW6A" name="footer" patternFilePath="templates/pattern._2bBioCw_EeyISLpWJUiW6A/method._2bBipiw_EeyISLpWJUiW6A.pt"/>
+          <parameters xmi:id="_aDmPcC0CEeyISLpWJUiW6A" name="element" type="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+          <parameters xmi:id="_b7UmEC0CEeyISLpWJUiW6A" name="documentTitle" type="java.lang.String"/>
+          <orchestration xmi:type="pattern:SuperCall" xmi:id="_2bBipyw_EeyISLpWJUiW6A"/>
+          <orchestration xmi:type="pattern:MethodCall" xmi:id="_2jS4UC0EEeyISLpWJUiW6A"
+              called="#_2bBipSw_EeyISLpWJUiW6A"/>
+        </elements>
+      </libraries-->
+    </viewpoints>
+  </viewpointContainer>
+</fcore:FactoryComponent>

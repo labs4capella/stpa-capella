@@ -1,0 +1,1 @@
+<%= com.thalesgroup.mde.capella.stpa.docgen.STPADocGenHelper.generateSTPARelations((org.polarsys.capella.core.data.capellacore.CapellaElement) element)%>
