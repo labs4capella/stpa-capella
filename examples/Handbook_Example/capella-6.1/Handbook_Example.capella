@@ -1,0 +1,859 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Capella_Version_6.1.0-->
+<org.polarsys.capella.core.data.capellamodeller:Project xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:libraries="http://www.polarsys.org/capella/common/libraries/6.0.0"
+    xmlns:org.polarsys.capella.core.data.capellacommon="http://www.polarsys.org/capella/core/common/6.0.0"
+    xmlns:org.polarsys.capella.core.data.capellacore="http://www.polarsys.org/capella/core/core/6.0.0"
+    xmlns:org.polarsys.capella.core.data.capellamodeller="http://www.polarsys.org/capella/core/modeller/6.0.0"
+    xmlns:org.polarsys.capella.core.data.cs="http://www.polarsys.org/capella/core/cs/6.0.0"
+    xmlns:org.polarsys.capella.core.data.ctx="http://www.polarsys.org/capella/core/ctx/6.0.0"
+    xmlns:org.polarsys.capella.core.data.epbs="http://www.polarsys.org/capella/core/epbs/6.0.0"
+    xmlns:org.polarsys.capella.core.data.fa="http://www.polarsys.org/capella/core/fa/6.0.0"
+    xmlns:org.polarsys.capella.core.data.information="http://www.polarsys.org/capella/core/information/6.0.0"
+    xmlns:org.polarsys.capella.core.data.information.datatype="http://www.polarsys.org/capella/core/information/datatype/6.0.0"
+    xmlns:org.polarsys.capella.core.data.information.datavalue="http://www.polarsys.org/capella/core/information/datavalue/6.0.0"
+    xmlns:org.polarsys.capella.core.data.la="http://www.polarsys.org/capella/core/la/6.0.0"
+    xmlns:org.polarsys.capella.core.data.oa="http://www.polarsys.org/capella/core/oa/6.0.0"
+    xmlns:org.polarsys.capella.core.data.pa="http://www.polarsys.org/capella/core/pa/6.0.0"
+    xmlns:stpa="http://www.thalesgroup.com/capella/stpa" id="981f075e-a498-4857-8cd4-5927138e4d93"
+    name="Handbook_Example">
+  <ownedExtensions xsi:type="libraries:ModelInformation" id="4686e72d-81a2-488b-8edf-cc454cb1457a"/>
+  <ownedEnumerationPropertyTypes xsi:type="org.polarsys.capella.core.data.capellacore:EnumerationPropertyType"
+      id="64eeb5a6-f229-4f7a-a0e3-602850e3f4e4" name="ProgressStatus">
+    <ownedLiterals xsi:type="org.polarsys.capella.core.data.capellacore:EnumerationPropertyLiteral"
+        id="93a2a44b-3a26-4157-916a-2f419bbb62d5" name="DRAFT"/>
+    <ownedLiterals xsi:type="org.polarsys.capella.core.data.capellacore:EnumerationPropertyLiteral"
+        id="096c0e95-4ca6-4b1a-8e14-52c3e2e3dca4" name="TO_BE_REVIEWED"/>
+    <ownedLiterals xsi:type="org.polarsys.capella.core.data.capellacore:EnumerationPropertyLiteral"
+        id="d92bfb0a-7632-41f8-bf02-29e0440901c0" name="TO_BE_DISCUSSED"/>
+    <ownedLiterals xsi:type="org.polarsys.capella.core.data.capellacore:EnumerationPropertyLiteral"
+        id="3dbb6915-85c4-4aa8-a1cc-c31588e402b1" name="REWORK_NECESSARY"/>
+    <ownedLiterals xsi:type="org.polarsys.capella.core.data.capellacore:EnumerationPropertyLiteral"
+        id="11ac344e-37b2-4ab6-a64e-5fc2882c6d05" name="UNDER_REWORK"/>
+    <ownedLiterals xsi:type="org.polarsys.capella.core.data.capellacore:EnumerationPropertyLiteral"
+        id="efa0556b-0c62-47af-83b9-09af8042d4a9" name="REVIEWED_OK"/>
+  </ownedEnumerationPropertyTypes>
+  <keyValuePairs xsi:type="org.polarsys.capella.core.data.capellacore:KeyValue" id="c7e6be83-5052-4b18-bfe4-8474b89ad8de"
+      key="projectApproach" value="SingletonComponents"/>
+  <ownedModelRoots xsi:type="org.polarsys.capella.core.data.capellamodeller:SystemEngineering"
+      id="43688197-94fb-491a-8184-958fa9eecd8e" name="Handbook_Example" description="&lt;h1>Overview&lt;/h1>&#xA;&#xA;&lt;p>A partial illustration&amp;nbsp;on how the tool can be used, based on&amp;nbsp;example elements&amp;nbsp;provided in&amp;nbsp;the &lt;em>STPA Handbook&lt;/em> by Nancy G. Leveson and&amp;nbsp;John P. Thomas (2018) available at [1]. It does not include traditional Capella modeling.&lt;/p>&#xA;&#xA;&lt;p>It&amp;nbsp;is not a complete analysis and it is not intended to be a tutorial for the tool or the method. For the former, documentation is available at [2]. For the latter please read [1] and for a more complete understanding, &lt;em>Engineering a Safer World:&amp;nbsp;Systems Thinking Applied to Safety&lt;/em> by Nancy G. Leveson (The MIT Press, 2016).&lt;/p>&#xA;&#xA;&lt;p align=&quot;LEFT&quot;>[1]&amp;nbsp;&lt;a href=&quot;https://psas.scripts.mit.edu/home/get_file.php?name=STPA_handbook.pdf&quot;>https://psas.scripts.mit.edu/home/get_file.php?name=STPA_handbook.pdf&lt;/a>&lt;/p>&#xA;&#xA;&lt;p align=&quot;LEFT&quot;>[2] &lt;a href=&quot;https://github.com/labs4capella/stpa-capella&quot;>https://github.com/labs4capella/stpa-capella&lt;/a>&lt;/p>&#xA;&#xA;&lt;p align=&quot;LEFT&quot;>&amp;nbsp;&lt;/p>&#xA;&#xA;&lt;h1 align=&quot;LEFT&quot;>Noteworthy&amp;nbsp;Representations&lt;/h1>&#xA;&#xA;&lt;p align=&quot;LEFT&quot;>Step 1&lt;/p>&#xA;&#xA;&lt;ul>&#xA;&#x9;&lt;li align=&quot;LEFT&quot;>&lt;a href=&quot;hlink://_A3I4IGEnEe6prtKLO73yhQ&quot;>Losses&lt;/a>&lt;/li>&#xA;&#x9;&lt;li align=&quot;LEFT&quot;>&lt;a href=&quot;hlink://_VTWdp2EnEe6prtKLO73yhQ&quot;>Hazards&lt;/a>&lt;/li>&#xA;&#x9;&lt;li align=&quot;LEFT&quot;>&lt;a href=&quot;hlink://_dTxbaWEoEe6prtKLO73yhQ&quot;>System-level Constraints&lt;/a>&lt;/li>&#xA;&lt;/ul>&#xA;&#xA;&lt;p>Step 2&lt;/p>&#xA;&#xA;&lt;ul>&#xA;&#x9;&lt;li align=&quot;LEFT&quot;>&lt;a href=&quot;hlink://__K6qEWEqEe6prtKLO73yhQ&quot;>Hierarchical Control Structure&lt;/a>&lt;/li>&#xA;&#x9;&lt;li align=&quot;LEFT&quot;>&lt;a href=&quot;hlink://_WIEfM2HrEe6prtKLO73yhQ&quot;>Responsibilities of Autobrake Controller&lt;/a>&lt;/li>&#xA;&lt;/ul>&#xA;&#xA;&lt;p>Step 3&lt;/p>&#xA;&#xA;&lt;ul>&#xA;&#x9;&lt;li align=&quot;LEFT&quot;>Unsafe control actions: &lt;a href=&quot;hlink://_J8-hsmHzEe6prtKLO73yhQ&quot;>on Brake cmd&lt;/a>, &lt;a href=&quot;hlink://_Z_GFCWH0Ee6prtKLO73yhQ&quot;>on BSCU power on/off&lt;/a>&lt;/li>&#xA;&#x9;&lt;li align=&quot;LEFT&quot;>&lt;a href=&quot;hlink://_PQb44WHrEe6prtKLO73yhQ&quot;>Controller Constraints on Autobrake Controller&lt;/a>&lt;/li>&#xA;&lt;/ul>&#xA;&#xA;&lt;p>Step 4&lt;/p>&#xA;&#xA;&lt;ul>&#xA;&#x9;&lt;li align=&quot;LEFT&quot;>&lt;a href=&quot;hlink://_fFv_MWIAEe6prtKLO73yhQ&quot;>Hint words for causal factors on Brake cmd&lt;/a>&lt;/li>&#xA;&#x9;&lt;li align=&quot;LEFT&quot;>&lt;a href=&quot;hlink://_ncyKYGH6Ee6prtKLO73yhQ&quot;>Loss scenarios&lt;/a>&amp;nbsp;(details in their Description property)&lt;/li>&#xA;&lt;/ul>&#xA;&#xA;&lt;p align=&quot;LEFT&quot;>Overall&lt;/p>&#xA;&#xA;&lt;ul>&#xA;&#x9;&lt;li align=&quot;LEFT&quot;>&lt;a href=&quot;hlink://_q4gvc2KsEe6prtKLO73yhQ&quot;>Traceability diagram&lt;/a> for loss L-01&lt;/li>&#xA;&#x9;&lt;li align=&quot;LEFT&quot;>&lt;a href=&quot;hlink://_KIz64GKzEe6prtKLO73yhQ&quot;>Table of all analysis elements&lt;/a>&lt;/li>&#xA;&lt;/ul>&#xA;&#xA;&lt;p align=&quot;LEFT&quot;>&amp;nbsp;&lt;/p>&#xA;">
+    <ownedExtensions xsi:type="stpa:StpaAnalysis" id="e2b61919-fa8c-478b-8c8d-d7614fca2401"
+        name="STPA Analysis">
+      <technicalPackage xsi:type="stpa:TechnicalPackage" id="0dedd0ae-81f7-42dc-9bcc-3da602de4d53"
+          name="Technical Package">
+        <unsafeControlActionCategories xsi:type="stpa:UnsafeControlActionCategory"
+            id="4c4f2198-eea4-4386-852a-5155535caab0"/>
+        <unsafeControlActionCategories xsi:type="stpa:UnsafeControlActionCategory"
+            id="dc06ec74-7afb-4fee-b190-719cff3f6f7e" kind="PROVIDING"/>
+        <unsafeControlActionCategories xsi:type="stpa:UnsafeControlActionCategory"
+            id="eece4d05-56c3-42c2-b759-bc1c4d60afa4" kind="WRONG_TIMING"/>
+        <unsafeControlActionCategories xsi:type="stpa:UnsafeControlActionCategory"
+            id="8128c410-7752-4c3d-b934-9700a6a1125b" kind="WRONG_DURATION"/>
+      </technicalPackage>
+      <lossPackage xsi:type="stpa:LossPackage" id="8d96320c-3e9a-4000-9e12-ec669a3a16d1"
+          name="Losses">
+        <losses xsi:type="stpa:Loss" id="387fbabd-af8b-47a6-8d73-87748f8eb070" name="Loss of life or injury to people"
+            userID="L-01" hazards="#1f17000f-a7b3-4bb1-9e49-363d259815bb #684adc01-a278-44b0-9ee4-aef2776ca373 #f1215b4e-11ed-4e8a-9954-d68b5b6ecd5e #bdfab505-b920-404f-bf39-0a2756b718cc"/>
+        <losses xsi:type="stpa:Loss" id="c21ad841-fb2c-4a9f-8d8a-f8a85538af83" name="Loss of or damage to vehicle"
+            userID="L-02" hazards="#1f17000f-a7b3-4bb1-9e49-363d259815bb #684adc01-a278-44b0-9ee4-aef2776ca373 #f1215b4e-11ed-4e8a-9954-d68b5b6ecd5e #bdfab505-b920-404f-bf39-0a2756b718cc"/>
+        <losses xsi:type="stpa:Loss" id="adda8353-ed40-4e1e-b494-314aa7b46568" name="Loss of mission"
+            userID="L-03" hazards="#1f17000f-a7b3-4bb1-9e49-363d259815bb #684adc01-a278-44b0-9ee4-aef2776ca373"/>
+        <losses xsi:type="stpa:Loss" id="aa8d4df9-b3b8-4f28-b2bc-b3faf7b296c6" name="Loss of customer satisfaction"
+            userID="L-04" hazards="#1f17000f-a7b3-4bb1-9e49-363d259815bb #684adc01-a278-44b0-9ee4-aef2776ca373 #f1215b4e-11ed-4e8a-9954-d68b5b6ecd5e #bdfab505-b920-404f-bf39-0a2756b718cc"/>
+      </lossPackage>
+      <hazardConstraintPackage xsi:type="stpa:HazardConstraintPackage" id="eea8a46f-ab48-4abc-aea9-970b83905f9d"
+          name="Hazards &amp; Constraints">
+        <rootHazards xsi:type="stpa:Hazard" id="1f17000f-a7b3-4bb1-9e49-363d259815bb"
+            name="Aircraft violate minimum separation standards in flight" userID="H-01"
+            losses="#387fbabd-af8b-47a6-8d73-87748f8eb070 #c21ad841-fb2c-4a9f-8d8a-f8a85538af83 #adda8353-ed40-4e1e-b494-314aa7b46568 #aa8d4df9-b3b8-4f28-b2bc-b3faf7b296c6"
+            systemConstraints="#a5d449d8-b72f-4167-8f03-0674455fd7ec"/>
+        <rootHazards xsi:type="stpa:Hazard" id="684adc01-a278-44b0-9ee4-aef2776ca373"
+            name="Aircraft airframe integrity is lost" userID="H-02" losses="#387fbabd-af8b-47a6-8d73-87748f8eb070 #c21ad841-fb2c-4a9f-8d8a-f8a85538af83 #adda8353-ed40-4e1e-b494-314aa7b46568 #aa8d4df9-b3b8-4f28-b2bc-b3faf7b296c6"
+            systemConstraints="#d3f80f3c-68b0-4090-8efe-aba56d6580af"/>
+        <rootHazards xsi:type="stpa:Hazard" id="f1215b4e-11ed-4e8a-9954-d68b5b6ecd5e"
+            name="Aircraft leaves designated taxiway, runway, or apron on ground"
+            userID="H-03" losses="#387fbabd-af8b-47a6-8d73-87748f8eb070 #c21ad841-fb2c-4a9f-8d8a-f8a85538af83 #aa8d4df9-b3b8-4f28-b2bc-b3faf7b296c6"/>
+        <rootHazards xsi:type="stpa:Hazard" id="bdfab505-b920-404f-bf39-0a2756b718cc"
+            name="Aircraft comes too close to other objects on the ground" userID="H-04"
+            losses="#387fbabd-af8b-47a6-8d73-87748f8eb070 #c21ad841-fb2c-4a9f-8d8a-f8a85538af83 #aa8d4df9-b3b8-4f28-b2bc-b3faf7b296c6">
+          <decompositionCategories xsi:type="stpa:DecompositionCategory" id="0574aa4c-1c0a-4763-b3ff-4cbd03c2c9ed"
+              name="Deceleration" coverage="#4ab87c12-33fa-49ad-aedc-aee4d85b4c49 #c6374642-2950-41c4-acc8-7e23d2531b70 #f8a2656a-f3b4-45e2-90ff-c5356e597a8c"/>
+          <decompositionCategories xsi:type="stpa:DecompositionCategory" id="b554dbe1-5c8f-498d-b099-057abe1b34eb"
+              name="Acceleration" coverage="#f0881f0c-bd1a-4db2-a4d2-15f5cd59e414 #ea41cb1e-6b2e-44df-a80b-b3ab6970cc82 #4562e61d-095a-425f-b69b-7e8c4111e510 #858b2d99-e9b5-4223-aa0d-0d1f8c08f28e #130c6984-002a-443a-be49-f44274ea4c6d"/>
+          <decompositionCategories xsi:type="stpa:DecompositionCategory" id="04115f83-c539-4e4b-8ed6-f3f0de75bf5d"
+              name="Steering" coverage="#f9e02cbb-99a4-4c3f-8d60-5a523ba323a2 #e62312cb-d157-4d98-bb88-881735162433"/>
+          <subHazards xsi:type="stpa:Hazard" id="4ab87c12-33fa-49ad-aedc-aee4d85b4c49"
+              name="Deceleration is insufficient upon landing, rejected takeoff, or during taxiing"
+              userID="H-05" category="#0574aa4c-1c0a-4763-b3ff-4cbd03c2c9ed" systemConstraints="#66ea5c59-20a3-4803-800a-63bdfd0fd44d"
+              unsafeControlActions="#1cde2443-66d4-43b9-b7b7-64a70512cfd3 #4e031536-a2fb-4b8a-82f2-504583e7b5f1 #058ecc6b-8da1-4c79-81e9-4c3c6f1a138f #ace7fd1c-f682-422b-8d9a-2d143f008a47 #aeebbe3e-63d1-4b81-b0f1-4b3607949afe #2b2825b2-0fd5-4d4e-94cc-942b480b133c #708d7332-d718-4cb0-8930-fc72d7090c7a #02be4401-3788-4696-8f63-a8c89fb47a58"
+              lossScenarios="#ed569f94-6d01-4489-8be7-f7077d6c19c0 #9d91a1d3-9696-440e-a4fa-eab2018f78c6 #1e35b977-ab6a-4311-bb24-59993da6d01d #1498971f-a547-4ad7-a8fb-9491ffdcd035 #18ac75d6-24d7-4d9d-8cf2-f072a28d4c33 #41f825a4-7a42-43a4-ad68-1f59e89bcd9f #20926a23-5339-4b2b-b690-15ddcf8d2200 #62a214d0-d335-44f9-a314-26d851d2a8e4 #2d033429-0438-46ae-aa30-cde23a770c95 #20c315e7-7e75-4194-8be6-18dc728ed1c0 #faf5e257-2912-43fb-9a8f-09784bea8a50 #a8add3bf-6bbf-409d-bd92-7a5f5c0887e9 #e3133138-f11c-49f6-84b7-fc619a4f824d"/>
+          <subHazards xsi:type="stpa:Hazard" id="c6374642-2950-41c4-acc8-7e23d2531b70"
+              name="Asymmetric deceleration maneuvers aircraft toward other objects"
+              userID="H-06" category="#0574aa4c-1c0a-4763-b3ff-4cbd03c2c9ed" systemConstraints="#98a64e18-4df3-4ba3-bc95-b75e30aa6346"
+              unsafeControlActions="#058ecc6b-8da1-4c79-81e9-4c3c6f1a138f"/>
+          <subHazards xsi:type="stpa:Hazard" id="f8a2656a-f3b4-45e2-90ff-c5356e597a8c"
+              name="Deceleration occurs after V1 point during takeoff" userID="H-07"
+              category="#0574aa4c-1c0a-4763-b3ff-4cbd03c2c9ed" systemConstraints="#86d3a0d5-cf2f-4f19-9cb4-02918f12ddb2"
+              unsafeControlActions="#80f1188c-ba6f-4645-965e-875334c1e23e"/>
+          <subHazards xsi:type="stpa:Hazard" id="f0881f0c-bd1a-4db2-a4d2-15f5cd59e414"
+              name="Excessive acceleration provided while taxiing" userID="H-08" category="#b554dbe1-5c8f-498d-b099-057abe1b34eb"
+              unsafeControlActions="#2b2825b2-0fd5-4d4e-94cc-942b480b133c" lossScenarios="#1e35b977-ab6a-4311-bb24-59993da6d01d"/>
+          <subHazards xsi:type="stpa:Hazard" id="ea41cb1e-6b2e-44df-a80b-b3ab6970cc82"
+              name="Asymmetric acceleration maneuvers aircraft toward other objects"
+              userID="H-09" category="#b554dbe1-5c8f-498d-b099-057abe1b34eb"/>
+          <subHazards xsi:type="stpa:Hazard" id="4562e61d-095a-425f-b69b-7e8c4111e510"
+              name="Acceleration is insufficient during takeoff" userID="H-10" category="#b554dbe1-5c8f-498d-b099-057abe1b34eb"
+              unsafeControlActions="#80f1188c-ba6f-4645-965e-875334c1e23e" lossScenarios="#4a6e8380-8af6-4ee9-8851-385d25ff07b4"/>
+          <subHazards xsi:type="stpa:Hazard" id="858b2d99-e9b5-4223-aa0d-0d1f8c08f28e"
+              name="Acceleration is provided during landing or when parked" userID="H-11"
+              category="#b554dbe1-5c8f-498d-b099-057abe1b34eb" unsafeControlActions="#2b2825b2-0fd5-4d4e-94cc-942b480b133c #708d7332-d718-4cb0-8930-fc72d7090c7a #02be4401-3788-4696-8f63-a8c89fb47a58"/>
+          <subHazards xsi:type="stpa:Hazard" id="130c6984-002a-443a-be49-f44274ea4c6d"
+              name="Acceleration continues to be applied during rejected takeoff"
+              userID="H-12" category="#b554dbe1-5c8f-498d-b099-057abe1b34eb"/>
+          <subHazards xsi:type="stpa:Hazard" id="f9e02cbb-99a4-4c3f-8d60-5a523ba323a2"
+              name="Insufficient steering to turn along taxiway, runway, or apron path"
+              userID="H-13" category="#04115f83-c539-4e4b-8ed6-f3f0de75bf5d"/>
+          <subHazards xsi:type="stpa:Hazard" id="e62312cb-d157-4d98-bb88-881735162433"
+              name="Steering maneuvers aircraft off the taxiway, runway, or apron path"
+              userID="H-14" category="#04115f83-c539-4e4b-8ed6-f3f0de75bf5d"/>
+        </rootHazards>
+        <rootSystemConstraints xsi:type="stpa:SystemConstraint" id="a5d449d8-b72f-4167-8f03-0674455fd7ec"
+            name="Aircraft must satisfy minimum separation standards from other aircraft and objects"
+            userID="SC-01" hazards="#1f17000f-a7b3-4bb1-9e49-363d259815bb"/>
+        <rootSystemConstraints xsi:type="stpa:SystemConstraint" id="d3f80f3c-68b0-4090-8efe-aba56d6580af"
+            name="Aircraft airframe integrity must be maintained under worst-case conditions"
+            userID="SC-02" hazards="#684adc01-a278-44b0-9ee4-aef2776ca373"/>
+        <rootSystemConstraints xsi:type="stpa:SystemConstraint" id="66ea5c59-20a3-4803-800a-63bdfd0fd44d"
+            name="Deceleration must occur within TBD seconds of landing or rejected takeoff at a rate of at least TBD m/s2"
+            userID="SC-03" hazards="#4ab87c12-33fa-49ad-aedc-aee4d85b4c49" responsibilities="#38a16490-05d6-494e-8d0e-5be6e4d2a826 #cdbfa2c3-3ef7-451b-962e-43f11aadce30 #980846ac-dcca-45b8-b433-8a434c675f5b #94f8855e-2ed5-4962-9e46-16cda327b21e #60effb1a-c4d9-43f7-b1f4-84e6ac5388e5 #fc421a26-a081-4628-8283-c378db815c8c #6fca7fa6-9f04-4911-a445-4cb949bb701d #4ca4d95e-e8b2-4124-a375-71299e16b629"
+            unsafeControlActions="#1cde2443-66d4-43b9-b7b7-64a70512cfd3 #4e031536-a2fb-4b8a-82f2-504583e7b5f1 #ace7fd1c-f682-422b-8d9a-2d143f008a47 #aeebbe3e-63d1-4b81-b0f1-4b3607949afe #2b2825b2-0fd5-4d4e-94cc-942b480b133c #708d7332-d718-4cb0-8930-fc72d7090c7a #02be4401-3788-4696-8f63-a8c89fb47a58"/>
+        <rootSystemConstraints xsi:type="stpa:SystemConstraint" id="98a64e18-4df3-4ba3-bc95-b75e30aa6346"
+            name="Asymmetric deceleration must not lead to loss of directional control or cause aircraft to depart taxiway, runway, or apron"
+            userID="SC-04" hazards="#c6374642-2950-41c4-acc8-7e23d2531b70" responsibilities="#e51e9eb8-47f5-4c5d-a5c7-c48c1572aec4 #6fca7fa6-9f04-4911-a445-4cb949bb701d #4ca4d95e-e8b2-4124-a375-71299e16b629"
+            unsafeControlActions="#058ecc6b-8da1-4c79-81e9-4c3c6f1a138f"/>
+        <rootSystemConstraints xsi:type="stpa:SystemConstraint" id="86d3a0d5-cf2f-4f19-9cb4-02918f12ddb2"
+            name="Deceleration must not be provided after V1 point during takeoff"
+            userID="SC-05" hazards="#f8a2656a-f3b4-45e2-90ff-c5356e597a8c" responsibilities="#94f8855e-2ed5-4962-9e46-16cda327b21e"
+            unsafeControlActions="#80f1188c-ba6f-4645-965e-875334c1e23e"/>
+      </hazardConstraintPackage>
+      <controlStructurePackage xsi:type="stpa:ControlStructurePackage" id="f0732b0b-8363-4e36-8601-24e0b37dffc0"
+          name="Control Structure">
+        <rootEntities xsi:type="stpa:ControlEntity" id="94172566-7bd5-4a9f-9afe-a5e55556a1e5"
+            name="Flight Crew" userID="C-01">
+          <responsibilities xsi:type="stpa:Responsibility" id="94f8855e-2ed5-4962-9e46-16cda327b21e"
+              name="Decide when braking is needed" userID="R-01" systemConstraints="#66ea5c59-20a3-4803-800a-63bdfd0fd44d #86d3a0d5-cf2f-4f19-9cb4-02918f12ddb2"/>
+          <responsibilities xsi:type="stpa:Responsibility" id="60effb1a-c4d9-43f7-b1f4-84e6ac5388e5"
+              name="Decide how braking will be done: Autobrake, normal braking, or manual braking"
+              userID="R-02" systemConstraints="#66ea5c59-20a3-4803-800a-63bdfd0fd44d"
+              feedback="#656cff31-4671-44a0-a215-947ff25f0b2a #b579c6e1-0350-4374-817e-022afa894a82 #056099f0-7f42-4f9d-8920-5ec2ae5921e9"/>
+          <responsibilities xsi:type="stpa:Responsibility" id="fc421a26-a081-4628-8283-c378db815c8c"
+              name="Configure BSCU and Autobrake to prepare for braking" userID="R-03"
+              systemConstraints="#66ea5c59-20a3-4803-800a-63bdfd0fd44d" controlActions="#8b130ab5-2fb9-46a8-884e-03b2d6a37e0e #29ec6c3c-1df4-469d-8dbc-c19c707e67f4 #d8d5c12b-e6ce-4523-bde2-2a0165aa60e2"
+              feedback="#03d9c201-c4b8-4794-afbe-c80170653edd #d3f48025-3dd9-4beb-8277-9a3403f4c308 #971d740f-2bd5-4d52-a20a-bb2c510d4280"/>
+          <responsibilities xsi:type="stpa:Responsibility" id="6fca7fa6-9f04-4911-a445-4cb949bb701d"
+              name="Monitor braking and disable BSCU, manually brake in case of malfunction"
+              userID="R-04" systemConstraints="#66ea5c59-20a3-4803-800a-63bdfd0fd44d #98a64e18-4df3-4ba3-bc95-b75e30aa6346"
+              controlActions="#8b130ab5-2fb9-46a8-884e-03b2d6a37e0e #341ab9dd-f484-4c17-9c88-dbc1defee0ba"
+              feedback="#656cff31-4671-44a0-a215-947ff25f0b2a"/>
+          <outgoingRelations xsi:type="stpa:ControlRelation" id="a287105b-feea-4483-a573-00accbc2ae75"
+              target="#d4f42557-e6f7-4c39-8e8d-bd3f2a8e8713">
+            <controlActions xsi:type="stpa:ControlAction" id="a90d48de-fd71-4995-bde4-3a0d357b4ec4"
+                name="Manual controls (Engine throttle, Steer, Reverse thrust, etc.)"
+                userID="CA-01"/>
+          </outgoingRelations>
+          <outgoingRelations xsi:type="stpa:ControlRelation" id="40aaa7c1-09d1-4740-aaee-b3cd4d0932ac"
+              target="#f13e59fe-2872-4f28-85c5-e53cab42d76e">
+            <controlActions xsi:type="stpa:ControlAction" id="29ec6c3c-1df4-469d-8dbc-c19c707e67f4"
+                name="Arm and Set" userID="CA-02" exercisedResponsibilities="#fc421a26-a081-4628-8283-c378db815c8c"/>
+            <controlActions xsi:type="stpa:ControlAction" id="d8d5c12b-e6ce-4523-bde2-2a0165aa60e2"
+                name="Disarm" userID="CA-03" exercisedResponsibilities="#fc421a26-a081-4628-8283-c378db815c8c"/>
+          </outgoingRelations>
+          <outgoingRelations xsi:type="stpa:FeedbackRelation" id="7b255782-60b8-4a79-a80f-a374497f5a2a"
+              target="#d4f42557-e6f7-4c39-8e8d-bd3f2a8e8713">
+            <feedback xsi:type="stpa:FeedbackElement" id="056099f0-7f42-4f9d-8920-5ec2ae5921e9"
+                name="Other system modes, states" userID="FB-01" responsibilities="#60effb1a-c4d9-43f7-b1f4-84e6ac5388e5"/>
+          </outgoingRelations>
+          <outgoingRelations xsi:type="stpa:FeedbackRelation" id="7fe5ac42-6b1e-4f4a-8ef3-0630887fd26e"
+              target="#07dd7aa6-a88b-40b1-8c95-dbba3a134e9f">
+            <feedback xsi:type="stpa:FeedbackElement" id="03d9c201-c4b8-4794-afbe-c80170653edd"
+                name="BSCU mode" userID="FB-02" responsibilities="#fc421a26-a081-4628-8283-c378db815c8c"/>
+            <feedback xsi:type="stpa:FeedbackElement" id="656cff31-4671-44a0-a215-947ff25f0b2a"
+                name="BSCU faults" userID="FB-03" responsibilities="#6fca7fa6-9f04-4911-a445-4cb949bb701d #60effb1a-c4d9-43f7-b1f4-84e6ac5388e5"/>
+          </outgoingRelations>
+          <outgoingRelations xsi:type="stpa:FeedbackRelation" id="cb0d9843-ab85-417e-895c-566ad1d32d7e"
+              target="#6999b6a6-f201-4437-9ce1-87ee5a5ac6c8">
+            <feedback xsi:type="stpa:FeedbackElement" id="971d740f-2bd5-4d52-a20a-bb2c510d4280"
+                name="Braking mode (normal/alternate)" userID="FB-04" responsibilities="#fc421a26-a081-4628-8283-c378db815c8c"/>
+          </outgoingRelations>
+          <outgoingRelations xsi:type="stpa:ControlRelation" id="b29a2ec3-b85e-4c27-b968-63c8f42ee9d9"
+              target="#6999b6a6-f201-4437-9ce1-87ee5a5ac6c8">
+            <controlActions xsi:type="stpa:ControlAction" id="341ab9dd-f484-4c17-9c88-dbc1defee0ba"
+                name="Brake (pedal)" userID="CA-04" exercisedResponsibilities="#6fca7fa6-9f04-4911-a445-4cb949bb701d"/>
+          </outgoingRelations>
+          <outgoingRelations xsi:type="stpa:ControlRelation" id="9d90676e-0ece-4d54-8b27-fb619df5337a"
+              target="#24411696-f613-4f0f-b86b-fdd2e345981e">
+            <controlActions xsi:type="stpa:ControlAction" id="647d0129-e409-4cab-92ab-c9b51222e6c9"
+                name="Brake (pedal)" userID="CA-05"/>
+          </outgoingRelations>
+          <outgoingRelations xsi:type="stpa:FeedbackRelation" id="8786ff41-30c9-4bcd-b71c-88d49e81ec50"
+              target="#f13e59fe-2872-4f28-85c5-e53cab42d76e">
+            <feedback xsi:type="stpa:FeedbackElement" id="d3f48025-3dd9-4beb-8277-9a3403f4c308"
+                name="Autobrake mode" userID="FB-01" responsibilities="#fc421a26-a081-4628-8283-c378db815c8c"/>
+            <feedback xsi:type="stpa:FeedbackElement" id="b579c6e1-0350-4374-817e-022afa894a82"
+                name="Programmed decel rate" userID="FB-02" responsibilities="#60effb1a-c4d9-43f7-b1f4-84e6ac5388e5"/>
+          </outgoingRelations>
+          <outgoingRelations xsi:type="stpa:ControlRelation" id="dba40e15-baa4-45c9-999e-4d966c9bdc04"
+              target="#07dd7aa6-a88b-40b1-8c95-dbba3a134e9f">
+            <controlActions xsi:type="stpa:ControlAction" id="8b130ab5-2fb9-46a8-884e-03b2d6a37e0e"
+                name="BSCU power on/off" userID="CA-01" exercisedResponsibilities="#fc421a26-a081-4628-8283-c378db815c8c #6fca7fa6-9f04-4911-a445-4cb949bb701d"
+                lossScenarios="#1e35b977-ab6a-4311-bb24-59993da6d01d">
+              <unsafeControlActions xsi:type="stpa:UnsafeControlAction" id="2b2825b2-0fd5-4d4e-94cc-942b480b133c"
+                  name="Crew does not provide BSCU Power Off when abnormal WBS behavior occurs"
+                  userID="UCA-01" lossScenarios="#1e35b977-ab6a-4311-bb24-59993da6d01d"
+                  violatedConstraints="#66ea5c59-20a3-4803-800a-63bdfd0fd44d" hazards="#4ab87c12-33fa-49ad-aedc-aee4d85b4c49 #f0881f0c-bd1a-4db2-a4d2-15f5cd59e414 #858b2d99-e9b5-4223-aa0d-0d1f8c08f28e">
+                <controlFlawSet xsi:type="stpa:ControlFlawSet" id="7daa9f5a-1d2c-4d8d-a0fd-4610dd6483c0">
+                  <controlFlaws xsi:type="stpa:ControlFlaw" id="8c4cdcdc-bf47-478f-8494-71a6bfea52f1"/>
+                  <controlFlaws xsi:type="stpa:ControlFlaw" id="b08aeb5a-fc5c-4969-852b-37b227a0409d"
+                      kind="CONTROL_ALGORITHM" verdict="KO" lossScenarios="#1e35b977-ab6a-4311-bb24-59993da6d01d"/>
+                  <controlFlaws xsi:type="stpa:ControlFlaw" id="7c7b1d12-d62a-4160-9f9b-afe85b12f37f"
+                      kind="PROCESS_MODEL"/>
+                  <controlFlaws xsi:type="stpa:ControlFlaw" id="993205d7-b110-498b-a2e9-1f1d14b414db"
+                      kind="PROCESS_FAILURE"/>
+                  <controlFlaws xsi:type="stpa:ControlFlaw" id="50990bde-bcc8-4275-94b8-47649be524c4"
+                      kind="PROCESS_CHANGE"/>
+                  <controlFlaws xsi:type="stpa:ControlFlaw" id="2d9b083c-8ccb-4a68-96d2-35d41d130d83"
+                      kind="PROCESS_CONFLICT"/>
+                  <controlFlaws xsi:type="stpa:ControlFlaw" id="d679038b-e71a-45ee-8030-fdea8dd628b3"
+                      kind="PROCESS_INPUT"/>
+                  <controlFlaws xsi:type="stpa:ControlFlaw" id="7581ab4f-9167-46d1-8de5-8d96d8c7abf6"
+                      kind="PROCESS_DISTURBANCE"/>
+                  <controlFlaws xsi:type="stpa:ControlFlaw" id="07f190e0-75d1-4980-8d86-b752818a7081"
+                      kind="PROCESS_OUTPUT"/>
+                  <controlFlaws xsi:type="stpa:ControlFlaw" id="eba4da48-1183-42f2-b325-28787ed79a3e"
+                      kind="PROCESS_TO_SENSOR_DELAY"/>
+                  <controlFlaws xsi:type="stpa:ControlFlaw" id="b2081551-c481-4557-adf8-bd5568da5680"
+                      kind="PROCESS_TO_SENSOR_INACCURATE"/>
+                  <controlFlaws xsi:type="stpa:ControlFlaw" id="33acb4d4-7693-4649-9550-9a8c73a6981f"
+                      kind="PROCESS_TO_SENSOR_INCORRECT"/>
+                  <controlFlaws xsi:type="stpa:ControlFlaw" id="ef93ec72-837d-4b5f-9373-d6adf415ab2f"
+                      kind="SENSOR"/>
+                  <controlFlaws xsi:type="stpa:ControlFlaw" id="5d175c71-40ba-4a5e-a1da-eadae2866fa5"
+                      kind="SENSOR_TO_CONTROLLER_DELAY"/>
+                  <controlFlaws xsi:type="stpa:ControlFlaw" id="ffe68536-d836-4388-b0f4-60a57a2deba3"
+                      kind="SENSOR_TO_CONTROLLER_INADEQUATE"/>
+                </controlFlawSet>
+              </unsafeControlActions>
+              <unsafeControlActions xsi:type="stpa:UnsafeControlAction" id="708d7332-d718-4cb0-8930-fc72d7090c7a"
+                  name="Crew provides BSCU Power Off when Anti-Skid functionality is needed and WBS is functioning normally"
+                  userID="UCA-02" kind="PROVIDING" violatedConstraints="#66ea5c59-20a3-4803-800a-63bdfd0fd44d"
+                  hazards="#4ab87c12-33fa-49ad-aedc-aee4d85b4c49 #858b2d99-e9b5-4223-aa0d-0d1f8c08f28e"/>
+              <unsafeControlActions xsi:type="stpa:UnsafeControlAction" id="02be4401-3788-4696-8f63-a8c89fb47a58"
+                  name="Crew powers off BSCU too early before Autobrake or Anti-Skid behavior is completed when it is needed"
+                  userID="UCA-03" kind="WRONG_TIMING" violatedConstraints="#66ea5c59-20a3-4803-800a-63bdfd0fd44d"
+                  hazards="#4ab87c12-33fa-49ad-aedc-aee4d85b4c49 #858b2d99-e9b5-4223-aa0d-0d1f8c08f28e"/>
+            </controlActions>
+          </outgoingRelations>
+        </rootEntities>
+        <rootEntities xsi:type="stpa:ControlEntity" id="4d90c2f6-50ac-4b77-b8a8-d88c1a1a1c6b"
+            name="Aircraft" userID="C-02">
+          <subEntities xsi:type="stpa:ControlEntity" id="8648823e-bf4c-4f38-a3c1-f17a1859889d"
+              name="Wheel Breaking Subsystem (WBS)" userID="C-03">
+            <subEntities xsi:type="stpa:ControlEntity" id="07dd7aa6-a88b-40b1-8c95-dbba3a134e9f"
+                name="Brake System Control Unit (BSCU)" userID="C-04" incomingRelations="#7fe5ac42-6b1e-4f4a-8ef3-0630887fd26e #dba40e15-baa4-45c9-999e-4d966c9bdc04">
+              <subEntities xsi:type="stpa:ControlEntity" id="f13e59fe-2872-4f28-85c5-e53cab42d76e"
+                  name="Autobrake Controller" userID="C-05" incomingRelations="#40aaa7c1-09d1-4740-aaee-b3cd4d0932ac #8786ff41-30c9-4bcd-b71c-88d49e81ec50 #40ea347a-6c42-464d-9ea3-2937c6dfd312">
+                <ownedConstraints xsi:type="org.polarsys.capella.core.data.capellacore:Constraint"
+                    id="155fc2fe-b991-4375-9248-52dafa01ad3e" name="BSCU Autobrake must provide the Brake control action during landing roll when the BSCU is armed"
+                    constrainedElements="#f13e59fe-2872-4f28-85c5-e53cab42d76e">
+                  <ownedSpecification xsi:type="org.polarsys.capella.core.data.information.datavalue:OpaqueExpression"
+                      id="5a6cb495-7635-42c7-a78f-d19f3b1c406b">
+                    <bodies></bodies>
+                    <languages>capella:linkedText</languages>
+                  </ownedSpecification>
+                </ownedConstraints>
+                <ownedConstraints xsi:type="org.polarsys.capella.core.data.capellacore:Constraint"
+                    id="52228d52-6b9b-4ce3-a050-6793793dfa9b" name="BSCU Autobrake must not provide Brake control action during a normal takeoff"
+                    constrainedElements="#f13e59fe-2872-4f28-85c5-e53cab42d76e">
+                  <ownedSpecification xsi:type="org.polarsys.capella.core.data.information.datavalue:OpaqueExpression"
+                      id="a945cabe-ef9d-43e1-b876-7109b305292d">
+                    <bodies></bodies>
+                    <languages>capella:linkedText</languages>
+                  </ownedSpecification>
+                </ownedConstraints>
+                <ownedConstraints xsi:type="org.polarsys.capella.core.data.capellacore:Constraint"
+                    id="a48e73f3-cddd-4c4c-8cab-6eef38587986" name="BSCU Autobrake must provide the Brake control action within TBD seconds after touchdown"
+                    constrainedElements="#f13e59fe-2872-4f28-85c5-e53cab42d76e">
+                  <ownedSpecification xsi:type="org.polarsys.capella.core.data.information.datavalue:OpaqueExpression"
+                      id="f8e77424-a6d6-43d0-85e5-f261a5920fcf">
+                    <bodies></bodies>
+                    <languages>capella:linkedText</languages>
+                  </ownedSpecification>
+                </ownedConstraints>
+                <ownedConstraints xsi:type="org.polarsys.capella.core.data.capellacore:Constraint"
+                    id="61c23ac3-9437-49db-93e2-e163927a7bad" name="BSCU Autobrake must not stop providing the Brake control action before TBD taxi speed is attained during landing roll"
+                    constrainedElements="#f13e59fe-2872-4f28-85c5-e53cab42d76e">
+                  <ownedSpecification xsi:type="org.polarsys.capella.core.data.information.datavalue:OpaqueExpression"
+                      id="8a4ab374-b173-4b13-b75b-30d984d9fd1d">
+                    <bodies></bodies>
+                    <languages>capella:linkedText</languages>
+                  </ownedSpecification>
+                </ownedConstraints>
+                <ownedConstraints xsi:type="org.polarsys.capella.core.data.capellacore:Constraint"
+                    id="c033894c-eaa9-4f39-8a63-12a0cb5f02eb" name="BSCU Autobrake must not provide less than TBD level of braking during landing roll"
+                    constrainedElements="#f13e59fe-2872-4f28-85c5-e53cab42d76e">
+                  <ownedSpecification xsi:type="org.polarsys.capella.core.data.information.datavalue:OpaqueExpression"
+                      id="afccc929-fffa-4567-ab6b-6d1c61765cae">
+                    <bodies></bodies>
+                    <languages>capella:linkedText</languages>
+                  </ownedSpecification>
+                </ownedConstraints>
+                <ownedConstraints xsi:type="org.polarsys.capella.core.data.capellacore:Constraint"
+                    id="9fba269a-e26c-461d-9f2f-a3ac91f651fa" name="BSCU Autobrake must not provide directional or asymmetrical braking during landing roll"
+                    constrainedElements="#f13e59fe-2872-4f28-85c5-e53cab42d76e">
+                  <ownedSpecification xsi:type="org.polarsys.capella.core.data.information.datavalue:OpaqueExpression"
+                      id="b6e9c5b4-2e4e-45cf-b37d-c7bea59d439d">
+                    <bodies></bodies>
+                    <languages>capella:linkedText</languages>
+                  </ownedSpecification>
+                </ownedConstraints>
+                <responsibilities xsi:type="stpa:Responsibility" id="e51e9eb8-47f5-4c5d-a5c7-c48c1572aec4"
+                    name="Pulse brakes in case of a skid (Anti-skid)" userID="R-05"
+                    systemConstraints="#98a64e18-4df3-4ba3-bc95-b75e30aa6346" controlActions="#f625d541-bf14-4343-86d8-287fb18ecbff"
+                    feedback="#117ea4e4-c760-4f4f-9d75-a933793561ec" variables="#7bc8460a-4156-40d3-97d0-fd6ec67aac35"/>
+                <responsibilities xsi:type="stpa:Responsibility" id="cdbfa2c3-3ef7-451b-962e-43f11aadce30"
+                    name="Actuate brakes when requested by flight crew" userID="R-06"
+                    systemConstraints="#66ea5c59-20a3-4803-800a-63bdfd0fd44d" controlActions="#f625d541-bf14-4343-86d8-287fb18ecbff"
+                    variables="#83514bcb-d516-4cde-8d16-f5ad395594b4"/>
+                <responsibilities xsi:type="stpa:Responsibility" id="980846ac-dcca-45b8-b433-8a434c675f5b"
+                    name="Automatically engage brakes on landing or rejected takeoff (Autobrake)"
+                    userID="R-07" systemConstraints="#66ea5c59-20a3-4803-800a-63bdfd0fd44d"
+                    controlActions="#f625d541-bf14-4343-86d8-287fb18ecbff" information="#64e196a2-a1bb-4e59-ae72-e547dc08294a #3443e3a6-1332-41b7-a680-4f07babcecdc"
+                    variables="#28fcd1f9-31ab-4d19-a9be-f69362c97965 #fd34fa0f-069a-498e-b43e-db53b76d424c"/>
+                <outgoingRelations xsi:type="stpa:ControlRelation" id="a86ab895-2e3d-4c47-919e-27b42c14f679"
+                    target="#24411696-f613-4f0f-b86b-fdd2e345981e">
+                  <controlActions xsi:type="stpa:ControlAction" id="f625d541-bf14-4343-86d8-287fb18ecbff"
+                      name="Brake cmd" userID="CA-07" exercisedResponsibilities="#e51e9eb8-47f5-4c5d-a5c7-c48c1572aec4 #cdbfa2c3-3ef7-451b-962e-43f11aadce30 #980846ac-dcca-45b8-b433-8a434c675f5b"
+                      lossScenarios="#ed569f94-6d01-4489-8be7-f7077d6c19c0 #9d91a1d3-9696-440e-a4fa-eab2018f78c6 #1498971f-a547-4ad7-a8fb-9491ffdcd035 #18ac75d6-24d7-4d9d-8cf2-f072a28d4c33 #20c315e7-7e75-4194-8be6-18dc728ed1c0 #faf5e257-2912-43fb-9a8f-09784bea8a50 #e3133138-f11c-49f6-84b7-fc619a4f824d">
+                    <controlFlawSet xsi:type="stpa:ControlFlawSet" id="e918791e-7ef5-4879-919e-0c70d5b30eef">
+                      <controlFlaws xsi:type="stpa:ControlFlaw" id="fafe861a-df62-49bc-8bf0-9fcfd1a3d277"
+                          kind="CONTROLLER_TO_ACTUATOR"/>
+                      <controlFlaws xsi:type="stpa:ControlFlaw" id="e1db16f0-d8d0-4cbd-950e-c150e9f4e4f8"
+                          kind="ACTUATOR"/>
+                      <controlFlaws xsi:type="stpa:ControlFlaw" id="a0761f12-3ca0-4786-b8ce-e4cfcff59bd7"
+                          kind="ACTUATOR_TO_PROCESS"/>
+                      <controlFlaws xsi:type="stpa:ControlFlaw" id="522f048d-b5a8-44e0-a560-319a27e930a3"
+                          kind="PROCESS_FAILURE" verdict="KO" lossScenarios="#faf5e257-2912-43fb-9a8f-09784bea8a50"/>
+                      <controlFlaws xsi:type="stpa:ControlFlaw" id="8698bfaa-ca7e-43c6-ad2f-75033976cb1d"
+                          kind="PROCESS_CHANGE" verdict="KO" lossScenarios="#20c315e7-7e75-4194-8be6-18dc728ed1c0 #e3133138-f11c-49f6-84b7-fc619a4f824d"/>
+                      <controlFlaws xsi:type="stpa:ControlFlaw" id="73237ee7-a753-4902-b363-197f181c5474"
+                          kind="PROCESS_CONFLICT"/>
+                      <controlFlaws xsi:type="stpa:ControlFlaw" id="3f86a822-05bb-4cd2-9abc-89fe632be2e9"
+                          kind="PROCESS_INPUT"/>
+                      <controlFlaws xsi:type="stpa:ControlFlaw" id="0f2cb9f8-cace-44ef-9627-25b3955ebb3c"
+                          kind="PROCESS_DISTURBANCE"/>
+                      <controlFlaws xsi:type="stpa:ControlFlaw" id="a7f2e722-c34b-451b-b124-11b95be59585"
+                          kind="PROCESS_OUTPUT"/>
+                    </controlFlawSet>
+                    <unsafeControlActions xsi:type="stpa:UnsafeControlAction" id="1cde2443-66d4-43b9-b7b7-64a70512cfd3"
+                        name="BSCU Autobrake does not provide the Brake control action during landing roll when the BSCU is armed"
+                        userID="UCA-04" countermeasures="#155fc2fe-b991-4375-9248-52dafa01ad3e"
+                        lossScenarios="#ed569f94-6d01-4489-8be7-f7077d6c19c0 #1498971f-a547-4ad7-a8fb-9491ffdcd035 #18ac75d6-24d7-4d9d-8cf2-f072a28d4c33"
+                        violatedConstraints="#66ea5c59-20a3-4803-800a-63bdfd0fd44d"
+                        hazards="#4ab87c12-33fa-49ad-aedc-aee4d85b4c49">
+                      <controlFlawSet xsi:type="stpa:ControlFlawSet" id="17292f8e-376f-4492-ace5-022246987eae">
+                        <controlFlaws xsi:type="stpa:ControlFlaw" id="62574004-173d-40ec-9ec1-d9310cf7ae81"
+                            name="Control input or external information wrong or missing&#xD;&#xA;(INF-01) Touchdown&#xD;&#xA;"
+                            verdict="KO" lossScenarios="#18ac75d6-24d7-4d9d-8cf2-f072a28d4c33"/>
+                        <controlFlaws xsi:type="stpa:ControlFlaw" id="55d7e864-c4c0-4884-8f81-134327109323"
+                            kind="CONTROL_ALGORITHM" verdict="KO" lossScenarios="#1498971f-a547-4ad7-a8fb-9491ffdcd035"/>
+                        <controlFlaws xsi:type="stpa:ControlFlaw" id="5a9d92a1-71f4-4443-a466-8bf0830adc39"
+                            name="Inconsistent, incomplete or incorrect&#xD;&#xA;(PM-03) Aircraft landed&#xD;&#xA;Aircraft stopped on ground"
+                            kind="PROCESS_MODEL" verdict="KO" lossScenarios="#1498971f-a547-4ad7-a8fb-9491ffdcd035 #18ac75d6-24d7-4d9d-8cf2-f072a28d4c33"/>
+                        <controlFlaws xsi:type="stpa:ControlFlaw" id="1c742897-0fac-4d11-bce6-f34947f5ab0d"
+                            kind="PROCESS_FAILURE"/>
+                        <controlFlaws xsi:type="stpa:ControlFlaw" id="3d9911d4-b789-402a-ad40-db883a7b66fc"
+                            kind="PROCESS_CHANGE"/>
+                        <controlFlaws xsi:type="stpa:ControlFlaw" id="4283fb9e-5550-4d24-a4fe-d83d5ac68269"
+                            kind="PROCESS_CONFLICT"/>
+                        <controlFlaws xsi:type="stpa:ControlFlaw" id="3edd2923-6e18-4d43-90eb-84a345a57fd5"
+                            kind="PROCESS_INPUT"/>
+                        <controlFlaws xsi:type="stpa:ControlFlaw" id="e43c2457-f6bc-41d0-9b63-529ef62963b5"
+                            kind="PROCESS_DISTURBANCE"/>
+                        <controlFlaws xsi:type="stpa:ControlFlaw" id="76e28d19-5826-4ea2-b566-482947b7068a"
+                            kind="PROCESS_OUTPUT"/>
+                        <controlFlaws xsi:type="stpa:ControlFlaw" id="600abefd-a561-4b62-8feb-1e35a8b27d32"
+                            kind="PROCESS_TO_SENSOR_DELAY"/>
+                        <controlFlaws xsi:type="stpa:ControlFlaw" id="affa96b1-8e7c-4d9a-8aa5-6e1ea85b97d7"
+                            kind="PROCESS_TO_SENSOR_INACCURATE"/>
+                        <controlFlaws xsi:type="stpa:ControlFlaw" id="15d87dd7-33b5-4cf6-8872-2a9c0499c355"
+                            kind="PROCESS_TO_SENSOR_INCORRECT"/>
+                        <controlFlaws xsi:type="stpa:ControlFlaw" id="e5a321b0-3b3b-4ec3-91a1-eb22e48755a3"
+                            kind="SENSOR"/>
+                        <controlFlaws xsi:type="stpa:ControlFlaw" id="d1bdb77a-ec21-4205-9c24-4756d5db0d5a"
+                            kind="SENSOR_TO_CONTROLLER_DELAY"/>
+                        <controlFlaws xsi:type="stpa:ControlFlaw" id="9063e44d-817c-4407-9979-1996f32d6528"
+                            kind="SENSOR_TO_CONTROLLER_INADEQUATE"/>
+                      </controlFlawSet>
+                    </unsafeControlActions>
+                    <unsafeControlActions xsi:type="stpa:UnsafeControlAction" id="80f1188c-ba6f-4645-965e-875334c1e23e"
+                        name="BSCU Autobrake provides Brake control action during a normal takeoff"
+                        userID="UCA-05" countermeasures="#52228d52-6b9b-4ce3-a050-6793793dfa9b"
+                        kind="PROVIDING" violatedConstraints="#86d3a0d5-cf2f-4f19-9cb4-02918f12ddb2"
+                        hazards="#f8a2656a-f3b4-45e2-90ff-c5356e597a8c #4562e61d-095a-425f-b69b-7e8c4111e510"/>
+                    <unsafeControlActions xsi:type="stpa:UnsafeControlAction" id="4e031536-a2fb-4b8a-82f2-504583e7b5f1"
+                        name="BSCU Autobrake provides Brake control action with an insufficient level of braking during landing roll"
+                        userID="UCA-06" countermeasures="#c033894c-eaa9-4f39-8a63-12a0cb5f02eb"
+                        kind="PROVIDING" violatedConstraints="#66ea5c59-20a3-4803-800a-63bdfd0fd44d"
+                        hazards="#4ab87c12-33fa-49ad-aedc-aee4d85b4c49"/>
+                    <unsafeControlActions xsi:type="stpa:UnsafeControlAction" id="058ecc6b-8da1-4c79-81e9-4c3c6f1a138f"
+                        name="BSCU Autobrake provides Brake control action with directional or asymmetrical braking during landing roll"
+                        userID="UCA-07" countermeasures="#9fba269a-e26c-461d-9f2f-a3ac91f651fa"
+                        kind="PROVIDING" violatedConstraints="#98a64e18-4df3-4ba3-bc95-b75e30aa6346"
+                        hazards="#4ab87c12-33fa-49ad-aedc-aee4d85b4c49 #c6374642-2950-41c4-acc8-7e23d2531b70"/>
+                    <unsafeControlActions xsi:type="stpa:UnsafeControlAction" id="ace7fd1c-f682-422b-8d9a-2d143f008a47"
+                        name="BSCU Autobrake provides the Brake control action too late (>TBD seconds) after touchdown"
+                        userID="UCA-08" countermeasures="#a48e73f3-cddd-4c4c-8cab-6eef38587986"
+                        kind="WRONG_TIMING" lossScenarios="#9d91a1d3-9696-440e-a4fa-eab2018f78c6"
+                        violatedConstraints="#66ea5c59-20a3-4803-800a-63bdfd0fd44d"
+                        hazards="#4ab87c12-33fa-49ad-aedc-aee4d85b4c49">
+                      <controlFlawSet xsi:type="stpa:ControlFlawSet" id="9190adf4-7289-4043-87d8-31d0d0ec4999">
+                        <controlFlaws xsi:type="stpa:ControlFlaw" id="b667314a-54ba-4350-86de-1f1108a2b006"/>
+                        <controlFlaws xsi:type="stpa:ControlFlaw" id="4c6fb3b8-55f9-4057-9048-dfe07ab6b401"
+                            kind="CONTROL_ALGORITHM" verdict="KO" lossScenarios="#9d91a1d3-9696-440e-a4fa-eab2018f78c6"/>
+                        <controlFlaws xsi:type="stpa:ControlFlaw" id="65cbad8b-84df-4655-b2e7-be41af170186"
+                            kind="PROCESS_MODEL"/>
+                        <controlFlaws xsi:type="stpa:ControlFlaw" id="27442db7-694c-4fc5-a798-a66985a3fbf9"
+                            kind="PROCESS_FAILURE"/>
+                        <controlFlaws xsi:type="stpa:ControlFlaw" id="857c73f1-35d6-4244-a5bc-d412e9e8ed79"
+                            kind="PROCESS_CHANGE"/>
+                        <controlFlaws xsi:type="stpa:ControlFlaw" id="3cd45910-48e7-4950-bafa-37884333a8bc"
+                            kind="PROCESS_CONFLICT"/>
+                        <controlFlaws xsi:type="stpa:ControlFlaw" id="d5815a0b-8f75-4b0a-9d1c-3fd825a5ff0d"
+                            kind="PROCESS_INPUT"/>
+                        <controlFlaws xsi:type="stpa:ControlFlaw" id="fa35824b-a533-4287-a8a2-aab751468719"
+                            kind="PROCESS_DISTURBANCE"/>
+                        <controlFlaws xsi:type="stpa:ControlFlaw" id="14a94744-cfb7-4497-a28f-8d25efabb7f8"
+                            kind="PROCESS_OUTPUT"/>
+                        <controlFlaws xsi:type="stpa:ControlFlaw" id="5e8af0ad-55c2-4108-937f-cac7e82bbb3c"
+                            kind="PROCESS_TO_SENSOR_DELAY"/>
+                        <controlFlaws xsi:type="stpa:ControlFlaw" id="add0e429-382b-474d-b203-5534426306e3"
+                            kind="PROCESS_TO_SENSOR_INACCURATE"/>
+                        <controlFlaws xsi:type="stpa:ControlFlaw" id="0cbeb1f4-a68e-42f6-ad29-243211b22670"
+                            kind="PROCESS_TO_SENSOR_INCORRECT"/>
+                        <controlFlaws xsi:type="stpa:ControlFlaw" id="f0f08b2a-fcd1-4d9c-9266-5891d8db12be"
+                            kind="SENSOR"/>
+                        <controlFlaws xsi:type="stpa:ControlFlaw" id="1f2a7e8e-26b6-4bd2-85a4-151dab71c8bb"
+                            kind="SENSOR_TO_CONTROLLER_DELAY"/>
+                        <controlFlaws xsi:type="stpa:ControlFlaw" id="a17fa187-7243-4a8c-b79b-6ac2e9b0463c"
+                            kind="SENSOR_TO_CONTROLLER_INADEQUATE"/>
+                      </controlFlawSet>
+                    </unsafeControlActions>
+                    <unsafeControlActions xsi:type="stpa:UnsafeControlAction" id="aeebbe3e-63d1-4b81-b0f1-4b3607949afe"
+                        name="BSCU Autobrake stops providing the Brake control action too early (before TBD taxi speed attained) when aircraft lands"
+                        userID="UCA-09" countermeasures="#61c23ac3-9437-49db-93e2-e163927a7bad"
+                        kind="WRONG_DURATION" violatedConstraints="#66ea5c59-20a3-4803-800a-63bdfd0fd44d"
+                        hazards="#4ab87c12-33fa-49ad-aedc-aee4d85b4c49"/>
+                  </controlActions>
+                </outgoingRelations>
+                <outgoingRelations xsi:type="stpa:FeedbackRelation" id="47573fb4-945d-4b2e-ba44-d09d6369b718"
+                    target="#24411696-f613-4f0f-b86b-fdd2e345981e">
+                  <feedback xsi:type="stpa:FeedbackElement" id="91ee164c-8936-4915-9e91-467fc83b1898"
+                      name="Manual breaking state" userID="FB-07"/>
+                  <feedback xsi:type="stpa:FeedbackElement" id="117ea4e4-c760-4f4f-9d75-a933793561ec"
+                      name="Wheel speed" userID="FB-08" responsibilities="#e51e9eb8-47f5-4c5d-a5c7-c48c1572aec4"/>
+                </outgoingRelations>
+                <processModel xsi:type="stpa:ProcessModelVariable" id="83514bcb-d516-4cde-8d16-f5ad395594b4"
+                    name="Breaking is requested by Flight Crew" userID="PM-01" responsibilities="#cdbfa2c3-3ef7-451b-962e-43f11aadce30"/>
+                <processModel xsi:type="stpa:ProcessModelVariable" id="28fcd1f9-31ab-4d19-a9be-f69362c97965"
+                    name="Aircraft landed" userID="PM-03" responsibilities="#980846ac-dcca-45b8-b433-8a434c675f5b"/>
+                <processModel xsi:type="stpa:ProcessModelVariable" id="fd34fa0f-069a-498e-b43e-db53b76d424c"
+                    name="Takeoff is rejected" userID="PM-04" responsibilities="#980846ac-dcca-45b8-b433-8a434c675f5b"/>
+                <processModel xsi:type="stpa:ProcessModelVariable" id="7bc8460a-4156-40d3-97d0-fd6ec67aac35"
+                    name="Aircraft is skidding" userID="PM-02" responsibilities="#e51e9eb8-47f5-4c5d-a5c7-c48c1572aec4"/>
+              </subEntities>
+              <subEntities xsi:type="stpa:ControlEntity" id="24411696-f613-4f0f-b86b-fdd2e345981e"
+                  name="Hydraulic Controller" userID="C-06" incomingRelations="#9d90676e-0ece-4d54-8b27-fb619df5337a #a86ab895-2e3d-4c47-919e-27b42c14f679 #47573fb4-945d-4b2e-ba44-d09d6369b718">
+                <responsibilities xsi:type="stpa:Responsibility" id="4ca4d95e-e8b2-4124-a375-71299e16b629"
+                    name="Actuate wheel brakes" userID="R-08" systemConstraints="#66ea5c59-20a3-4803-800a-63bdfd0fd44d #98a64e18-4df3-4ba3-bc95-b75e30aa6346"
+                    controlActions="#2ad55492-a37c-4dc6-b7f3-2f034cb6a37d"/>
+                <outgoingRelations xsi:type="stpa:FeedbackRelation" id="57a40b3d-adc1-4143-b54c-8a857f1a12c1"
+                    target="#c5181713-89de-457a-b5c3-12b4dc49cf16">
+                  <feedback xsi:type="stpa:FeedbackElement" id="20d7e0d9-0be0-4cbd-878e-13d476caeb13"
+                      name="Wheel speed" userID="FB-09"/>
+                </outgoingRelations>
+                <outgoingRelations xsi:type="stpa:ControlRelation" id="592da2c0-f69e-4d49-ac1f-fe75ba31c2cc"
+                    target="#6999b6a6-f201-4437-9ce1-87ee5a5ac6c8">
+                  <controlActions xsi:type="stpa:ControlAction" id="2ad55492-a37c-4dc6-b7f3-2f034cb6a37d"
+                      name="Open/close valves" userID="CA-08" exercisedResponsibilities="#4ca4d95e-e8b2-4124-a375-71299e16b629"
+                      lossScenarios="#41f825a4-7a42-43a4-ad68-1f59e89bcd9f #20926a23-5339-4b2b-b690-15ddcf8d2200 #62a214d0-d335-44f9-a314-26d851d2a8e4 #4a6e8380-8af6-4ee9-8851-385d25ff07b4 #2d033429-0438-46ae-aa30-cde23a770c95">
+                    <controlFlawSet xsi:type="stpa:ControlFlawSet" id="fb568c6e-57d0-45a8-b551-cd8ccbc6c5ac">
+                      <controlFlaws xsi:type="stpa:ControlFlaw" id="3eda02a6-d09c-405b-b39e-f6e8292f6304"
+                          kind="CONTROLLER_TO_ACTUATOR"/>
+                      <controlFlaws xsi:type="stpa:ControlFlaw" id="637c50ee-9af6-445f-bd75-dcc9111f759a"
+                          kind="ACTUATOR" verdict="KO" lossScenarios="#62a214d0-d335-44f9-a314-26d851d2a8e4 #2d033429-0438-46ae-aa30-cde23a770c95"/>
+                      <controlFlaws xsi:type="stpa:ControlFlaw" id="dc192d0a-a37b-4563-8177-98762aff9e26"
+                          kind="ACTUATOR_TO_PROCESS"/>
+                      <controlFlaws xsi:type="stpa:ControlFlaw" id="6d17382d-1752-4dfb-861c-c23762b42949"
+                          kind="PROCESS_FAILURE" verdict="KO" lossScenarios="#41f825a4-7a42-43a4-ad68-1f59e89bcd9f #20926a23-5339-4b2b-b690-15ddcf8d2200 #4a6e8380-8af6-4ee9-8851-385d25ff07b4"/>
+                      <controlFlaws xsi:type="stpa:ControlFlaw" id="76a8f507-05b9-48a1-a189-a65ea18e45ec"
+                          kind="PROCESS_CHANGE"/>
+                      <controlFlaws xsi:type="stpa:ControlFlaw" id="9da585a3-26b3-4f45-b6f4-1c06990fbad7"
+                          kind="PROCESS_CONFLICT"/>
+                      <controlFlaws xsi:type="stpa:ControlFlaw" id="3e993bda-fa57-4f19-8f41-e4a950df9215"
+                          kind="PROCESS_INPUT"/>
+                      <controlFlaws xsi:type="stpa:ControlFlaw" id="d7cf6bd5-2abb-4863-b9b2-54393e9d8b2a"
+                          kind="PROCESS_DISTURBANCE"/>
+                      <controlFlaws xsi:type="stpa:ControlFlaw" id="f0a74d87-0fd6-4944-8e0a-746d85b4ef92"
+                          kind="PROCESS_OUTPUT"/>
+                    </controlFlawSet>
+                  </controlActions>
+                </outgoingRelations>
+              </subEntities>
+            </subEntities>
+            <subEntities xsi:type="stpa:ControlEntity" id="6999b6a6-f201-4437-9ce1-87ee5a5ac6c8"
+                name="Hydraulic Wheel Brakes" userID="C-07" incomingRelations="#cb0d9843-ab85-417e-895c-566ad1d32d7e #b29a2ec3-b85e-4c27-b968-63c8f42ee9d9 #592da2c0-f69e-4d49-ac1f-fe75ba31c2cc">
+              <responsibilities xsi:type="stpa:Responsibility" id="38a16490-05d6-494e-8d0e-5be6e4d2a826"
+                  name="Decelerate wheels when commanded by BSCU or Flight Crew" userID="R-09"
+                  systemConstraints="#66ea5c59-20a3-4803-800a-63bdfd0fd44d" controlActions="#61fcb0f2-3c79-47b8-82ff-64fa8420c704"/>
+              <outgoingRelations xsi:type="stpa:ControlRelation" id="5cece442-dffc-451e-8438-6fb5f2aa883b"
+                  target="#c5181713-89de-457a-b5c3-12b4dc49cf16">
+                <controlActions xsi:type="stpa:ControlAction" id="61fcb0f2-3c79-47b8-82ff-64fa8420c704"
+                    name="Brake" userID="CA-09" exercisedResponsibilities="#38a16490-05d6-494e-8d0e-5be6e4d2a826"
+                    lossScenarios="#a8add3bf-6bbf-409d-bd92-7a5f5c0887e9">
+                  <controlFlawSet xsi:type="stpa:ControlFlawSet" id="097aa7b0-0cc6-4650-bb7d-534118004699">
+                    <controlFlaws xsi:type="stpa:ControlFlaw" id="d9068a5f-25e0-4651-af6a-d9df99ec4fd5"
+                        kind="CONTROLLER_TO_ACTUATOR" verdict="KO" lossScenarios="#a8add3bf-6bbf-409d-bd92-7a5f5c0887e9"/>
+                    <controlFlaws xsi:type="stpa:ControlFlaw" id="3a0a507c-ca64-40a1-a363-dc9515cc207d"
+                        kind="ACTUATOR"/>
+                    <controlFlaws xsi:type="stpa:ControlFlaw" id="296a3009-3da6-41cd-9494-f9f5400a2edd"
+                        kind="ACTUATOR_TO_PROCESS"/>
+                    <controlFlaws xsi:type="stpa:ControlFlaw" id="5a946ff6-9749-4606-aed5-13f2354e82af"
+                        kind="PROCESS_FAILURE"/>
+                    <controlFlaws xsi:type="stpa:ControlFlaw" id="55ef640d-bc4a-4e53-be4f-5bc69ab80632"
+                        kind="PROCESS_CHANGE"/>
+                    <controlFlaws xsi:type="stpa:ControlFlaw" id="f12c8511-598b-4ee1-ab68-b09b40138bcb"
+                        kind="PROCESS_CONFLICT"/>
+                    <controlFlaws xsi:type="stpa:ControlFlaw" id="4c8bd754-6e3d-4e7c-93b4-c31fbc8b58af"
+                        kind="PROCESS_INPUT"/>
+                    <controlFlaws xsi:type="stpa:ControlFlaw" id="83567258-69e8-42f2-b20a-64af19ee0e10"
+                        kind="PROCESS_DISTURBANCE"/>
+                    <controlFlaws xsi:type="stpa:ControlFlaw" id="dc17b830-620a-42d8-9485-4216100d31b9"
+                        kind="PROCESS_OUTPUT"/>
+                  </controlFlawSet>
+                </controlActions>
+              </outgoingRelations>
+            </subEntities>
+          </subEntities>
+          <subEntities xsi:type="stpa:ControlEntity" id="d4f42557-e6f7-4c39-8e8d-bd3f2a8e8713"
+              name="Other subsystems" userID="C-08" incomingRelations="#a287105b-feea-4483-a573-00accbc2ae75 #7b255782-60b8-4a79-a80f-a374497f5a2a">
+            <outgoingRelations xsi:type="stpa:InformationExchangeRelation" id="40ea347a-6c42-464d-9ea3-2937c6dfd312"
+                target="#f13e59fe-2872-4f28-85c5-e53cab42d76e">
+              <information xsi:type="stpa:PieceOfInformation" id="64e196a2-a1bb-4e59-ae72-e547dc08294a"
+                  name="Touchdown" userID="INF-01" responsibilities="#980846ac-dcca-45b8-b433-8a434c675f5b"/>
+              <information xsi:type="stpa:PieceOfInformation" id="3443e3a6-1332-41b7-a680-4f07babcecdc"
+                  name="Rejected takeoff" userID="INF-02" responsibilities="#980846ac-dcca-45b8-b433-8a434c675f5b"/>
+            </outgoingRelations>
+          </subEntities>
+          <subEntities xsi:type="stpa:ControlEntity" id="c5181713-89de-457a-b5c3-12b4dc49cf16"
+              name="Wheels" userID="C-09" process="true" incomingRelations="#5cece442-dffc-451e-8438-6fb5f2aa883b #57a40b3d-adc1-4143-b54c-8a857f1a12c1"/>
+        </rootEntities>
+      </controlStructurePackage>
+      <lossScenarioPackage xsi:type="stpa:LossScenarioPackage" id="9b2dcf9a-f7d6-4dc2-ad65-50e44cfcc423"
+          name="Loss Scenarios">
+        <lossScenarios xsi:type="stpa:LossScenario" id="ed569f94-6d01-4489-8be7-f7077d6c19c0"
+            name="Autobrake failure leads to insufficient deceleration upon landing"
+            description="&lt;p>The BSCU Autobrake physical controller fails during landing roll when BSCU is armed, causing the Brake control action to not be provided &lt;a href=&quot;hlink://1cde2443-66d4-43b9-b7b7-64a70512cfd3&quot;>(UCA-04)&lt;/a>. As a result, insufficient deceleration may be provided upon landing &lt;a href=&quot;hlink://4ab87c12-33fa-49ad-aedc-aee4d85b4c49&quot;>(H-05)&lt;/a>.&lt;/p>&#xA;"
+            userID="LS-01" controlAction="#f625d541-bf14-4343-86d8-287fb18ecbff" unsafeControlAction="#1cde2443-66d4-43b9-b7b7-64a70512cfd3"
+            hazards="#4ab87c12-33fa-49ad-aedc-aee4d85b4c49"/>
+        <lossScenarios xsi:type="stpa:LossScenario" id="9d91a1d3-9696-440e-a4fa-eab2018f78c6"
+            name="BSCU processing delays lead to insufficient deceleration upon landing"
+            description="&lt;p>The aircraft lands, but processing delays within the BSCU result in the Brake control action being provided too late &lt;a href=&quot;hlink://ace7fd1c-f682-422b-8d9a-2d143f008a47&quot;>(UCA-08)&lt;/a>. As a result, insufficient deceleration may be provided upon landing &lt;a href=&quot;hlink://4ab87c12-33fa-49ad-aedc-aee4d85b4c49&quot;>(H-05)&lt;/a>.&lt;/p>&#xA;"
+            userID="LS-02" controlAction="#f625d541-bf14-4343-86d8-287fb18ecbff" unsafeControlAction="#ace7fd1c-f682-422b-8d9a-2d143f008a47"
+            causalFactors="#4c6fb3b8-55f9-4057-9048-dfe07ab6b401" hazards="#4ab87c12-33fa-49ad-aedc-aee4d85b4c49"/>
+        <lossScenarios xsi:type="stpa:LossScenario" id="1e35b977-ab6a-4311-bb24-59993da6d01d"
+            name="Inadequate operating procedures for faulty BSCU" description="&lt;p>Abnormal WBS behavior occurs and a BSCU fault indication is provided to the crew. The crew does not power off the BSCU &lt;a href=&quot;hlink://2b2825b2-0fd5-4d4e-94cc-942b480b133c&quot;>(UCA-01)&lt;/a>&amp;nbsp;because the operating procedures did not specify that the crew must power off the BSCU upon receiving a BSCU fault indication.&lt;/p>&#xA;"
+            userID="LS-03" controlAction="#8b130ab5-2fb9-46a8-884e-03b2d6a37e0e" unsafeControlAction="#2b2825b2-0fd5-4d4e-94cc-942b480b133c"
+            causalFactors="#b08aeb5a-fc5c-4969-852b-37b227a0409d" hazards="#4ab87c12-33fa-49ad-aedc-aee4d85b4c49 #f0881f0c-bd1a-4db2-a4d2-15f5cd59e414"/>
+        <lossScenarios xsi:type="stpa:LossScenario" id="1498971f-a547-4ad7-a8fb-9491ffdcd035"
+            name="BSCU fooled by anti-skid operation" description="&lt;p>The BSCU is armed and the aircraft begins landing roll. The BSCU does not provide the Brake control action&amp;nbsp;&lt;a href=&quot;hlink://1cde2443-66d4-43b9-b7b7-64a70512cfd3&quot;>(UCA-04)&lt;/a> because the BSCU incorrectly believes the aircraft has already come to a stop. This flawed process model will occur if the received feedback momentarily indicates zero speed during landing roll. The received feedback may momentarily indicate zero speed during anti-skid operation, even though the aircraft is not stopped.&lt;/p>&#xA;"
+            userID="LS-04" controlAction="#f625d541-bf14-4343-86d8-287fb18ecbff" unsafeControlAction="#1cde2443-66d4-43b9-b7b7-64a70512cfd3"
+            causalFactors="#55d7e864-c4c0-4884-8f81-134327109323 #5a9d92a1-71f4-4443-a466-8bf0830adc39"
+            hazards="#4ab87c12-33fa-49ad-aedc-aee4d85b4c49"/>
+        <lossScenarios xsi:type="stpa:LossScenario" id="18ac75d6-24d7-4d9d-8cf2-f072a28d4c33"
+            name="BSCU fooled by missing touchdown" description="&lt;p>The BSCU is armed and the aircraft begins landing roll. The BSCU does not provide the Brake control action&amp;nbsp;&lt;a href=&quot;hlink://1cde2443-66d4-43b9-b7b7-64a70512cfd3&quot;>(UCA-04)&lt;/a> because the BSCU incorrectly believes the aircraft is in the air and has not touched down. This flawed process model will occur if the touchdown indication is not received upon touchdown. The touchdown indication may not be received when needed if any of the following occur:&lt;/p>&#xA;&#xA;&lt;ul>&#xA;&#x9;&lt;li>Wheels hydroplane due to a wet runway (insufficient wheel speed)&lt;/li>&#xA;&#x9;&lt;li>Wheel speed feedback is delayed due to filtering used&lt;/li>&#xA;&#x9;&lt;li>Conflicting air/ground indications due to crosswind landing&lt;/li>&#xA;&#x9;&lt;li>Failure of wheel speed sensors&lt;/li>&#xA;&#x9;&lt;li>Failure of air/ground switches&lt;/li>&#xA;&#x9;&lt;li>Etc.&lt;/li>&#xA;&lt;/ul>&#xA;&#xA;&lt;p>As a result, insufficient deceleration may be provided upon landing &lt;a href=&quot;hlink://4ab87c12-33fa-49ad-aedc-aee4d85b4c49&quot;>(H-05)&lt;/a>.&lt;/p>&#xA;"
+            userID="LS-05" controlAction="#f625d541-bf14-4343-86d8-287fb18ecbff" unsafeControlAction="#1cde2443-66d4-43b9-b7b7-64a70512cfd3"
+            causalFactors="#62574004-173d-40ec-9ec1-d9310cf7ae81 #5a9d92a1-71f4-4443-a466-8bf0830adc39"
+            hazards="#4ab87c12-33fa-49ad-aedc-aee4d85b4c49"/>
+        <lossScenarios xsi:type="stpa:LossScenario" id="41f825a4-7a42-43a4-ad68-1f59e89bcd9f"
+            name="BSCU breaking ineffective due to actuator failure" description="&lt;p>The BSCU sends the Brake command upon landing, but the brakes are not applied due to actuator failure. As a result, insufficient deceleration may be provided upon landing.&lt;/p>&#xA;"
+            userID="LS-06" controlAction="#2ad55492-a37c-4dc6-b7f3-2f034cb6a37d" causalFactors="#6d17382d-1752-4dfb-861c-c23762b42949"
+            hazards="#4ab87c12-33fa-49ad-aedc-aee4d85b4c49"/>
+        <lossScenarios xsi:type="stpa:LossScenario" id="20926a23-5339-4b2b-b690-15ddcf8d2200"
+            name="BSCU breaking ineffective due to slow actuator response" description="&lt;p>The BSCU sends the Brake command upon landing, but insufficient braking is applied due to slow actuator response. As a result, insufficient deceleration may be provided upon landing.&lt;/p>&#xA;"
+            userID="LS-07" controlAction="#2ad55492-a37c-4dc6-b7f3-2f034cb6a37d" causalFactors="#6d17382d-1752-4dfb-861c-c23762b42949"
+            hazards="#4ab87c12-33fa-49ad-aedc-aee4d85b4c49"/>
+        <lossScenarios xsi:type="stpa:LossScenario" id="62a214d0-d335-44f9-a314-26d851d2a8e4"
+            name="BSCU breaking ineffective due to wiring error" description="&lt;p>The BSCU sends the Brake command upon landing, but it is not received by the actuator due to a wiring error. As a result, insufficient deceleration may be provided upon landing.&lt;/p>&#xA;"
+            userID="LS-08" controlAction="#2ad55492-a37c-4dc6-b7f3-2f034cb6a37d" causalFactors="#637c50ee-9af6-445f-bd75-dcc9111f759a"
+            hazards="#4ab87c12-33fa-49ad-aedc-aee4d85b4c49"/>
+        <lossScenarios xsi:type="stpa:LossScenario" id="4a6e8380-8af6-4ee9-8851-385d25ff07b4"
+            name="Improper BSCU breaking due to valve failure" description="&lt;p>The BSCU does not send Brake command, but the brakes are applied due to hydraulic valve failure. As a result, acceleration may be insufficient during takeoff.&lt;/p>&#xA;"
+            userID="LS-09" controlAction="#2ad55492-a37c-4dc6-b7f3-2f034cb6a37d" causalFactors="#6d17382d-1752-4dfb-861c-c23762b42949"
+            hazards="#4562e61d-095a-425f-b69b-7e8c4111e510"/>
+        <lossScenarios xsi:type="stpa:LossScenario" id="2d033429-0438-46ae-aa30-cde23a770c95"
+            name="BSCU breaking ineffective due to DoS attack" description="&lt;p>The BSCU sends the Brake command, but the brakes are not applied because an adversary executes a denial of service attack that blocks the Brake command. As a result, insufficient deceleration may be provided upon landing.&lt;/p>&#xA;"
+            userID="LS-10" controlAction="#2ad55492-a37c-4dc6-b7f3-2f034cb6a37d" causalFactors="#637c50ee-9af6-445f-bd75-dcc9111f759a"
+            hazards="#4ab87c12-33fa-49ad-aedc-aee4d85b4c49"/>
+        <lossScenarios xsi:type="stpa:LossScenario" id="20c315e7-7e75-4194-8be6-18dc728ed1c0"
+            name="BSCU breaking ineffective due to WBS in alternate braking mode"
+            description="&lt;p>The BSCU sends Brake command, but the brakes are not applied because the wheel braking system was previously commanded into alternate braking mode (bypassing the BSCU). As a result, insufficient deceleration may be provided upon landing.&lt;/p>&#xA;"
+            userID="LS-11" controlAction="#f625d541-bf14-4343-86d8-287fb18ecbff" causalFactors="#8698bfaa-ca7e-43c6-ad2f-75033976cb1d"
+            hazards="#4ab87c12-33fa-49ad-aedc-aee4d85b4c49"/>
+        <lossScenarios xsi:type="stpa:LossScenario" id="faf5e257-2912-43fb-9a8f-09784bea8a50"
+            name="Improper BSCU breaking due to insufficient hydraulic pressure" description="&lt;p>The BSCU sends Brake command, but the brakes are not applied due to insufficient hydraulic pressure (pump failure, hydraulic leak, etc.). As a result, insufficient deceleration may be provided upon landing.&lt;/p>&#xA;"
+            userID="LS-12" controlAction="#f625d541-bf14-4343-86d8-287fb18ecbff" causalFactors="#522f048d-b5a8-44e0-a560-319a27e930a3"
+            hazards="#4ab87c12-33fa-49ad-aedc-aee4d85b4c49"/>
+        <lossScenarios xsi:type="stpa:LossScenario" id="a8add3bf-6bbf-409d-bd92-7a5f5c0887e9"
+            name="BSCU breaking ineffective due to wet runway" description="&lt;p>The BSCU sends Brake command, the brakes are applied, but the aircraft does not decelerate due to a wet runway (wheels hydroplane). As a result, insufficient deceleration may be provided upon landing.&lt;/p>&#xA;"
+            userID="LS-13" controlAction="#61fcb0f2-3c79-47b8-82ff-64fa8420c704" causalFactors="#d9068a5f-25e0-4651-af6a-d9df99ec4fd5"
+            hazards="#4ab87c12-33fa-49ad-aedc-aee4d85b4c49"/>
+        <lossScenarios xsi:type="stpa:LossScenario" id="e3133138-f11c-49f6-84b7-fc619a4f824d"
+            name="BSCU breaking ineffective due to command injected by adversary"
+            description="&lt;p>The BSCU sends Brake command, but the brakes are not applied because an adversary injected a command that put the wheel braking system into alternate braking mode. As a result, insufficient deceleration may be provided upon landing.&lt;/p>&#xA;"
+            userID="LS-14" controlAction="#f625d541-bf14-4343-86d8-287fb18ecbff" causalFactors="#8698bfaa-ca7e-43c6-ad2f-75033976cb1d"
+            hazards="#4ab87c12-33fa-49ad-aedc-aee4d85b4c49"/>
+      </lossScenarioPackage>
+    </ownedExtensions>
+    <ownedArchitectures xsi:type="org.polarsys.capella.core.data.oa:OperationalAnalysis"
+        id="54b5ccbb-f9b6-4a32-a96d-f128531a488c" name="Operational Analysis">
+      <ownedFunctionPkg xsi:type="org.polarsys.capella.core.data.oa:OperationalActivityPkg"
+          id="62fbee10-70aa-4fc3-b338-def302a36286" name="Operational Activities">
+        <ownedOperationalActivities xsi:type="org.polarsys.capella.core.data.oa:OperationalActivity"
+            id="14b89240-7496-4a96-937b-92cbbb58f2e5" name="Root Operational Activity"/>
+      </ownedFunctionPkg>
+      <ownedAbstractCapabilityPkg xsi:type="org.polarsys.capella.core.data.oa:OperationalCapabilityPkg"
+          id="57c5de0c-e015-4b2c-b8f5-c2913fcce1d2" name="Operational Capabilities"/>
+      <ownedInterfacePkg xsi:type="org.polarsys.capella.core.data.cs:InterfacePkg"
+          id="f9d6837c-531c-4f78-bc5b-d6399d79ef8b" name="Interfaces"/>
+      <ownedDataPkg xsi:type="org.polarsys.capella.core.data.information:DataPkg"
+          id="9bd62653-fba1-49d6-894f-32ce1dacee6e" name="Data"/>
+      <ownedRolePkg xsi:type="org.polarsys.capella.core.data.oa:RolePkg" id="aca13588-2cb6-4c31-998f-9495b325d3cd"
+          name="Roles"/>
+      <ownedEntityPkg xsi:type="org.polarsys.capella.core.data.oa:EntityPkg" id="1d819b96-3e42-40c2-b738-42c9e7cdf178"
+          name="Operational Entities"/>
+    </ownedArchitectures>
+    <ownedArchitectures xsi:type="org.polarsys.capella.core.data.ctx:SystemAnalysis"
+        id="2ee44f82-23b6-46d8-82dd-7a0e12c2a1ef" name="System Analysis">
+      <ownedFunctionPkg xsi:type="org.polarsys.capella.core.data.ctx:SystemFunctionPkg"
+          id="7aa5dd99-af21-4359-adc6-eb1e4424aa62" name="System Functions">
+        <ownedSystemFunctions xsi:type="org.polarsys.capella.core.data.ctx:SystemFunction"
+            id="3700c8a7-e94b-4002-88db-f5fd1e9c0bf0" name="Root System Function">
+          <ownedFunctionRealizations xsi:type="org.polarsys.capella.core.data.fa:FunctionRealization"
+              id="8457a3f8-081f-4376-8cb8-5b3497c1ba53" targetElement="#14b89240-7496-4a96-937b-92cbbb58f2e5"
+              sourceElement="#3700c8a7-e94b-4002-88db-f5fd1e9c0bf0"/>
+        </ownedSystemFunctions>
+      </ownedFunctionPkg>
+      <ownedAbstractCapabilityPkg xsi:type="org.polarsys.capella.core.data.ctx:CapabilityPkg"
+          id="8c407279-f5a5-4b67-b423-07b3df33f5b8" name="Capabilities"/>
+      <ownedInterfacePkg xsi:type="org.polarsys.capella.core.data.cs:InterfacePkg"
+          id="b80c41c3-de0f-425a-a2e9-332d208d16c0" name="Interfaces"/>
+      <ownedDataPkg xsi:type="org.polarsys.capella.core.data.information:DataPkg"
+          id="6ba408e2-c933-47a4-86ad-31a3ce174440" name="Data">
+        <ownedDataPkgs xsi:type="org.polarsys.capella.core.data.information:DataPkg"
+            id="a680a4e8-844e-4941-a1ac-0660d227504f" name="Predefined Types">
+          <ownedDataTypes xsi:type="org.polarsys.capella.core.data.information.datatype:BooleanType"
+              id="5b82b487-16f4-483c-bd76-11ee7c24ab10" name="Boolean" visibility="PUBLIC">
+            <ownedLiterals xsi:type="org.polarsys.capella.core.data.information.datavalue:LiteralBooleanValue"
+                id="f908cad7-a368-4915-b78b-066537d1379c" name="True" abstractType="#5b82b487-16f4-483c-bd76-11ee7c24ab10"
+                value="true"/>
+            <ownedLiterals xsi:type="org.polarsys.capella.core.data.information.datavalue:LiteralBooleanValue"
+                id="8531c7fd-3b98-47d1-86d6-b5849487218f" name="False" abstractType="#5b82b487-16f4-483c-bd76-11ee7c24ab10"/>
+          </ownedDataTypes>
+          <ownedDataTypes xsi:type="org.polarsys.capella.core.data.information.datatype:NumericType"
+              id="6661e3af-dc1a-4983-8f22-901d404529b3" name="Byte" visibility="PUBLIC">
+            <ownedMinValue xsi:type="org.polarsys.capella.core.data.information.datavalue:LiteralNumericValue"
+                id="9982d50c-41ed-4192-a020-2dfd1187a19f" name="" abstractType="#6661e3af-dc1a-4983-8f22-901d404529b3"
+                value="0"/>
+            <ownedMaxValue xsi:type="org.polarsys.capella.core.data.information.datavalue:LiteralNumericValue"
+                id="71a7a64e-f5a1-4466-a02a-8aa26594a73d" name="" abstractType="#6661e3af-dc1a-4983-8f22-901d404529b3"
+                value="255"/>
+          </ownedDataTypes>
+          <ownedDataTypes xsi:type="org.polarsys.capella.core.data.information.datatype:StringType"
+              id="dfb3f0e3-a39f-4bfe-9509-154007499ffd" name="Char" visibility="PUBLIC">
+            <ownedMinLength xsi:type="org.polarsys.capella.core.data.information.datavalue:LiteralNumericValue"
+                id="fecd7470-aa9c-4756-8cd3-3ab21d8fd264" name="" abstractType="#d0620e60-a03f-47fd-bbef-86c29f6f45c6"
+                value="1"/>
+            <ownedMaxLength xsi:type="org.polarsys.capella.core.data.information.datavalue:LiteralNumericValue"
+                id="780d9c4f-1ae3-45ec-90ee-25fa67c43772" name="" abstractType="#d0620e60-a03f-47fd-bbef-86c29f6f45c6"
+                value="1"/>
+          </ownedDataTypes>
+          <ownedDataTypes xsi:type="org.polarsys.capella.core.data.information.datatype:NumericType"
+              id="36deae20-928a-4591-9cfb-b1798eb96dd7" name="Double" discrete="false"
+              visibility="PUBLIC" kind="FLOAT"/>
+          <ownedDataTypes xsi:type="org.polarsys.capella.core.data.information.datatype:NumericType"
+              id="6636d329-1e3e-41fc-b94d-a87be3399d5d" name="Float" discrete="false"
+              visibility="PUBLIC" kind="FLOAT"/>
+          <ownedDataTypes xsi:type="org.polarsys.capella.core.data.information.datatype:NumericType"
+              id="3ffb7f4b-54f8-42f6-9898-2eff79acb282" name="Hexadecimal" visibility="PUBLIC">
+            <ownedMinValue xsi:type="org.polarsys.capella.core.data.information.datavalue:LiteralNumericValue"
+                id="d6d47319-e14d-4d37-9747-91380d0c4ba4" name="" abstractType="#3ffb7f4b-54f8-42f6-9898-2eff79acb282"
+                value="0"/>
+            <ownedMaxValue xsi:type="org.polarsys.capella.core.data.information.datavalue:BinaryExpression"
+                id="d4f0feb3-c5fe-4953-b231-a8a1994d2028" abstractType="#3ffb7f4b-54f8-42f6-9898-2eff79acb282"
+                operator="SUB">
+              <ownedLeftOperand xsi:type="org.polarsys.capella.core.data.information.datavalue:BinaryExpression"
+                  id="305f5481-5a7c-40d9-93f1-7eb7b2cde3ba" operator="POW">
+                <ownedLeftOperand xsi:type="org.polarsys.capella.core.data.information.datavalue:LiteralNumericValue"
+                    id="5bc266e6-98d5-4470-b59f-b7fdd7845ac1" value="2"/>
+                <ownedRightOperand xsi:type="org.polarsys.capella.core.data.information.datavalue:LiteralNumericValue"
+                    id="72a885c6-6e89-40ab-90de-a7692e7b745e" value="64"/>
+              </ownedLeftOperand>
+              <ownedRightOperand xsi:type="org.polarsys.capella.core.data.information.datavalue:LiteralNumericValue"
+                  id="dd6b54d6-7d3d-463e-b395-2b9f5eb9f92d" value="1"/>
+            </ownedMaxValue>
+          </ownedDataTypes>
+          <ownedDataTypes xsi:type="org.polarsys.capella.core.data.information.datatype:NumericType"
+              id="64e15ec9-8bbb-42ab-9c84-3278b20f6c17" name="Integer" visibility="PUBLIC"/>
+          <ownedDataTypes xsi:type="org.polarsys.capella.core.data.information.datatype:NumericType"
+              id="f5e05cad-c06e-4570-a2b8-ad73e3b4c98d" name="Long" visibility="PUBLIC"/>
+          <ownedDataTypes xsi:type="org.polarsys.capella.core.data.information.datatype:NumericType"
+              id="ae4b4481-44db-443a-9fcb-58a1d090cd18" name="LongLong" visibility="PUBLIC"/>
+          <ownedDataTypes xsi:type="org.polarsys.capella.core.data.information.datatype:NumericType"
+              id="b178b1ac-7e63-41cb-9031-87a1dc124315" name="Short" visibility="PUBLIC"/>
+          <ownedDataTypes xsi:type="org.polarsys.capella.core.data.information.datatype:StringType"
+              id="20ac87a1-bd30-4716-8bc4-c1a5682d1cba" name="String" visibility="PUBLIC"/>
+          <ownedDataTypes xsi:type="org.polarsys.capella.core.data.information.datatype:NumericType"
+              id="04824f3a-757a-47a6-be71-9ee6db90bcbc" name="UnsignedInteger" maxInclusive="false"
+              visibility="PUBLIC">
+            <ownedMinValue xsi:type="org.polarsys.capella.core.data.information.datavalue:LiteralNumericValue"
+                id="442ff011-1b05-4261-88d2-b0be5ed98189" name="" abstractType="#04824f3a-757a-47a6-be71-9ee6db90bcbc"
+                value="0"/>
+          </ownedDataTypes>
+          <ownedDataTypes xsi:type="org.polarsys.capella.core.data.information.datatype:NumericType"
+              id="d0620e60-a03f-47fd-bbef-86c29f6f45c6" name="UnsignedShort" maxInclusive="false"
+              visibility="PUBLIC">
+            <ownedMinValue xsi:type="org.polarsys.capella.core.data.information.datavalue:LiteralNumericValue"
+                id="7ea273d8-a623-438a-983b-8f26b652c9d3" name="" abstractType="#d0620e60-a03f-47fd-bbef-86c29f6f45c6"
+                value="0"/>
+          </ownedDataTypes>
+          <ownedDataTypes xsi:type="org.polarsys.capella.core.data.information.datatype:NumericType"
+              id="fb6f4d02-8a6c-473d-8a0a-e25b85e82c62" name="UnsignedLong" maxInclusive="false"
+              visibility="PUBLIC">
+            <ownedMinValue xsi:type="org.polarsys.capella.core.data.information.datavalue:LiteralNumericValue"
+                id="c424a9e2-2c2d-4a61-80db-d02aa22a7af4" name="" abstractType="#fb6f4d02-8a6c-473d-8a0a-e25b85e82c62"
+                value="0"/>
+          </ownedDataTypes>
+          <ownedDataTypes xsi:type="org.polarsys.capella.core.data.information.datatype:NumericType"
+              id="b708c8ab-c293-43cf-891d-4ba6c6ae386d" name="UnsignedLongLong" maxInclusive="false"
+              visibility="PUBLIC">
+            <ownedMinValue xsi:type="org.polarsys.capella.core.data.information.datavalue:LiteralNumericValue"
+                id="47cc6ad7-28bf-44a2-b4e0-c46add33dc56" name="" abstractType="#b708c8ab-c293-43cf-891d-4ba6c6ae386d"
+                value="0"/>
+          </ownedDataTypes>
+        </ownedDataPkgs>
+      </ownedDataPkg>
+      <ownedSystemComponentPkg xsi:type="org.polarsys.capella.core.data.ctx:SystemComponentPkg"
+          id="1e6b6f1d-aa1b-4121-98d0-d851f275f3f3" name="Structure">
+        <ownedParts xsi:type="org.polarsys.capella.core.data.cs:Part" id="4c5580bc-3829-4069-a86b-bbf10f1295cd"
+            name="System" abstractType="#1ed74dc2-e1a8-4fff-9708-059d263dc39c"/>
+        <ownedSystemComponents xsi:type="org.polarsys.capella.core.data.ctx:SystemComponent"
+            id="1ed74dc2-e1a8-4fff-9708-059d263dc39c" name="System">
+          <ownedStateMachines xsi:type="org.polarsys.capella.core.data.capellacommon:StateMachine"
+              id="e335688a-38e1-431e-bce0-c47b2028b2bc" name="System State Machine">
+            <ownedRegions xsi:type="org.polarsys.capella.core.data.capellacommon:Region"
+                id="e7e97b2a-b11c-4bea-95ad-d412cecfedc8" name="Default Region"/>
+          </ownedStateMachines>
+        </ownedSystemComponents>
+      </ownedSystemComponentPkg>
+      <ownedMissionPkg xsi:type="org.polarsys.capella.core.data.ctx:MissionPkg" id="acab89e2-e894-4b86-874b-fd858816579a"
+          name="Missions"/>
+      <ownedOperationalAnalysisRealizations xsi:type="org.polarsys.capella.core.data.ctx:OperationalAnalysisRealization"
+          id="7eb22a99-5318-4073-930e-a0cfb0e8e0d9" targetElement="#54b5ccbb-f9b6-4a32-a96d-f128531a488c"
+          sourceElement="#2ee44f82-23b6-46d8-82dd-7a0e12c2a1ef"/>
+    </ownedArchitectures>
+    <ownedArchitectures xsi:type="org.polarsys.capella.core.data.la:LogicalArchitecture"
+        id="80477943-f3f2-4392-a028-0148294dbd5f" name="Logical Architecture">
+      <ownedFunctionPkg xsi:type="org.polarsys.capella.core.data.la:LogicalFunctionPkg"
+          id="da8ad0dc-14e2-467e-a683-54833730a362" name="Logical Functions">
+        <ownedLogicalFunctions xsi:type="org.polarsys.capella.core.data.la:LogicalFunction"
+            id="3d626b96-d68c-49b6-8594-6b567ef07be0" name="Root Logical Function">
+          <ownedFunctionRealizations xsi:type="org.polarsys.capella.core.data.fa:FunctionRealization"
+              id="9c853da8-d21f-4fc9-9a44-8b2aa10ba978" targetElement="#3700c8a7-e94b-4002-88db-f5fd1e9c0bf0"
+              sourceElement="#3d626b96-d68c-49b6-8594-6b567ef07be0"/>
+        </ownedLogicalFunctions>
+      </ownedFunctionPkg>
+      <ownedAbstractCapabilityPkg xsi:type="org.polarsys.capella.core.data.la:CapabilityRealizationPkg"
+          id="224ffde7-14ca-4885-8a9d-4d859d2f50df" name="Capabilities"/>
+      <ownedInterfacePkg xsi:type="org.polarsys.capella.core.data.cs:InterfacePkg"
+          id="32157978-f54b-4fc2-9101-e1cae1c0958e" name="Interfaces"/>
+      <ownedDataPkg xsi:type="org.polarsys.capella.core.data.information:DataPkg"
+          id="a59ed599-befa-4f90-ba26-c56fbf5884ab" name="Data"/>
+      <ownedLogicalComponentPkg xsi:type="org.polarsys.capella.core.data.la:LogicalComponentPkg"
+          id="4468c7f5-22b1-43d2-8904-98d833047e80" name="Structure">
+        <ownedParts xsi:type="org.polarsys.capella.core.data.cs:Part" id="cf15a7eb-cb7e-4e9a-906a-c06182bbd4ad"
+            name="Logical System" abstractType="#5881e2e9-0fd1-46e4-9e7f-70bfdb74c9ac"/>
+        <ownedLogicalComponents xsi:type="org.polarsys.capella.core.data.la:LogicalComponent"
+            id="5881e2e9-0fd1-46e4-9e7f-70bfdb74c9ac" name="Logical System">
+          <ownedComponentRealizations xsi:type="org.polarsys.capella.core.data.cs:ComponentRealization"
+              id="9292bdd6-f1fd-47dc-9e04-afebfdc84923" targetElement="#1ed74dc2-e1a8-4fff-9708-059d263dc39c"
+              sourceElement="#5881e2e9-0fd1-46e4-9e7f-70bfdb74c9ac"/>
+        </ownedLogicalComponents>
+      </ownedLogicalComponentPkg>
+      <ownedSystemAnalysisRealizations xsi:type="org.polarsys.capella.core.data.la:SystemAnalysisRealization"
+          id="82679755-273e-435b-a0cc-d545df14a463" targetElement="#2ee44f82-23b6-46d8-82dd-7a0e12c2a1ef"
+          sourceElement="#80477943-f3f2-4392-a028-0148294dbd5f"/>
+    </ownedArchitectures>
+    <ownedArchitectures xsi:type="org.polarsys.capella.core.data.pa:PhysicalArchitecture"
+        id="e5192636-af97-44a5-bca1-5ce3024e9b54" name="Physical Architecture">
+      <ownedFunctionPkg xsi:type="org.polarsys.capella.core.data.pa:PhysicalFunctionPkg"
+          id="014b413b-8cc9-48a2-b30f-99eeff052c1f" name="Physical Functions">
+        <ownedPhysicalFunctions xsi:type="org.polarsys.capella.core.data.pa:PhysicalFunction"
+            id="aaf851f7-e4cc-4ac7-b519-1fff3b46d55a" name="Root Physical Function">
+          <ownedFunctionRealizations xsi:type="org.polarsys.capella.core.data.fa:FunctionRealization"
+              id="3a20651d-b4ee-4a09-90ab-d1323ca773f1" targetElement="#3d626b96-d68c-49b6-8594-6b567ef07be0"
+              sourceElement="#aaf851f7-e4cc-4ac7-b519-1fff3b46d55a"/>
+        </ownedPhysicalFunctions>
+      </ownedFunctionPkg>
+      <ownedAbstractCapabilityPkg xsi:type="org.polarsys.capella.core.data.la:CapabilityRealizationPkg"
+          id="0638d11d-d2f5-41e6-a790-5ceba23f6c7e" name="Capabilities"/>
+      <ownedInterfacePkg xsi:type="org.polarsys.capella.core.data.cs:InterfacePkg"
+          id="1b1c6482-f797-429c-b2b0-102c94329ec8" name="Interfaces"/>
+      <ownedDataPkg xsi:type="org.polarsys.capella.core.data.information:DataPkg"
+          id="14db9555-7c4a-4e30-8465-e51da9b228db" name="Data"/>
+      <ownedPhysicalComponentPkg xsi:type="org.polarsys.capella.core.data.pa:PhysicalComponentPkg"
+          id="3f872050-22ae-45f0-a232-b6c223789690" name="Structure">
+        <ownedParts xsi:type="org.polarsys.capella.core.data.cs:Part" id="3f92afc5-3a86-4b2f-b2d0-4b013f280cef"
+            name="Physical System" abstractType="#fabd91c6-c192-431c-b0e9-752cbfce9777"/>
+        <ownedPhysicalComponents xsi:type="org.polarsys.capella.core.data.pa:PhysicalComponent"
+            id="fabd91c6-c192-431c-b0e9-752cbfce9777" name="Physical System">
+          <ownedComponentRealizations xsi:type="org.polarsys.capella.core.data.cs:ComponentRealization"
+              id="675723a8-fc72-4d3e-98ee-5307b9ade126" targetElement="#5881e2e9-0fd1-46e4-9e7f-70bfdb74c9ac"
+              sourceElement="#fabd91c6-c192-431c-b0e9-752cbfce9777"/>
+        </ownedPhysicalComponents>
+      </ownedPhysicalComponentPkg>
+      <ownedLogicalArchitectureRealizations xsi:type="org.polarsys.capella.core.data.pa:LogicalArchitectureRealization"
+          id="d748de4f-4521-40a7-af27-f639c4e9004f" targetElement="#80477943-f3f2-4392-a028-0148294dbd5f"
+          sourceElement="#e5192636-af97-44a5-bca1-5ce3024e9b54"/>
+    </ownedArchitectures>
+    <ownedArchitectures xsi:type="org.polarsys.capella.core.data.epbs:EPBSArchitecture"
+        id="1cabdfb5-bc26-46aa-8b97-374d56159074" name="EPBS Architecture">
+      <ownedAbstractCapabilityPkg xsi:type="org.polarsys.capella.core.data.la:CapabilityRealizationPkg"
+          id="db5a9f8a-0a9e-4b34-a207-d1e89f363336" name="Capabilities"/>
+      <ownedConfigurationItemPkg xsi:type="org.polarsys.capella.core.data.epbs:ConfigurationItemPkg"
+          id="97c9628c-6deb-4e04-adf9-114eb0babc4e" name="Structure">
+        <ownedParts xsi:type="org.polarsys.capella.core.data.cs:Part" id="889ae266-3c7a-40c3-bfbc-110df7caa9ad"
+            name="System" abstractType="#1f4a88fc-2209-4db8-8879-7ee15ef7811a"/>
+        <ownedConfigurationItems xsi:type="org.polarsys.capella.core.data.epbs:ConfigurationItem"
+            id="1f4a88fc-2209-4db8-8879-7ee15ef7811a" name="System" kind="SystemCI">
+          <ownedPhysicalArtifactRealizations xsi:type="org.polarsys.capella.core.data.epbs:PhysicalArtifactRealization"
+              id="7533e4c7-2e14-4311-a792-1416b98185f2" targetElement="#fabd91c6-c192-431c-b0e9-752cbfce9777"
+              sourceElement="#1f4a88fc-2209-4db8-8879-7ee15ef7811a"/>
+        </ownedConfigurationItems>
+      </ownedConfigurationItemPkg>
+      <ownedPhysicalArchitectureRealizations xsi:type="org.polarsys.capella.core.data.epbs:PhysicalArchitectureRealization"
+          id="c94b347c-772b-4ed6-b93b-24b6b49404f6" targetElement="#e5192636-af97-44a5-bca1-5ce3024e9b54"
+          sourceElement="#1cabdfb5-bc26-46aa-8b97-374d56159074"/>
+    </ownedArchitectures>
+  </ownedModelRoots>
+</org.polarsys.capella.core.data.capellamodeller:Project>
