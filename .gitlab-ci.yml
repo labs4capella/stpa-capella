@@ -32,6 +32,3 @@ build-job:
         - features/**/*
         - plugins/**/*
         - releng/**/*
-  tags:
-    - autoscale
-
