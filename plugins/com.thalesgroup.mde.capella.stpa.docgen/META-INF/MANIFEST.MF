@@ -11,6 +11,7 @@ Require-Bundle: org.eclipse.egf.pattern;visibility:=reexport,
  org.eclipse.egf.pattern.ftask;visibility:=reexport,
  org.polarsys.capella.docgen,
  com.thalesgroup.mde.capella.stpa.model,
+ com.thalesgroup.mde.capella.stpa.helpers,
  org.eclipse.sirius.diagram,
  org.eclipse.ui
 Export-Package: com.thalesgroup.mde.capella.stpa.docgen,

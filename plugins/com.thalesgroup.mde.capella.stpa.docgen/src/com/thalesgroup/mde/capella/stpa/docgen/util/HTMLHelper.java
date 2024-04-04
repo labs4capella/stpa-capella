@@ -14,8 +14,11 @@ package com.thalesgroup.mde.capella.stpa.docgen.util;
 
 import java.util.Arrays;
 
+import org.eclipse.emf.ecore.EObject;
 import org.polarsys.capella.core.data.capellacore.CapellaElement;
 import org.polarsys.capella.docgen.util.StringUtil;
+
+import com.thalesgroup.mde.capella.stpa.helpers.STPAQueryHelper;
 
 
 /**
@@ -55,15 +58,15 @@ public class HTMLHelper {
 		return "<p>" + content + "</p>";
 	}
 
-	private static String getPathElement(CapellaElement element, String htmlFolderName) {
+	private static String getPathElement(EObject element, String htmlFolderName) {
 		return "../" + htmlFolderName + "/" + StpaDocGenFileNameService.SERVICE.getFileName(element) + ".html";
 	}
 
-	public static String getLinkElementList(CapellaElement element, String htmlFolderName) {
+	public static String getLinkElementList(EObject element, String htmlFolderName) {
 		StringBuilder builder = new StringBuilder();
 		builder.append(IMG_TEMPLATE.replace(PATH_IMG, ImageHelper.getPathImgGif(element)).replace(ALT_NAME,
 				ImageHelper.getPathImgGif(element)));
-		builder.append(LINK_TEMPLATE.replace(NAME_ELEMENT, element.getLabel()).replace(PATH_ELEMENT,
+		builder.append(LINK_TEMPLATE.replace(NAME_ELEMENT, STPAQueryHelper.getEditLabel(element)).replace(PATH_ELEMENT,
 				getPathElement(element, htmlFolderName)));
 		return builder.toString();
 	}

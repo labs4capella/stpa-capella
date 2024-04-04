@@ -12,14 +12,24 @@
  *******************************************************************************/
 package com.thalesgroup.mde.capella.stpa.docgen;
 
+import java.util.Collection;
+import java.util.stream.Collectors;
+
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.polarsys.capella.common.model.helpers.HelperNotFoundException;
 import org.polarsys.capella.common.model.helpers.IHelper;
 import org.polarsys.capella.core.data.capellacore.CapellaElement;
+import org.polarsys.capella.core.data.capellacore.Constraint;
 
+import com.thalesgroup.mde.capella.stpa.docgen.util.HTMLHelper;
+import com.thalesgroup.mde.capella.stpa.docgen.util.StpaDocGenConstants;
+import com.thalesgroup.mde.capella.stpa.model.ControlFlaw;
+import com.thalesgroup.mde.capella.stpa.model.ControlFlawSet;
 import com.thalesgroup.mde.capella.stpa.model.StpaAnalysisElement;
+import com.thalesgroup.mde.capella.stpa.model.TechnicalPackage;
+import com.thalesgroup.mde.capella.stpa.model.UnsafeControlActionCategory;
 
 
 /**
@@ -36,20 +46,68 @@ public class StpaDocGenHelper implements IHelper {
   }
   
   /**
-   * Return HTML documentation for STPA relations on Capella elements
-   * @param capellaElement a non-null element
+   * Return HTML documentation for attributes of STPA elements
+   * @param element a non-null element
+   * @param htmlFolderName a non-null string
    * @return a non-null, potentially empty string
    */
-  public static String generateSTPARelations(CapellaElement capellaElement) {
+  public static String getAttributes(CapellaElement element, String htmlFolderName) {
     return "";
   }
   
   /**
-   * Return whether the given element has children in the HTML side bar.
+   * Return HTML documentation for contents of STPA elements
    * @param element a non-null element
+   * @param htmlFolderName a non-null string
+   * @return a non-null, potentially empty string
    */
-  public static boolean hasChildren(StpaAnalysisElement element) {
-    return !element.eContents().isEmpty();
+  public static String getContents(CapellaElement element, String htmlFolderName) {
+    return getHtmlData(
+        element.eContents().stream().filter(e -> isVisibleStpaElement(element)).collect(Collectors.toList()),
+        htmlFolderName, StpaDocGenConstants.CONTENT);
+  }
+  
+  /**
+   * Forked from org.polarsys.capella.cybersecurity.docgen.helper.CybersecurityHelper#getHtmlDataToAppend(Collection, String, String)
+   */
+  public static String getHtmlData(Collection<? extends EObject> elements,
+      String htmlFolderName, String category) {
+    StringBuilder builder = new StringBuilder();
+    if (!elements.isEmpty()) {
+      builder.append(HTMLHelper.getSubtitle(category));
+      builder.append(HTMLHelper.getUlList(
+          elements.stream().map(e -> HTMLHelper.getLinkElementList(e, htmlFolderName)).toArray(String[]::new)));
+    }
+    return builder.toString();
+  }
+  
+  /**
+   * Return HTML documentation for STPA relations
+   * @param element a non-null element
+   * @param htmlFolderName a non-null string
+   * @return a non-null, potentially empty string
+   */
+  public static String getRelations(CapellaElement element, String htmlFolderName) {
+    StringBuilder builder = new StringBuilder();
+    //TODO
+    /*
+    For every applicable SB query:
+      builder.append(getHtmlData(returnedElements, htmlFolderName, query label));
+     */
+    return builder.toString();
+  }
+  
+  /**
+   * Return whether the given element qualifies as a visible STPA element
+   * @param element a potentially null element (false for null) 
+   */
+  public static boolean isVisibleStpaElement(EObject element) {
+    return element instanceof StpaAnalysisElement &&
+        !(element instanceof TechnicalPackage
+            || element instanceof UnsafeControlActionCategory
+            || element instanceof ControlFlawSet
+            || element instanceof ControlFlaw)
+        || element instanceof Constraint;
   }
   
 }

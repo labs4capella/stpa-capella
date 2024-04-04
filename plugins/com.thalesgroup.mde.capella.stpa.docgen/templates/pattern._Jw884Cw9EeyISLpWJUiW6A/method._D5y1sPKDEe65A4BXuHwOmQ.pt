@@ -1,0 +1,6 @@
+<%super.method_content(stringBuffer, ctx);%>
+<% Path pathToHtmlFolder = new Path(ctx.getValue("outputFolder").toString());
+   String htmlFolderName = pathToHtmlFolder.lastSegment(); %>
+<%stringBuffer.append(StpaDocGenHelper.getAttributes(element, htmlFolderName)); %>   
+<%stringBuffer.append(StpaDocGenHelper.getContents(element, htmlFolderName));%>
+<%stringBuffer.append(StpaDocGenHelper.getRelations(element, htmlFolderName));%>

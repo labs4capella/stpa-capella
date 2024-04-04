@@ -31,6 +31,7 @@
           <methods xmi:id="_Jw885iw9EeyISLpWJUiW6A" name="footer" patternFilePath="templates/pattern._Jw884Cw9EeyISLpWJUiW6A/method._Jw885iw9EeyISLpWJUiW6A.pt"/>
           <methods xmi:id="_VoWFsC2-EeyISLpWJUiW6A" name="setCapellaContext" patternFilePath="templates/pattern._Jw884Cw9EeyISLpWJUiW6A/method._VoWFsC2-EeyISLpWJUiW6A.pt"/>
           <methods xmi:id="_tHPZ0PJUEe65A4BXuHwOmQ" name="createPNG" patternFilePath="templates/pattern._Jw884Cw9EeyISLpWJUiW6A/method._tHPZ0PJUEe65A4BXuHwOmQ.pt"/>
+          <methods xmi:id="_D5y1sPKDEe65A4BXuHwOmQ" name="content" patternFilePath="templates/pattern._Jw884Cw9EeyISLpWJUiW6A/method._D5y1sPKDEe65A4BXuHwOmQ.pt"/>
           <parameters xmi:id="_43s68C20EeyISLpWJUiW6A" name="parameter" type="http://www.thalesgroup.com/capella/stpa#//StpaAnalysisElement"/>
           <orchestration xmi:type="pattern:MethodCall" xmi:id="_uq0scPJUEe65A4BXuHwOmQ"
               called="#_tHPZ0PJUEe65A4BXuHwOmQ"/>
