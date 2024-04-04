@@ -25,7 +25,7 @@ import com.thalesgroup.mde.capella.stpa.model.StpaAnalysisElement;
 /**
  * A helper for STPA doc gen.
  */
-public class STPADocGenHelper implements IHelper {
+public class StpaDocGenHelper implements IHelper {
   
   /**
    * @see org.polarsys.capella.common.model.helpers.IHelper#getValue(org.eclipse.emf.ecore.EObject, org.eclipse.emf.ecore.EStructuralFeature, org.eclipse.emf.ecore.EAnnotation)

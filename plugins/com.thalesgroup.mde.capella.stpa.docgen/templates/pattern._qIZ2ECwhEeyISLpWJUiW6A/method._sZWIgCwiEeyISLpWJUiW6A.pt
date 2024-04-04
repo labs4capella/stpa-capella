@@ -1,5 +1,0 @@
-<%
-if(STPADocGenHelper.hasChildren(parameter)) {
-	super.method_startSidebarSubElement(new StringBuffer(), ctx);
-%>
-<%}%>

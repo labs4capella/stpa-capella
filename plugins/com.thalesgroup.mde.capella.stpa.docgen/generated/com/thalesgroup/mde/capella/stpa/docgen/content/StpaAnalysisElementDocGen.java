@@ -1,16 +1,4 @@
 //Generated with EGF 1.6.3.202110291409
-/*******************************************************************************
- * Copyright (c) 2020-2024 THALES.
- * 
- * This program and the accompanying materials are made available under the
- * terms of the Eclipse Public License 2.0 which is available at
- * http://www.eclipse.org/legal/epl-2.0
- * 
- * SPDX-License-Identifier: EPL-2.0
- * 
- * Contributors:
- *    THALES - initial API and implementation
- *******************************************************************************/
 package com.thalesgroup.mde.capella.stpa.docgen.content;
 
 import org.eclipse.egf.common.helper.*;
@@ -21,6 +9,7 @@ import org.eclipse.egf.pattern.execution.*;
 import org.eclipse.egf.pattern.query.*;
 import com.thalesgroup.mde.capella.stpa.docgen.*;
 import com.thalesgroup.mde.capella.stpa.model.*;
+import com.thalesgroup.mde.capella.stpa.docgen.util.*;
 
 public class StpaAnalysisElementDocGen
     extends com.thalesgroup.mde.capella.stpa.docgen.common.AbstractStpaAnalysisElementDocGen {
@@ -79,6 +68,7 @@ public class StpaAnalysisElementDocGen
   public String orchestration(PatternContext ctx) throws Exception {
     InternalPatternContext ictx = (InternalPatternContext) ctx;
 
+    method_createPNG(new StringBuffer(), ictx);
     super.orchestration(new SuperOrchestrationContext(ictx));
 
     if (ictx.useReporter()) {
@@ -109,6 +99,16 @@ public class StpaAnalysisElementDocGen
 
     InternalPatternContext ictx = (InternalPatternContext) ctx;
     new Node.DataLeaf(ictx.getNode(), getClass(), "setCapellaContext", stringBuffer.toString());
+  }
+
+  protected void method_createPNG(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
+
+    String outputFolder = ctx.getValue("outputFolder").toString();
+    String projectName = ctx.getValue("projectName").toString();
+    ImageHelper.createPNG(parameter, projectName, outputFolder);
+
+    InternalPatternContext ictx = (InternalPatternContext) ctx;
+    new Node.DataLeaf(ictx.getNode(), getClass(), "createPNG", stringBuffer.toString());
   }
 
   public boolean preCondition(PatternContext ctx) throws Exception {

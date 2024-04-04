@@ -1,1 +1,0 @@
-return PageExtensionRegistry.getInstance().getCategoryActivationStatus("Capella", "STPA Viewpoint").equals(PageExtensionActivationStatus.Active);

@@ -10,15 +10,16 @@
  * Contributors:
  *    THALES - initial API and implementation
  *******************************************************************************/
-package com.thalesgroup.mde.capella.stpa.docgen;
+package com.thalesgroup.mde.capella.stpa.docgen.util;
 
-import org.polarsys.capella.docgen.util.CapellaDiagramHelper;
+import org.polarsys.capella.docgen.util.CapellaFileNameService;
 
 
 /**
- * A diagram helper for STPA doc gen.
+ * A file name service for STPA doc gen.
  */
-public class STPADocGenDiagramHelper extends CapellaDiagramHelper {
+public class StpaDocGenFileNameService extends CapellaFileNameService {
   
-  
+  public static final StpaDocGenFileNameService SERVICE = new StpaDocGenFileNameService();
+
 }

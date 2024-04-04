@@ -27,26 +27,14 @@
             category="STPA Viewpoint"
             defaultStatus="Active"
             description="STPA Viewpoint"
-            diagramHelper="com.thalesgroup.mde.capella.stpa.docgen.STPADocGenDiagramHelper"
+            diagramHelper="com.thalesgroup.mde.capella.stpa.docgen.util.StpaDocGenDiagramHelper"
             domain="capella"
-            fileNameService="com.thalesgroup.mde.capella.stpa.docgen.STPADocGenFileNameService"
+            fileNameService="com.thalesgroup.mde.capella.stpa.docgen.util.StpaDocGenFileNameService"
             name="STPA Viewpoint">
          <pagePattern
                URI="platform:/plugin/com.thalesgroup.mde.capella.stpa.docgen/egf/stpa-docgen.fcore#_Jw884Cw9EeyISLpWJUiW6A">
          </pagePattern>
-         <!--sidebarPattern
-               URI="platform:/plugin/com.thalesgroup.mde.capella.stpa.docgen/egf/stpa-docgen.fcore#_qIZ2ECwhEeyISLpWJUiW6A">
-         </sidebarPattern-->
       </pageExtension>
-      <!--contentExtension
-            description="Generate Capella STPA in dedicated Pages"
-            name="Capella STPA GenDoc Extension"
-            priority="0"
-            topic="CAPELLA_STPA_EXTENSION">
-         <fcores
-               patternURI="platform:/plugin/com.thalesgroup.mde.capella.stpa.docgen/egf/stpa-docgen.fcore#_V16NQCwhEeyISLpWJUiW6A">
-         </fcores>
-      </contentExtension-->
    </extension>
 
 </plugin>

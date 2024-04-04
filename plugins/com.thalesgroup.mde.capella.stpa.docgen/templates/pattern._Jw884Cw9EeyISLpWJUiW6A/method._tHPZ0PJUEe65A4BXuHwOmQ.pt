@@ -1,0 +1,5 @@
+<%
+String outputFolder = ctx.getValue("outputFolder").toString();
+String projectName = ctx.getValue("projectName").toString();
+ImageHelper.createPNG(parameter, projectName, outputFolder);
+%>
