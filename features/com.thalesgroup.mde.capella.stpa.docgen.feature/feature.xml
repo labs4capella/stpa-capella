@@ -33,9 +33,12 @@
       <import plugin="org.eclipse.egf.pattern"/>
       <import plugin="org.eclipse.egf.pattern.ftask"/>
       <import plugin="org.polarsys.capella.docgen"/>
-      <import feature="com.thalesgroup.mde.capella.stpa.feature" version="0.1.1.qualifier"/>
       <import plugin="com.thalesgroup.mde.capella.stpa.model"/>
       <import plugin="org.eclipse.sirius.diagram"/>
+      <import feature="com.thalesgroup.mde.capella.stpa.feature" version="0.1.1.qualifier"/>
+      <import plugin="com.thalesgroup.mde.capella.stpa.helpers"/>
+      <import plugin="org.eclipse.ui"/>
+      <import plugin="org.polarsys.capella.common.ui.toolkit.browser"/>
    </requires>
 
    <plugin
