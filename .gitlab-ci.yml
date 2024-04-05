@@ -32,3 +32,4 @@ build-job:
         - features/**/*
         - plugins/**/*
         - releng/**/*
+        - doc/**/*

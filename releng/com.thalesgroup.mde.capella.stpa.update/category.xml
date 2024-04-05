@@ -12,10 +12,10 @@
        THALES - initial API and implementation
 -->
 <site>
-   <feature url="features/com.thalesgroup.mde.capella.stpa.feature_0.1.1.qualifier.jar" id="com.thalesgroup.mde.capella.stpa.feature" version="0.1.1.qualifier">
+   <feature url="features/com.thalesgroup.mde.capella.stpa.feature_0.2.0.qualifier.jar" id="com.thalesgroup.mde.capella.stpa.feature" version="0.2.0.qualifier">
       <category name="com.thalesgroup.mde.capella.stpa.category"/>
    </feature>
-   <feature url="features/com.thalesgroup.mde.capella.stpa.docgen.feature_0.1.1.qualifier.jar" id="com.thalesgroup.mde.capella.stpa.docgen.feature" version="0.1.1.qualifier">
+   <feature url="features/com.thalesgroup.mde.capella.stpa.docgen.feature_0.2.0.qualifier.jar" id="com.thalesgroup.mde.capella.stpa.docgen.feature" version="0.2.0.qualifier">
       <category name="com.thalesgroup.mde.capella.stpa.category"/>
    </feature>
    <feature id="org.eclipse.sirius.properties.feature">

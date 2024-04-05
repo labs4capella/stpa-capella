@@ -14,7 +14,7 @@
 <feature
       id="com.thalesgroup.mde.capella.stpa.docgen.feature"
       label="%featureName"
-      version="0.1.1.qualifier"
+      version="0.2.0.qualifier"
       provider-name="%providerName">
 
    <description>
@@ -35,7 +35,7 @@
       <import plugin="org.polarsys.capella.docgen"/>
       <import plugin="com.thalesgroup.mde.capella.stpa.model"/>
       <import plugin="org.eclipse.sirius.diagram"/>
-      <import feature="com.thalesgroup.mde.capella.stpa.feature" version="0.1.1.qualifier"/>
+      <import feature="com.thalesgroup.mde.capella.stpa.feature" version="0.2.0.qualifier"/>
       <import plugin="com.thalesgroup.mde.capella.stpa.helpers"/>
       <import plugin="org.eclipse.ui"/>
       <import plugin="org.polarsys.capella.common.ui.toolkit.browser"/>
