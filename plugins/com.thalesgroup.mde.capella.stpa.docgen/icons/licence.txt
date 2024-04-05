@@ -29,7 +29,8 @@ http://www.eclipse.org/legal/epl-2.0
 /icons/Responsibility.png - com.thalesgroup.mde.capella.stpa.model.edit - com.thalesgroup.mde.capella.stpa.model.edit/icons/full/obj16/Responsibility.gif
 /icons/Stake.png - com.thalesgroup.mde.capella.stpa.model.edit - com.thalesgroup.mde.capella.stpa.model.edit/icons/full/obj16/Stake.gif
 /icons/Stakeholder.png - com.thalesgroup.mde.capella.stpa.model.edit - com.thalesgroup.mde.capella.stpa.model.edit/icons/full/obj16/Stakeholder.gif
-/icons/StpaAnalysis.png - com.thalesgroup.mde.capella.stpa.model.edit - com.thalesgroup.mde.capella.stpa.model.edit/icons/full/obj16/StpaAnalysis.gif
+/icons/StpaAnalysis.png - org.polarsys.capella.glossary.doc - org.polarsys.capella.glossary.doc/html/Glossary/Images/88. System Analysis_html_m5da03533.png
+/icons/StpaAnalysis_small.png - com.thalesgroup.mde.capella.stpa.model.edit - com.thalesgroup.mde.capella.stpa.model.edit/icons/full/obj16/StpaAnalysis.gif
 /icons/SystemConstraint.png - com.thalesgroup.mde.capella.stpa.model.edit - com.thalesgroup.mde.capella.stpa.model.edit/icons/full/obj16/SystemConstraint.gif
 /icons/TechnicalPackage.png - com.thalesgroup.mde.capella.stpa.model.edit - com.thalesgroup.mde.capella.stpa.model.edit/icons/full/obj16/TechnicalPackage.gif
 /icons/UnsafeControlAction.png - com.thalesgroup.mde.capella.stpa.model.edit - com.thalesgroup.mde.capella.stpa.model.edit/icons/full/obj16/UnsafeControlAction.gif

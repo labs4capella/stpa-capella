@@ -1,0 +1,37 @@
+These followings icons are made available under the
+terms of the Eclipse Public License 2.0 which is available at
+http://www.eclipse.org/legal/epl-2.0
+
+<icon file path> - <original eclipse plug-ins> - <original file paths>
+
+/icons/full/obj16/ControlAction.gif - com.thalesgroup.mde.capella.stpa.model.edit - com.thalesgroup.mde.capella.stpa.model.edit/icons/full/obj16/ControlAction.gif
+/icons/full/obj16/ControlEntity.gif - com.thalesgroup.mde.capella.stpa.model.edit - com.thalesgroup.mde.capella.stpa.model.edit/icons/full/obj16/ControlEntity.gif
+/icons/full/obj16/ControlFlaw.gif - com.thalesgroup.mde.capella.stpa.model.edit - com.thalesgroup.mde.capella.stpa.model.edit/icons/full/obj16/ControlFlaw.gif
+/icons/full/obj16/ControlFlawSet.gif - com.thalesgroup.mde.capella.stpa.model.edit - com.thalesgroup.mde.capella.stpa.model.edit/icons/full/obj16/ControlFlawSet.gif
+/icons/full/obj16/ControllerConstraint.gif - com.thalesgroup.mde.capella.stpa.model.edit - com.thalesgroup.mde.capella.stpa.model.edit/icons/full/obj16/ControllerConstraint.gif
+/icons/full/obj16/ControlRelation.gif - com.thalesgroup.mde.capella.stpa.model.edit - com.thalesgroup.mde.capella.stpa.model.edit/icons/full/obj16/ControlRelation.gif
+/icons/full/obj16/ControlStructurePackage.gif - com.thalesgroup.mde.capella.stpa.model.edit - com.thalesgroup.mde.capella.stpa.model.edit/icons/full/obj16/ControlStructurePackage.gif
+/icons/full/obj16/DecompositionCategory.gif - com.thalesgroup.mde.capella.stpa.model.edit - com.thalesgroup.mde.capella.stpa.model.edit/icons/full/obj16/DecompositionCategory.gif
+/icons/full/obj16/FeedbackElement.gif - com.thalesgroup.mde.capella.stpa.model.edit - com.thalesgroup.mde.capella.stpa.model.edit/icons/full/obj16/FeedbackElement.gif
+/icons/full/obj16/FeedbackRelation.gif - com.thalesgroup.mde.capella.stpa.model.edit - com.thalesgroup.mde.capella.stpa.model.edit/icons/full/obj16/FeedbackRelation.gif
+/icons/full/obj16/Hazard.gif - com.thalesgroup.mde.capella.stpa.model.edit - com.thalesgroup.mde.capella.stpa.model.edit/icons/full/obj16/Hazard.gif
+/icons/full/obj16/HazardConstraintPackage.gif - com.thalesgroup.mde.capella.stpa.model.edit - com.thalesgroup.mde.capella.stpa.model.edit/icons/full/obj16/HazardConstraintPackage.gif
+/icons/full/obj16/InformationExchangeRelation.gif - com.thalesgroup.mde.capella.stpa.model.edit - com.thalesgroup.mde.capella.stpa.model.edit/icons/full/obj16/InformationExchangeRelation.gif
+/icons/full/obj16/Lightning-M.png - com.thalesgroup.mde.capella.stpa.model.edit - com.thalesgroup.mde.capella.stpa.model.edit/icons/full/obj16/Lightning-M.png
+/icons/full/obj16/Lightning-S.png - com.thalesgroup.mde.capella.stpa.model.edit - com.thalesgroup.mde.capella.stpa.model.edit/icons/full/obj16/Lightning-S.png
+/icons/full/obj16/Loss.gif - com.thalesgroup.mde.capella.stpa.model.edit - com.thalesgroup.mde.capella.stpa.model.edit/icons/full/obj16/Loss.gif
+/icons/full/obj16/LossPackage.gif - com.thalesgroup.mde.capella.stpa.model.edit - com.thalesgroup.mde.capella.stpa.model.edit/icons/full/obj16/LossPackage.gif
+/icons/full/obj16/LossScenario.gif - com.thalesgroup.mde.capella.stpa.model.edit - com.thalesgroup.mde.capella.stpa.model.edit/icons/full/obj16/LossScenario.gif
+/icons/full/obj16/LossScenarioPackage.gif - com.thalesgroup.mde.capella.stpa.model.edit - com.thalesgroup.mde.capella.stpa.model.edit/icons/full/obj16/LossScenarioPackage.gif
+/icons/full/obj16/PieceOfInformation.gif - com.thalesgroup.mde.capella.stpa.model.edit - com.thalesgroup.mde.capella.stpa.model.edit/icons/full/obj16/PieceOfInformation.gif
+/icons/full/obj16/Process.gif - com.thalesgroup.mde.capella.stpa.model.edit - com.thalesgroup.mde.capella.stpa.model.edit/icons/full/obj16/Process.gif
+/icons/full/obj16/ProcessModelValue.gif - com.thalesgroup.mde.capella.stpa.model.edit - com.thalesgroup.mde.capella.stpa.model.edit/icons/full/obj16/ProcessModelValue.gif
+/icons/full/obj16/ProcessModelVariable.gif - com.thalesgroup.mde.capella.stpa.model.edit - com.thalesgroup.mde.capella.stpa.model.edit/icons/full/obj16/ProcessModelVariable.gif
+/icons/full/obj16/Responsibility.gif - com.thalesgroup.mde.capella.stpa.model.edit - com.thalesgroup.mde.capella.stpa.model.edit/icons/full/obj16/Responsibility.gif
+/icons/full/obj16/Stake.gif - com.thalesgroup.mde.capella.stpa.model.edit - com.thalesgroup.mde.capella.stpa.model.edit/icons/full/obj16/Stake.gif
+/icons/full/obj16/Stakeholder.gif - com.thalesgroup.mde.capella.stpa.model.edit - com.thalesgroup.mde.capella.stpa.model.edit/icons/full/obj16/Stakeholder.gif
+/icons/full/obj16/StpaAnalysis.gif - com.thalesgroup.mde.capella.stpa.model.edit - com.thalesgroup.mde.capella.stpa.model.edit/icons/full/obj16/StpaAnalysis.gif
+/icons/full/obj16/SystemConstraint.gif - com.thalesgroup.mde.capella.stpa.model.edit - com.thalesgroup.mde.capella.stpa.model.edit/icons/full/obj16/SystemConstraint.gif
+/icons/full/obj16/TechnicalPackage.gif - com.thalesgroup.mde.capella.stpa.model.edit - com.thalesgroup.mde.capella.stpa.model.edit/icons/full/obj16/TechnicalPackage.gif
+/icons/full/obj16/UnsafeControlAction.gif - com.thalesgroup.mde.capella.stpa.model.edit - com.thalesgroup.mde.capella.stpa.model.edit/icons/full/obj16/UnsafeControlAction.gif
+/icons/full/obj16/UnsafeControlActionCategory.gif - com.thalesgroup.mde.capella.stpa.model.edit - com.thalesgroup.mde.capella.stpa.model.edit/icons/full/obj16/UnsafeControlActionCategory.gif

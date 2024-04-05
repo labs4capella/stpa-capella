@@ -43,10 +43,8 @@ public class ImageHelper {
 
 	public static void createPNG(EObject element, String projectName, String outputFolder)
 			throws IOException, CoreException {
-		if (element instanceof StpaAnalysisElement) {
+		if (element instanceof StpaAnalysisElement || element instanceof Constraint) {
 			copyFile(projectName, outputFolder, element.eClass().getName() + PNG_TYPE);
-    } else if (element instanceof Constraint) {
-			copyFile(projectName, outputFolder, Constraint.class.getSimpleName() + PNG_TYPE);
 		}
 	}
 
@@ -65,11 +63,6 @@ public class ImageHelper {
 	}
 
 	public static String getPathImgGif(EObject element) {
-		if (element instanceof StpaAnalysisElement) {
-			return PATH_IMG + element.eClass().getName() + GIF_TYPE;
-    } else if (element instanceof Constraint) {
-			return PATH_IMG + Constraint.class.getSimpleName() + GIF_TYPE;
-    }
-		return "";
+	  return PATH_IMG + element.eClass().getName() + GIF_TYPE;
 	}
 }

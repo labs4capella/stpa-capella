@@ -16,6 +16,7 @@ import java.util.Arrays;
 
 import org.eclipse.emf.ecore.EObject;
 import org.polarsys.capella.core.data.capellacore.CapellaElement;
+import org.polarsys.capella.core.data.capellacore.Constraint;
 import org.polarsys.capella.docgen.util.StringUtil;
 
 import com.thalesgroup.mde.capella.stpa.helpers.STPAQueryHelper;
@@ -65,7 +66,7 @@ public class HTMLHelper {
 	public static String getLinkElementList(EObject element, String htmlFolderName) {
 		StringBuilder builder = new StringBuilder();
 		builder.append(IMG_TEMPLATE.replace(PATH_IMG, ImageHelper.getPathImgGif(element)).replace(ALT_NAME,
-				ImageHelper.getPathImgGif(element)));
+				element instanceof Constraint? " ": ImageHelper.getPathImgGif(element))); //FIXME Properly handle constraints
 		builder.append(LINK_TEMPLATE.replace(NAME_ELEMENT, STPAQueryHelper.getEditLabel(element)).replace(PATH_ELEMENT,
 				getPathElement(element, htmlFolderName)));
 		return builder.toString();

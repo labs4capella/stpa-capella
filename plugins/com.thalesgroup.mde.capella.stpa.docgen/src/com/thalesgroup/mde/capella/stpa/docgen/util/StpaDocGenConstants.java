@@ -14,9 +14,11 @@ package com.thalesgroup.mde.capella.stpa.docgen.util;
 
 
 /**
- * Constant user-level strings for docgen.
+ * Constant strings for docgen.
  */
 public interface StpaDocGenConstants {
+  
+  String SB_CATEGORY_PREFIX = "com.thalesgroup.mde.capella.stpa.queries";
   
   String CONTENT = "Content";
   

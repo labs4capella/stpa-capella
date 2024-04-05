@@ -20,6 +20,8 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.polarsys.capella.common.model.helpers.HelperNotFoundException;
 import org.polarsys.capella.common.model.helpers.IHelper;
+import org.polarsys.capella.common.ui.toolkit.browser.category.CategoryRegistry;
+import org.polarsys.capella.common.ui.toolkit.browser.category.ICategory;
 import org.polarsys.capella.core.data.capellacore.CapellaElement;
 import org.polarsys.capella.core.data.capellacore.Constraint;
 
@@ -52,7 +54,7 @@ public class StpaDocGenHelper implements IHelper {
    * @return a non-null, potentially empty string
    */
   public static String getAttributes(CapellaElement element, String htmlFolderName) {
-    return "";
+    return ""; //TODO
   }
   
   /**
@@ -87,13 +89,21 @@ public class StpaDocGenHelper implements IHelper {
    * @param htmlFolderName a non-null string
    * @return a non-null, potentially empty string
    */
+  @SuppressWarnings("unchecked")
   public static String getRelations(CapellaElement element, String htmlFolderName) {
     StringBuilder builder = new StringBuilder();
-    //TODO
-    /*
-    For every applicable SB query:
-      builder.append(getHtmlData(returnedElements, htmlFolderName, query label));
-     */
+    CategoryRegistry registry = CategoryRegistry.getInstance();
+    Collection<ICategory> categories = registry.gatherCategories(element);
+    for (ICategory category : categories) {
+      String id = category.getCategoryId();
+      if (id != null && id.startsWith(StpaDocGenConstants.SB_CATEGORY_PREFIX)) {
+        Collection<Object> qResult = category.compute(element);
+        Collection<EObject> returnedElements = (Collection<EObject>)(Collection<?>) qResult;
+        if (!qResult.isEmpty()) {
+          builder.append(getHtmlData(returnedElements, htmlFolderName, category.getName()));
+        }
+      }
+    }
     return builder.toString();
   }
   
