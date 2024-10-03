@@ -12,6 +12,9 @@
  *******************************************************************************/
 package com.thalesgroup.mde.capella.stpa.model.impl;
 
+import java.lang.reflect.Field;
+import java.lang.reflect.Method;
+
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
@@ -36,7 +39,6 @@ import org.polarsys.capella.core.data.interaction.InteractionPackage;
 import org.polarsys.capella.core.data.la.LaPackage;
 import org.polarsys.capella.core.data.oa.OaPackage;
 import org.polarsys.capella.core.data.pa.PaPackage;
-import org.polarsys.capella.core.data.requirement.RequirementPackage;
 import org.polarsys.capella.core.data.sharedmodel.SharedmodelPackage;
 import org.polarsys.kitalpha.emde.model.EmdePackage;
 
@@ -421,6 +423,50 @@ public class StpaPackageImpl extends EPackageImpl implements StpaPackage {
   private static boolean isInited = false;
 
   /**
+   * Return the Capella RequirementPackage class if it exists, null otherwise 
+   * @generated NOT
+   * @return a potentially null class
+   */
+  public static Class<?> getRequirementPackage() {
+    Class<?> result;
+    try {
+      result = Class.forName(
+          "org.polarsys.capella.core.data.requirement.RequirementPackage",
+          false, StpaPackage.class.getClassLoader());
+    } catch (Exception e) {
+      result = null;
+    }
+    return result;
+  }
+
+  /**
+   * Return whether the current Capella environment is below v7.0 
+   * @generated NOT
+   */
+  public static boolean isBelowCapella7() {
+    return getRequirementPackage() != null;
+  }
+  
+  /**
+   * Initialize the Capella RequirementPackage if the current Capella environment is below v7.0 
+   * @generated NOT
+   */
+  public static void initializeRequirementPackage() {
+    // Perform RequirementPackage.eINSTANCE.eClass() if present
+    Class<?> rp = getRequirementPackage();
+    if (rp != null) {
+      try {
+        Field f = rp.getField("eINSTANCE");
+        Object eInstance = f.get(null);
+        Method eClassMeth = rp.getMethod("eClass", new Class<?>[] {});
+        eClassMeth.invoke(eInstance, new Object[] {});
+      } catch (Exception e) {
+        // Proceed
+      }
+    }
+  }
+
+  /**
    * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
    *
    * <p>This method is used to initialize {@link StpaPackage#eINSTANCE} when that field is accessed.
@@ -430,7 +476,7 @@ public class StpaPackageImpl extends EPackageImpl implements StpaPackage {
    * @see #eNS_URI
    * @see #createPackageContents()
    * @see #initializePackageContents()
-   * @generated
+   * @generated NOT
    */
   public static StpaPackage init() {
     if (isInited)
@@ -454,7 +500,7 @@ public class StpaPackageImpl extends EPackageImpl implements StpaPackage {
     PaPackage.eINSTANCE.eClass();
     EpbsPackage.eINSTANCE.eClass();
     SharedmodelPackage.eINSTANCE.eClass();
-    RequirementPackage.eINSTANCE.eClass();
+    initializeRequirementPackage();
     CapellacommonPackage.eINSTANCE.eClass();
     InformationPackage.eINSTANCE.eClass();
     CsPackage.eINSTANCE.eClass();

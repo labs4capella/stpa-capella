@@ -33,7 +33,7 @@
             uri="http://www.polarsys.org/kitalpha/emde/1.0.0"
             class="com.thalesgroup.mde.capella.stpa.model.provider.StpaItemProviderAdapterFactory$EmdeChildCreationExtender"/>
       <extender
-            uri="http://www.polarsys.org/capella/core/sharedmodel/6.0.0"
+            uri="http://www.polarsys.org/capella/core/sharedmodel/7.0.0"
             class="com.thalesgroup.mde.capella.stpa.model.provider.StpaItemProviderAdapterFactory$SharedmodelChildCreationExtender"/>
    </extension>
 

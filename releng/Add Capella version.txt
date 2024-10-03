@@ -1,0 +1,18 @@
+ADD SUPPORT FOR NEW CAPELLA VERSION
+
+- Add target platform definition in releng/com.thalesgroup.mde.capella.stpa.target/
+	* Add capella-X.Y/ subfolder
+	* Add pom.xml: specify <artifactId>
+	* Add capella-X.Y.target: specify all contents
+		. Set <target name=...
+		. Check URLs in Capella repo, right tag: releng\plugins\org.polarsys.capella.targets\full\capella.target-definition.targetplatform
+		. Add required units for Capella Docgen, Sirius Properties and EEF
+- Add <profile> in releng/com.thalesgroup.mde.capella.stpa.configuration/pom.xml
+	* Specify <id>, <capella.version> and <eclipse.name>
+- Extend range of Capella versions in .gitlab-ci.yml
+	* Add list entry in variable TP_VERSIONS
+	* Test build
+- Migrate example
+	* In examples/, duplicate-rename the folder for the most recent version
+	* Deploy build output in Capella with HTML DocGen, migrate example
+	* Test example: diagrams, tables, edition, properties, Semantic Browser, Docgen

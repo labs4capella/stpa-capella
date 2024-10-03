@@ -1,4 +1,5 @@
 #!/bin/bash
+# Sets the version of the Add-On (Maven, category, features, plugins)
 if [ -z "$1" ] || [ -n "$2" ]
 then
   echo "Usage: $(basename $0) <new_version>"

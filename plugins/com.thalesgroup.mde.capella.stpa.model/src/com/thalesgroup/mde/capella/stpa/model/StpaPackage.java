@@ -271,10 +271,10 @@ public interface StpaPackage extends EPackage {
    * The feature id for the '<em><b>Applied Requirements</b></em>' reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
+   * @generated NOT
    * @ordered
-   */
-  int STPA_ANALYSIS_ELEMENT__APPLIED_REQUIREMENTS = CapellacorePackage.NAMED_ELEMENT__APPLIED_REQUIREMENTS;
+   */ // Hard-coded for compatibility with Capella 7 (value is stable in Capella 5.0 to 6.1)
+  int STPA_ANALYSIS_ELEMENT__APPLIED_REQUIREMENTS = 21; //CapellacorePackage.NAMED_ELEMENT__APPLIED_REQUIREMENTS;
 
   /**
    * The number of structural features of the '<em>Analysis Element</em>' class.

@@ -124,8 +124,8 @@
       </activation>
       <properties>
         <capella.version>5.0</capella.version>
-		<eclipse.name>2020-06</eclipse.name>
-		<eclipse-repo.url>https://download.eclipse.org/releases/${eclipse.name}</eclipse-repo.url>
+	  <eclipse.name>2020-06</eclipse.name>
+	  <eclipse-repo.url>https://download.eclipse.org/releases/${eclipse.name}</eclipse-repo.url>
       </properties>
     </profile>
     <profile>
@@ -135,8 +135,8 @@
       </activation>
       <properties>
         <capella.version>5.1</capella.version>
-		<eclipse.name>2020-06</eclipse.name>
-		<eclipse-repo.url>https://download.eclipse.org/releases/${eclipse.name}</eclipse-repo.url>
+	  <eclipse.name>2020-06</eclipse.name>
+	  <eclipse-repo.url>https://download.eclipse.org/releases/${eclipse.name}</eclipse-repo.url>
       </properties>
     </profile>
     <profile>
@@ -146,8 +146,8 @@
       </activation>
       <properties>
         <capella.version>5.2</capella.version>
-		<eclipse.name>2020-06</eclipse.name>
-		<eclipse-repo.url>https://download.eclipse.org/releases/${eclipse.name}</eclipse-repo.url>
+	  <eclipse.name>2020-06</eclipse.name>
+	  <eclipse-repo.url>https://download.eclipse.org/releases/${eclipse.name}</eclipse-repo.url>
       </properties>
     </profile>
     <profile>
@@ -157,8 +157,8 @@
       </activation>
       <properties>
         <capella.version>6.0</capella.version>
-		<eclipse.name>2021-06</eclipse.name>
-		<eclipse-repo.url>https://download.eclipse.org/releases/${eclipse.name}</eclipse-repo.url>
+	  <eclipse.name>2021-06</eclipse.name>
+	  <eclipse-repo.url>https://download.eclipse.org/releases/${eclipse.name}</eclipse-repo.url>
       </properties>
     </profile>
     <profile>
@@ -168,8 +168,19 @@
       </activation>
       <properties>
         <capella.version>6.1</capella.version>
-		<eclipse.name>2021-06</eclipse.name>
-		<eclipse-repo.url>https://download.eclipse.org/releases/${eclipse.name}</eclipse-repo.url>
+	  <eclipse.name>2021-06</eclipse.name>
+	  <eclipse-repo.url>https://download.eclipse.org/releases/${eclipse.name}</eclipse-repo.url>
+      </properties>
+    </profile>
+    <profile>
+      <id>capella-7.0</id>
+      <activation>
+        <activeByDefault>false</activeByDefault>
+      </activation>
+      <properties>
+        <capella.version>7.0</capella.version>
+	  <eclipse.name>2023-03</eclipse.name>
+	  <eclipse-repo.url>https://download.eclipse.org/releases/${eclipse.name}</eclipse-repo.url>
       </properties>
     </profile>
   </profiles>
