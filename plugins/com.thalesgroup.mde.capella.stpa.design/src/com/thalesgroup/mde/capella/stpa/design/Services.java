@@ -133,6 +133,7 @@ import com.thalesgroup.mde.capella.stpa.model.StpaAnalysisElement;
 import com.thalesgroup.mde.capella.stpa.model.StpaFactory;
 import com.thalesgroup.mde.capella.stpa.model.StpaPackage;
 import com.thalesgroup.mde.capella.stpa.model.SystemConstraint;
+import com.thalesgroup.mde.capella.stpa.model.TechnicalPackage;
 import com.thalesgroup.mde.capella.stpa.model.UnsafeControlAction;
 import com.thalesgroup.mde.capella.stpa.model.UnsafeControlActionCategory;
 import com.thalesgroup.mde.capella.stpa.model.UnsafeControlActionKind;
@@ -1696,18 +1697,22 @@ public class Services {
   }
   
   /**                                                                            
-   * Return the UCA Category associated to the given UCA kind for the given element
-   * @param analysis a non-null analysis
-   * @param kind a non-null UCA kind
-   * @return a non-null UCA Category if the given analysis is properly configured
+   * Return the available UCA Categories for the given element
+   * @param element a non-null element
+   * @return a non-null, potentially empty list
    */                                                                            
-  public UnsafeControlActionCategory getUCACategory(StpaAnalysisElement element, UnsafeControlActionKind kind) {
-    UnsafeControlActionCategory result = null;
+  public List<UnsafeControlActionCategory> getUCACategories(StpaAnalysisElement element) {
     StpaAnalysis analysis = element.getAnalysis();
-    if (analysis != null) {
-      result = getUCACategory(analysis, kind);
+    while (analysis != null) {
+      TechnicalPackage tp = analysis.getTechnicalPackage();
+      if (tp != null && !tp.getUnsafeControlActionCategories().isEmpty()) {
+        return tp.getUnsafeControlActionCategories();
+      }
+      EObject container = analysis.eContainer();
+      analysis = container instanceof StpaAnalysis?
+          (StpaAnalysis) container: null;
     }
-    return result;
+    return Collections.emptyList();
   }
   
   /**
