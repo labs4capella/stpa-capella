@@ -29,7 +29,7 @@
 		<cbi.jarsigner.version>1.3.2</cbi.jarsigner.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<java.version>11</java.version>
-		<revision>0.2.0-SNAPSHOT</revision>
+		<revision>0.2.1-SNAPSHOT</revision>
 		<maven.compiler.source>${java.version}</maven.compiler.source>
 		<maven.compiler.target>${java.version}</maven.compiler.target>
 		<maven.dependency.version>2.10</maven.dependency.version>

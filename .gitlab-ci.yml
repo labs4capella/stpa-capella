@@ -14,9 +14,9 @@ build-job:
     BUILD_OUTPUT_PATH: ./releng/com.thalesgroup.mde.capella.stpa.update/target
     MAVEN_OPTS: "-Dmaven.repo.local=.m2/repository"
     OUTPUT_FOLDER: output
-    TP_VERSIONS: ("5.0" "5.1" "5.2" "6.0" "6.1")
   script:
     - |
+      TP_VERSIONS=("5.0" "5.1" "5.2" "6.0" "6.1")
       mkdir ${OUTPUT_FOLDER}
       for v in ${TP_VERSIONS[@]}; do
         echo '********** BUILDING FOR CAPELLA '${v}' **********'

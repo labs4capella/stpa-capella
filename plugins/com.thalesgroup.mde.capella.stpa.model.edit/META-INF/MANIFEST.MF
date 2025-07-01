@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-SymbolicName: com.thalesgroup.mde.capella.stpa.model.edit;singleton:=true
 Automatic-Module-Name: com.thalesgroup.mde.capella.stpa.model.edit
-Bundle-Version: 0.2.0.qualifier
+Bundle-Version: 0.2.1.qualifier
 Bundle-ClassPath: .
 Bundle-Activator: com.thalesgroup.mde.capella.stpa.model.provider.StpaEditPlugin$Implementation
 Bundle-Vendor: %providerName
