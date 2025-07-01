@@ -55,25 +55,9 @@ public class StpaAnalysisItemProvider extends StpaAnalysisElementItemProvider {
     if (itemPropertyDescriptors == null) {
       super.getPropertyDescriptors(object);
 
-      addTechnicalPackagePropertyDescriptor(object);
       addSystemPropertyDescriptor(object);
     }
     return itemPropertyDescriptors;
-  }
-
-  /**
-   * This adds a property descriptor for the Technical Package feature.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected void addTechnicalPackagePropertyDescriptor(Object object) {
-    itemPropertyDescriptors
-        .add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-            getResourceLocator(), getString("_UI_StpaAnalysis_technicalPackage_feature"), //$NON-NLS-1$
-            getString("_UI_PropertyDescriptor_description", "_UI_StpaAnalysis_technicalPackage_feature", //$NON-NLS-1$//$NON-NLS-2$
-                "_UI_StpaAnalysis_type"), //$NON-NLS-1$
-            StpaPackage.Literals.STPA_ANALYSIS__TECHNICAL_PACKAGE, true, false, true, null, null, null));
   }
 
   /**
@@ -102,6 +86,7 @@ public class StpaAnalysisItemProvider extends StpaAnalysisElementItemProvider {
   public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
     if (childrenFeatures == null) {
       super.getChildrenFeatures(object);
+      childrenFeatures.add(StpaPackage.Literals.STPA_ANALYSIS__TECHNICAL_PACKAGE);
       childrenFeatures.add(StpaPackage.Literals.STPA_ANALYSIS__LOSS_PACKAGE);
       childrenFeatures.add(StpaPackage.Literals.STPA_ANALYSIS__HAZARD_CONSTRAINT_PACKAGE);
       childrenFeatures.add(StpaPackage.Literals.STPA_ANALYSIS__CONTROL_STRUCTURE_PACKAGE);
@@ -170,6 +155,7 @@ public class StpaAnalysisItemProvider extends StpaAnalysisElementItemProvider {
     updateChildren(notification);
 
     switch (notification.getFeatureID(StpaAnalysis.class)) {
+    case StpaPackage.STPA_ANALYSIS__TECHNICAL_PACKAGE:
     case StpaPackage.STPA_ANALYSIS__LOSS_PACKAGE:
     case StpaPackage.STPA_ANALYSIS__HAZARD_CONSTRAINT_PACKAGE:
     case StpaPackage.STPA_ANALYSIS__CONTROL_STRUCTURE_PACKAGE:
@@ -191,6 +177,9 @@ public class StpaAnalysisItemProvider extends StpaAnalysisElementItemProvider {
   @Override
   protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
     super.collectNewChildDescriptors(newChildDescriptors, object);
+
+    newChildDescriptors.add(createChildParameter(StpaPackage.Literals.STPA_ANALYSIS__TECHNICAL_PACKAGE,
+        StpaFactory.eINSTANCE.createTechnicalPackage()));
 
     newChildDescriptors.add(createChildParameter(StpaPackage.Literals.STPA_ANALYSIS__LOSS_PACKAGE,
         StpaFactory.eINSTANCE.createLossPackage()));
