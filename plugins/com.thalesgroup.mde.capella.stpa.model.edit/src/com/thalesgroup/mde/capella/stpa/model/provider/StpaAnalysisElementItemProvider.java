@@ -15,6 +15,7 @@ package com.thalesgroup.mde.capella.stpa.model.provider;
 import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
@@ -23,6 +24,7 @@ import org.eclipse.emf.ecore.EGenericType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.polarsys.capella.common.data.modellingcore.provider.ModelElementItemPropertyDescriptor;
@@ -31,6 +33,7 @@ import org.polarsys.kitalpha.emde.model.EmdePackage;
 
 import com.thalesgroup.mde.capella.stpa.helpers.DelegatingEGenericType;
 import com.thalesgroup.mde.capella.stpa.model.Decomposable;
+import com.thalesgroup.mde.capella.stpa.model.StpaAnalysis;
 import com.thalesgroup.mde.capella.stpa.model.StpaAnalysisElement;
 import com.thalesgroup.mde.capella.stpa.model.StpaFactory;
 import com.thalesgroup.mde.capella.stpa.model.StpaPackage;
@@ -106,6 +109,29 @@ public class StpaAnalysisElementItemProvider extends NamedElementItemProvider {
         };
       }
       result = ItemPropertyDescriptor.getReachableObjectsOfType(element, type);
+      // Inter-analysis visibility filtering
+      result = result.stream().filter(
+          e -> checkAnalysisVisibility(element, e)).collect(Collectors.toList());
+    }
+    return result;
+  }
+  
+  /**
+   * Return whether the given elements can see each other w.r.t.
+   * inter-analysis visibility. Must be symmetric to make sense.
+   * @param e1 a non-null element
+   * @param e2 a non-null element
+   * @generated NOT
+   */
+  protected boolean checkAnalysisVisibility(EObject e1, EObject e2) {
+    boolean result = true;
+    if (e1 instanceof StpaAnalysisElement &&
+        e2 instanceof StpaAnalysisElement) {
+      StpaAnalysis a1 = ((StpaAnalysisElement) e1).getAnalysis();
+      StpaAnalysis a2 = ((StpaAnalysisElement) e2).getAnalysis();
+      result =
+          EcoreUtil.isAncestor(a1, a2) ||
+          EcoreUtil.isAncestor(a2, a1);
     }
     return result;
   }
