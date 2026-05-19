@@ -29,7 +29,7 @@
 		<cbi.jarsigner.version>1.3.2</cbi.jarsigner.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<java.version>11</java.version>
-		<revision>0.2.1-SNAPSHOT</revision>
+		<revision>0.2.2-SNAPSHOT</revision>
 		<maven.compiler.source>${java.version}</maven.compiler.source>
 		<maven.compiler.target>${java.version}</maven.compiler.target>
 		<maven.dependency.version>2.10</maven.dependency.version>
@@ -179,6 +179,17 @@
       </activation>
       <properties>
         <capella.version>7.0</capella.version>
+	  <eclipse.name>2023-03</eclipse.name>
+	  <eclipse-repo.url>https://download.eclipse.org/releases/${eclipse.name}</eclipse-repo.url>
+      </properties>
+    </profile>
+    <profile>
+      <id>capella-7.0.1</id>
+      <activation>
+        <activeByDefault>false</activeByDefault>
+      </activation>
+      <properties>
+        <capella.version>7.0.1</capella.version>
 	  <eclipse.name>2023-03</eclipse.name>
 	  <eclipse-repo.url>https://download.eclipse.org/releases/${eclipse.name}</eclipse-repo.url>
       </properties>

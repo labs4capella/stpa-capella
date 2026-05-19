@@ -13,16 +13,13 @@
 -->
 <project>
 	<modelVersion>4.0.0</modelVersion>
-	<artifactId>com.thalesgroup.mde.capella.stpa.target</artifactId>
-	<packaging>pom</packaging>
+	<artifactId>capella-7.0.1</artifactId>
+	<packaging>eclipse-target-definition</packaging>
 
 	<parent>
 		<groupId>com.thalesgroup.mde.capella.stpa</groupId>
-		<artifactId>com.thalesgroup.mde.capella.stpa.releng</artifactId>
+		<artifactId>com.thalesgroup.mde.capella.stpa.target</artifactId>
 		<version>${revision}</version>
 		<relativePath>..</relativePath>
 	</parent>
-  <modules>
-    <module>capella-${capella.version}</module>
-  </modules>
 </project>

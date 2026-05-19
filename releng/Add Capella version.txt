@@ -6,7 +6,7 @@ ADD SUPPORT FOR NEW CAPELLA VERSION
 	* Add capella-X.Y.target: specify all contents
 		. Set <target name=...
 		. Check URLs in Capella repo, right tag: releng\plugins\org.polarsys.capella.targets\full\capella.target-definition.targetplatform
-		. Add required units for Capella Docgen, Sirius Properties and EEF
+		. Ensure required additional units for Capella Docgen, Sirius Properties and EEF are present in the TP
 - Add <profile> in releng/com.thalesgroup.mde.capella.stpa.configuration/pom.xml
 	* Specify <id>, <capella.version> and <eclipse.name>
 - Extend range of Capella versions in .gitlab-ci.yml
