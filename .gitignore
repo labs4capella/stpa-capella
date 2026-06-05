@@ -4,3 +4,6 @@ workspace/
 ~$*.docx
 examples/**/doc/
 .settings/
+
+# MacOS
+.DS_Store
